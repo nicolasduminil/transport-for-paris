@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.simplex-software.tfp</groupId>
+  <artifactId>plan-journey</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>fuse</module>
+  </modules>
+  <packaging>pom</packaging>
+  <name>Transport for Paris :: Parent POM</name>
+  <properties>
+    <java.version>11</java.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <version.wildfly>7.4.0.GA-redhat-00005</version.wildfly>
+    <version.fuse>7.9.0.fuse-sb2-790065-redhat-00001</version.fuse>
+    <!--version.keycloak>10.0.1</version.keycloak>
+    <version.wildfly.cxf>3.3.9.redhat-00001</version.wildfly.cxf>
+    <version-cxf-plugin>${version.wildfly.cxf}</version-cxf-plugin>
+    <version-exec-maven-plugin>1.6.0</version-exec-maven-plugin>
+    <version-galleon-maven-plugin>4.2.8.Final</version-galleon-maven-plugin>
+    <version-maven-antrun-plugin>3.0.0</version-maven-antrun-plugin>
+    <version-maven-assembly-plugin>3.3.0</version-maven-assembly-plugin>
+    <version-maven-dependency-plugin>3.1.2</version-maven-dependency-plugin>
+    <version-maven-release-plugin>3.0.0-M1</version-maven-release-plugin>
+    <version-maven-source-plugin>3.2.0</version-maven-source-plugin-->
+    <version-maven-surefire-plugin>3.0.0-M5</version-maven-surefire-plugin>
+    <version-maven-war-plugin>3.0.0</version-maven-war-plugin>
+    <version-wildfly-galleon-plugin>5.1.2.Final</version-wildfly-galleon-plugin>
+    <version-wildfly-maven-plugin>2.0.2.Final</version-wildfly-maven-plugin>
+    <jboss.server.name>jboss-eap-7.4</jboss.server.name>
+    <version.wildfly.camel>5.7.0.fuse-790049-redhat-00001</version.wildfly.camel>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.16</version>
+    </dependency>
+  </dependencies>
+</project>
