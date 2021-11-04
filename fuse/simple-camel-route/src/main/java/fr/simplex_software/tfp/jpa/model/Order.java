@@ -4,12 +4,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name="orders")
 @Table(name = "ORDERS")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Data
+@NamedQuery(name = "pendingOrders", query = "SELECT o FROM orders o WHERE o.status = 'PENDING'")
 public class Order
 {
   @Id
