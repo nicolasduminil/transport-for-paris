@@ -1,15 +1,20 @@
 package fr.simplex_software.tfp.jpa;
 
 import fr.simplex_software.tfp.jpa.model.*;
+import fr.simplex_software.tfp.jpa.service.*;
 import org.apache.camel.builder.*;
 import org.apache.camel.cdi.*;
 
 import javax.enterprise.context.*;
+import javax.inject.*;
 
 @ApplicationScoped
 @ContextName("camel-jpa-context")
 public class JpaRouteBuilder extends RouteBuilder
 {
+  @Inject
+  private OrderService orderService;
+
   public void configure() throws Exception
   {
     from("timer:new-order?delay=0s&period=10s")
