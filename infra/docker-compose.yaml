@@ -1,0 +1,38 @@
+version: '3.7'
+networks:
+  of-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.96.0/20
+services:
+  oracle:
+    image: oracleinanutshell/oracle-xe-11g:latest
+    networks:
+      of-network:
+        ipv4_address: 192.168.96.3
+    hostname: oracle
+    container_name: oracle
+    ports:
+      - 49161:1521
+      - 5500:5500
+    environment:
+      ORACLE_ALLOW_REMOTE: "true"
+      ORACLE_DISABLE_ASYNCH_IO: "true"
+    volumes:
+      - ./scripts/oracle:/docker-entrypoint-initdb.d
+  jboss-fuse:
+    image: jboss-fuse-eap-7.9.0:1.0-SNAPSHOT
+    networks:
+      of-network:
+        ipv4_address: 192.168.96.2
+    hostname: jboss-fuse
+    container_name: jboss-fuse
+    depends_on:
+      - oracle
+    ports:
+      - 8080:8080
+      - 9990:9990
+    environment:
+      JAVA_OPTS: "-Djboss.server.default.config=standalone-microprofile.xml -Djboss.http.port=8080 -Djboss.management.http.port=9990 -Dapp.context.root=test -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0"

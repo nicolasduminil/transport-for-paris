@@ -1,0 +1,709 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Transport for Paris :: Parent POM                                  [pom]
+[INFO] Transport for Paris :: The Fuse Integration Parent POM             [pom]
+[INFO] Transport for Paris :: JPA Module                                  [war]
+[INFO] Transport for Paris :: The Infra Module                            [jar]
+[INFO] 
+[INFO] ----------------< fr.simplex-software.tfp:plan-journey >----------------
+[INFO] Building Transport for Paris :: Parent POM 1.0-SNAPSHOT            [1/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ plan-journey ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ plan-journey ---
+[INFO] Installing /home/nicolas/IdeaProjects/transport-for-paris/pom.xml to /home/nicolas/.m2/repository/fr/simplex-software/tfp/plan-journey/1.0-SNAPSHOT/plan-journey-1.0-SNAPSHOT.pom
+[INFO] 
+[INFO] --------------------< fr.simplex-software.tfp:fuse >--------------------
+[INFO] Building Transport for Paris :: The Fuse Integration Parent POM 1.0-SNAPSHOT [2/4]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ fuse ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ fuse ---
+[INFO] Installing /home/nicolas/IdeaProjects/transport-for-paris/fuse/pom.xml to /home/nicolas/.m2/repository/fr/simplex-software/tfp/fuse/1.0-SNAPSHOT/fuse-1.0-SNAPSHOT.pom
+[INFO] 
+[INFO] -------------< fr.simplex-software.tfp:simple-camel-route >-------------
+[INFO] Building Transport for Paris :: JPA Module 1.0-SNAPSHOT            [3/4]
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ simple-camel-route ---
+[INFO] Deleting /home/nicolas/IdeaProjects/transport-for-paris/fuse/simple-camel-route/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ simple-camel-route ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ simple-camel-route ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 9 source files to /home/nicolas/IdeaProjects/transport-for-paris/fuse/simple-camel-route/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ simple-camel-route ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/nicolas/IdeaProjects/transport-for-paris/fuse/simple-camel-route/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ simple-camel-route ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ simple-camel-route ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-war-plugin:3.0.0:war (default-war) @ simple-camel-route ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [simple-camel-route] in [/home/nicolas/IdeaProjects/transport-for-paris/fuse/simple-camel-route/target/simple-camel-route]
+[INFO] Processing war project
+[INFO] Webapp assembled in [21 msecs]
+[INFO] Building war: /home/nicolas/IdeaProjects/transport-for-paris/fuse/simple-camel-route/target/simple-camel-route.war
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ simple-camel-route ---
+[INFO] Installing /home/nicolas/IdeaProjects/transport-for-paris/fuse/simple-camel-route/target/simple-camel-route.war to /home/nicolas/.m2/repository/fr/simplex-software/tfp/simple-camel-route/1.0-SNAPSHOT/simple-camel-route-1.0-SNAPSHOT.war
+[INFO] Installing /home/nicolas/IdeaProjects/transport-for-paris/fuse/simple-camel-route/pom.xml to /home/nicolas/.m2/repository/fr/simplex-software/tfp/simple-camel-route/1.0-SNAPSHOT/simple-camel-route-1.0-SNAPSHOT.pom
+[INFO] 
+[INFO] -------------------< fr.simplex-software.tfp:infra >--------------------
+[INFO] Building Transport for Paris :: The Infra Module 1.0-SNAPSHOT      [4/4]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ infra ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ infra ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/nicolas/IdeaProjects/transport-for-paris/infra/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ infra ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ infra ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/nicolas/IdeaProjects/transport-for-paris/infra/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ infra ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M5:test (default-test) @ infra ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- dockerfile-maven-plugin:1.4.13:build (default) @ infra ---
+[INFO] dockerfile: null
+[INFO] contextDirectory: /home/nicolas/IdeaProjects/transport-for-paris/infra
+[INFO] Building Docker context /home/nicolas/IdeaProjects/transport-for-paris/infra
+[INFO] Path(dockerfile): null
+[INFO] Path(contextDirectory): /home/nicolas/IdeaProjects/transport-for-paris/infra
+[INFO] 
+[INFO] Image will be built as infra:1.0-SNAPSHOT
+[INFO] 
+[INFO] Step 1/11 : FROM openjdk:11.0.7-jdk-slim-buster
+[INFO] 
+[INFO] Pulling from library/openjdk
+[INFO] Digest: sha256:b577374a385b86572caad3050b122b6aa6dd911cf37421667d248e9d1c638e44
+[INFO] Status: Image is up to date for openjdk:11.0.7-jdk-slim-buster
+[INFO]  ---> 85229f071913
+[INFO] Step 2/11 : LABEL MAINTAINER="Nicolas DUMINIL nicolas.duminil@simplex-software.fr"
+[INFO] 
+[INFO]  ---> Using cache
+[INFO]  ---> 42fa402ed25d
+[INFO] Step 3/11 : ENV EAP_HOME=/usr/lib/jboss-fuse     JBOSS_USER=root     PATH="${EAP_HOME}/bin:/tmp:${PATH}"     JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0"
+[INFO] 
+[INFO]  ---> Using cache
+[INFO]  ---> 23c62b8b1ace
+[INFO] Step 4/11 : USER root
+[INFO] 
+[INFO]  ---> Using cache
+[INFO]  ---> b2e7ffe4c12b
+[INFO] Step 5/11 : RUN apt-get update     && apt-get -y upgrade     && apt-get -y install apt-utils     && apt-get -y install wget curl htop vim net-tools     && apt-get -y autoremove     && apt-get -y clean     && rm -rf /var/lib/apt/lists/*     && echo "export EAP_HOME=/usr/lib/jboss-fuse" >> /root/.bashrc     && echo "export JBOSS_USER=root" >> /root/.bashrc     && mkdir -p $EAP_HOME     && mkdir -p /root/install
+[INFO] 
+[INFO]  ---> Running in d3edd6ad4a70
+[INFO] Get:1 http://deb.debian.org/debian buster InRelease [122 kB]
+[INFO] Get:2 http://security.debian.org/debian-security buster/updates InRelease [65.4 kB]
+[INFO] Get:3 http://deb.debian.org/debian buster-updates InRelease [51.9 kB]
+[INFO] Get:4 http://security.debian.org/debian-security buster/updates/main amd64 Packages [308 kB]
+[INFO] Get:5 http://deb.debian.org/debian buster/main amd64 Packages [7906 kB]
+[INFO] Get:6 http://deb.debian.org/debian buster-updates/main amd64 Packages [15.2 kB]
+[INFO] Fetched 8469 kB in 2s (5125 kB/s)
+[INFO] Reading package lists...
+[INFO] 
+[INFO] Reading package lists...
+[INFO] 
+[INFO] Building dependency tree...
+[INFO] 
+[INFO] Reading state information...
+[INFO] Calculating upgrade...
+[INFO] 
+[INFO] The following package was automatically installed and is no longer required:
+[INFO]   lsb-base
+[INFO] Use 'apt autoremove' to remove it.
+[INFO] The following packages will be upgraded:
+[INFO]   apt base-files ca-certificates debconf debian-archive-keyring libapt-pkg5.0
+[INFO]   libgcrypt20 libgnutls30 libhogweed4 liblz4-1 libnettle6 libp11-kit0
+[INFO]   libssl1.1 libsystemd0 libudev1 libzstd1 openssl p11-kit p11-kit-modules
+[INFO]   perl-base tzdata
+[INFO] 21 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[INFO] Need to get 10.6 MB of archives.
+[INFO] After this operation, 78.8 kB of additional disk space will be used.
+[INFO] Get:1 http://deb.debian.org/debian buster/main amd64 base-files amd64 10.3+deb10u11 [69.9 kB]
+[INFO] Get:2 http://deb.debian.org/debian buster/main amd64 perl-base amd64 5.28.1-6+deb10u1 [1514 kB]
+[INFO] Get:3 http://deb.debian.org/debian buster/main amd64 liblz4-1 amd64 1.8.3-1+deb10u1 [53.3 kB]
+[INFO] Get:4 http://deb.debian.org/debian buster/main amd64 libsystemd0 amd64 241-7~deb10u8 [331 kB]
+[INFO] Get:5 http://deb.debian.org/debian buster/main amd64 libudev1 amd64 241-7~deb10u8 [151 kB]
+[INFO] Get:6 http://deb.debian.org/debian buster/main amd64 libzstd1 amd64 1.3.8+dfsg-3+deb10u2 [237 kB]
+[INFO] Get:7 http://deb.debian.org/debian buster/main amd64 libapt-pkg5.0 amd64 1.8.2.3 [967 kB]
+[INFO] Get:8 http://deb.debian.org/debian buster/main amd64 debian-archive-keyring all 2019.1+deb10u1 [93.5 kB]
+[INFO] Get:9 http://deb.debian.org/debian buster/main amd64 libnettle6 amd64 3.4.1-1+deb10u1 [215 kB]
+[INFO] Get:10 http://deb.debian.org/debian buster/main amd64 libhogweed4 amd64 3.4.1-1+deb10u1 [141 kB]
+[INFO] Get:11 http://deb.debian.org/debian buster/main amd64 p11-kit-modules amd64 0.23.15-2+deb10u1 [222 kB]
+[INFO] Get:12 http://deb.debian.org/debian buster/main amd64 libp11-kit0 amd64 0.23.15-2+deb10u1 [316 kB]
+[INFO] Get:13 http://deb.debian.org/debian buster/main amd64 libgnutls30 amd64 3.6.7-4+deb10u7 [1125 kB]
+[INFO] Get:14 http://deb.debian.org/debian buster/main amd64 apt amd64 1.8.2.3 [1418 kB]
+[INFO] Get:15 http://deb.debian.org/debian buster/main amd64 debconf all 1.5.71+deb10u1 [145 kB]
+[INFO] Get:16 http://deb.debian.org/debian buster/main amd64 libgcrypt20 amd64 1.8.4-5+deb10u1 [556 kB]
+[INFO] Get:17 http://deb.debian.org/debian buster-updates/main amd64 tzdata all 2021a-0+deb10u3 [266 kB]
+[INFO] Get:18 http://deb.debian.org/debian buster/main amd64 libssl1.1 amd64 1.1.1d-0+deb10u7 [1539 kB]
+[INFO] Get:19 http://deb.debian.org/debian buster/main amd64 openssl amd64 1.1.1d-0+deb10u7 [845 kB]
+[INFO] Get:20 http://deb.debian.org/debian buster/main amd64 ca-certificates all 20200601~deb10u2 [166 kB]
+[INFO] Get:21 http://deb.debian.org/debian buster/main amd64 p11-kit amd64 0.23.15-2+deb10u1 [268 kB]
+[INFO] debconf: delaying package configuration, since apt-utils is not installed
+[INFO] 
+[INFO] Fetched 10.6 MB in 0s (60.7 MB/s)
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../base-files_10.3+deb10u11_amd64.deb ...
+[INFO] Unpacking base-files (10.3+deb10u11) over (10.3+deb10u4) ...
+[INFO] Setting up base-files (10.3+deb10u11) ...
+[INFO] Installing new version of config file /etc/debian_version ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../perl-base_5.28.1-6+deb10u1_amd64.deb ...
+[INFO] Unpacking perl-base (5.28.1-6+deb10u1) over (5.28.1-6) ...
+[INFO] Setting up perl-base (5.28.1-6+deb10u1) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../liblz4-1_1.8.3-1+deb10u1_amd64.deb ...
+[INFO] Unpacking liblz4-1:amd64 (1.8.3-1+deb10u1) over (1.8.3-1) ...
+[INFO] Setting up liblz4-1:amd64 (1.8.3-1+deb10u1) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../libsystemd0_241-7~deb10u8_amd64.deb ...
+[INFO] Unpacking libsystemd0:amd64 (241-7~deb10u8) over (241-7~deb10u4) ...
+[INFO] Setting up libsystemd0:amd64 (241-7~deb10u8) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../libudev1_241-7~deb10u8_amd64.deb ...
+[INFO] Unpacking libudev1:amd64 (241-7~deb10u8) over (241-7~deb10u4) ...
+[INFO] Setting up libudev1:amd64 (241-7~deb10u8) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../libzstd1_1.3.8+dfsg-3+deb10u2_amd64.deb ...
+[INFO] Unpacking libzstd1:amd64 (1.3.8+dfsg-3+deb10u2) over (1.3.8+dfsg-3) ...
+[INFO] Setting up libzstd1:amd64 (1.3.8+dfsg-3+deb10u2) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../libapt-pkg5.0_1.8.2.3_amd64.deb ...
+[INFO] Unpacking libapt-pkg5.0:amd64 (1.8.2.3) over (1.8.2.1) ...
+[INFO] Setting up libapt-pkg5.0:amd64 (1.8.2.3) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../debian-archive-keyring_2019.1+deb10u1_all.deb ...
+[INFO] Unpacking debian-archive-keyring (2019.1+deb10u1) over (2019.1) ...
+[INFO] Setting up debian-archive-keyring (2019.1+deb10u1) ...
+[INFO] Removing obsolete conffile /etc/apt/trusted.gpg.d/debian-archive-jessie-automatic.gpg ...
+[INFO] Removing obsolete conffile /etc/apt/trusted.gpg.d/debian-archive-jessie-security-automatic.gpg ...
+[INFO] Removing obsolete conffile /etc/apt/trusted.gpg.d/debian-archive-jessie-stable.gpg ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../libnettle6_3.4.1-1+deb10u1_amd64.deb ...
+[INFO] Unpacking libnettle6:amd64 (3.4.1-1+deb10u1) over (3.4.1-1) ...
+[INFO] Setting up libnettle6:amd64 (3.4.1-1+deb10u1) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../libhogweed4_3.4.1-1+deb10u1_amd64.deb ...
+[INFO] Unpacking libhogweed4:amd64 (3.4.1-1+deb10u1) over (3.4.1-1) ...
+[INFO] Setting up libhogweed4:amd64 (3.4.1-1+deb10u1) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../p11-kit-modules_0.23.15-2+deb10u1_amd64.deb ...
+[INFO] Unpacking p11-kit-modules:amd64 (0.23.15-2+deb10u1) over (0.23.15-2) ...
+[INFO] Preparing to unpack .../libp11-kit0_0.23.15-2+deb10u1_amd64.deb ...
+[INFO] Unpacking libp11-kit0:amd64 (0.23.15-2+deb10u1) over (0.23.15-2) ...
+[INFO] Setting up libp11-kit0:amd64 (0.23.15-2+deb10u1) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../libgnutls30_3.6.7-4+deb10u7_amd64.deb ...
+[INFO] Unpacking libgnutls30:amd64 (3.6.7-4+deb10u7) over (3.6.7-4+deb10u4) ...
+[INFO] Setting up libgnutls30:amd64 (3.6.7-4+deb10u7) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../archives/apt_1.8.2.3_amd64.deb ...
+[INFO] Unpacking apt (1.8.2.3) over (1.8.2.1) ...
+[INFO] Setting up apt (1.8.2.3) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../debconf_1.5.71+deb10u1_all.deb ...
+[INFO] Unpacking debconf (1.5.71+deb10u1) over (1.5.71) ...
+[INFO] Setting up debconf (1.5.71+deb10u1) ...
+[INFO] debconf: unable to initialize frontend: Dialog
+[INFO] debconf: (TERM is not set, so the dialog frontend is not usable.)
+[INFO] debconf: falling back to frontend: Readline
+[INFO] debconf: unable to initialize frontend: Readline
+[INFO] debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+[INFO] debconf: falling back to frontend: Teletype
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../libgcrypt20_1.8.4-5+deb10u1_amd64.deb ...
+[INFO] Unpacking libgcrypt20:amd64 (1.8.4-5+deb10u1) over (1.8.4-5) ...
+[INFO] Setting up libgcrypt20:amd64 (1.8.4-5+deb10u1) ...
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6889 files and directories currently installed.)
+[INFO] Preparing to unpack .../tzdata_2021a-0+deb10u3_all.deb ...
+[INFO] Unpacking tzdata (2021a-0+deb10u3) over (2020a-0+deb10u1) ...
+[INFO] Preparing to unpack .../libssl1.1_1.1.1d-0+deb10u7_amd64.deb ...
+[INFO] Unpacking libssl1.1:amd64 (1.1.1d-0+deb10u7) over (1.1.1d-0+deb10u3) ...
+[INFO] Preparing to unpack .../openssl_1.1.1d-0+deb10u7_amd64.deb ...
+[INFO] Unpacking openssl (1.1.1d-0+deb10u7) over (1.1.1d-0+deb10u3) ...
+[INFO] Preparing to unpack .../ca-certificates_20200601~deb10u2_all.deb ...
+[INFO] Unpacking ca-certificates (20200601~deb10u2) over (20200601~deb10u1) ...
+[INFO] Preparing to unpack .../p11-kit_0.23.15-2+deb10u1_amd64.deb ...
+[INFO] Unpacking p11-kit (0.23.15-2+deb10u1) over (0.23.15-2) ...
+[INFO] Setting up libssl1.1:amd64 (1.1.1d-0+deb10u7) ...
+[INFO] debconf: unable to initialize frontend: Dialog
+[INFO] debconf: (TERM is not set, so the dialog frontend is not usable.)
+[INFO] debconf: falling back to frontend: Readline
+[INFO] debconf: unable to initialize frontend: Readline
+[INFO] debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+[INFO] debconf: falling back to frontend: Teletype
+[INFO] Setting up tzdata (2021a-0+deb10u3) ...
+[INFO] debconf: unable to initialize frontend: Dialog
+[INFO] debconf: (TERM is not set, so the dialog frontend is not usable.)
+[INFO] debconf: falling back to frontend: Readline
+[INFO] debconf: unable to initialize frontend: Readline
+[INFO] debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+[INFO] debconf: falling back to frontend: Teletype
+[INFO] 
+[INFO] Current default time zone: 'Etc/UTC'
+[INFO] Local time is now:      Wed Nov 10 13:22:20 UTC 2021.
+[INFO] Universal Time is now:  Wed Nov 10 13:22:20 UTC 2021.
+[INFO] Run 'dpkg-reconfigure tzdata' if you wish to change it.
+[INFO] 
+[INFO] Setting up p11-kit-modules:amd64 (0.23.15-2+deb10u1) ...
+[INFO] Setting up p11-kit (0.23.15-2+deb10u1) ...
+[INFO] Setting up openssl (1.1.1d-0+deb10u7) ...
+[INFO] Setting up ca-certificates (20200601~deb10u2) ...
+[INFO] debconf: unable to initialize frontend: Dialog
+[INFO] debconf: (TERM is not set, so the dialog frontend is not usable.)
+[INFO] debconf: falling back to frontend: Readline
+[INFO] debconf: unable to initialize frontend: Readline
+[INFO] debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+[INFO] debconf: falling back to frontend: Teletype
+[INFO] Updating certificates in /etc/ssl/certs...
+[INFO] 11 added, 0 removed; done.
+[INFO] Processing triggers for libc-bin (2.28-10) ...
+[INFO] Processing triggers for ca-certificates (20200601~deb10u2) ...
+[INFO] Updating certificates in /etc/ssl/certs...
+[INFO] 0 added, 0 removed; done.
+[INFO] Running hooks in /etc/ca-certificates/update.d...
+[INFO] done.
+[INFO] Reading package lists...
+[INFO] 
+[INFO] Building dependency tree...
+[INFO] 
+[INFO] Reading state information...
+[INFO] 
+[INFO] The following package was automatically installed and is no longer required:
+[INFO]   lsb-base
+[INFO] Use 'apt autoremove' to remove it.
+[INFO] The following additional packages will be installed:
+[INFO]   libapt-inst2.0
+[INFO] The following NEW packages will be installed:
+[INFO]   apt-utils libapt-inst2.0
+[INFO] 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+[INFO] Need to get 625 kB of archives.
+[INFO] After this operation, 1650 kB of additional disk space will be used.
+[INFO] Get:1 http://deb.debian.org/debian buster/main amd64 libapt-inst2.0 amd64 1.8.2.3 [204 kB]
+[INFO] Get:2 http://deb.debian.org/debian buster/main amd64 apt-utils amd64 1.8.2.3 [421 kB]
+[INFO] debconf: delaying package configuration, since apt-utils is not installed
+[INFO] 
+[INFO] Fetched 625 kB in 0s (15.5 MB/s)
+[INFO] Selecting previously unselected package libapt-inst2.0:amd64.
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 6900 files and directories currently installed.)
+[INFO] Preparing to unpack .../libapt-inst2.0_1.8.2.3_amd64.deb ...
+[INFO] Unpacking libapt-inst2.0:amd64 (1.8.2.3) ...
+[INFO] Selecting previously unselected package apt-utils.
+[INFO] Preparing to unpack .../apt-utils_1.8.2.3_amd64.deb ...
+[INFO] Unpacking apt-utils (1.8.2.3) ...
+[INFO] Setting up libapt-inst2.0:amd64 (1.8.2.3) ...
+[INFO] Setting up apt-utils (1.8.2.3) ...
+[INFO] Processing triggers for libc-bin (2.28-10) ...
+[INFO] Reading package lists...
+[INFO] 
+[INFO] Building dependency tree...
+[INFO] 
+[INFO] Reading state information...
+[INFO] 
+[INFO] The following package was automatically installed and is no longer required:
+[INFO]   lsb-base
+[INFO] Use 'apt autoremove' to remove it.
+[INFO] The following additional packages will be installed:
+[INFO]   krb5-locales libcurl4 libgpm2 libgssapi-krb5-2 libk5crypto3 libkeyutils1
+[INFO]   libkrb5-3 libkrb5support0 libldap-2.4-2 libldap-common libnghttp2-14
+[INFO]   libpcre2-8-0 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+[INFO]   libsasl2-modules-db libssh2-1 publicsuffix vim-common vim-runtime xxd
+[INFO] Suggested packages:
+[INFO]   lsof strace gpm krb5-doc krb5-user libsasl2-modules-gssapi-mit
+[INFO]   | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+[INFO]   libsasl2-modules-sql ctags vim-doc vim-scripts
+[INFO] The following NEW packages will be installed:
+[INFO]   curl htop krb5-locales libcurl4 libgpm2 libgssapi-krb5-2 libk5crypto3
+[INFO]   libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2 libldap-common
+[INFO]   libnghttp2-14 libpcre2-8-0 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+[INFO]   libsasl2-modules-db libssh2-1 net-tools publicsuffix vim vim-common
+[INFO]   vim-runtime wget xxd
+[INFO] 0 upgraded, 27 newly installed, 0 to remove and 0 not upgraded.
+[INFO] Need to get 11.4 MB of archives.
+[INFO] After this operation, 44.8 MB of additional disk space will be used.
+[INFO] Get:1 http://deb.debian.org/debian buster/main amd64 xxd amd64 2:8.1.0875-5 [140 kB]
+[INFO] Get:2 http://deb.debian.org/debian buster/main amd64 vim-common all 2:8.1.0875-5 [195 kB]
+[INFO] Get:3 http://deb.debian.org/debian buster/main amd64 krb5-locales all 1.17-3+deb10u3 [95.5 kB]
+[INFO] Get:4 http://deb.debian.org/debian buster/main amd64 libpcre2-8-0 amd64 10.32-5 [213 kB]
+[INFO] Get:5 http://deb.debian.org/debian buster/main amd64 libpsl5 amd64 0.20.2-2 [53.7 kB]
+[INFO] Get:6 http://deb.debian.org/debian buster/main amd64 wget amd64 1.20.1-1.1 [902 kB]
+[INFO] Get:7 http://deb.debian.org/debian buster/main amd64 libkeyutils1 amd64 1.6-6 [15.0 kB]
+[INFO] Get:8 http://deb.debian.org/debian buster/main amd64 libkrb5support0 amd64 1.17-3+deb10u3 [65.8 kB]
+[INFO] Get:9 http://deb.debian.org/debian buster/main amd64 libk5crypto3 amd64 1.17-3+deb10u3 [122 kB]
+[INFO] Get:10 http://deb.debian.org/debian buster/main amd64 libkrb5-3 amd64 1.17-3+deb10u3 [370 kB]
+[INFO] Get:11 http://deb.debian.org/debian buster/main amd64 libgssapi-krb5-2 amd64 1.17-3+deb10u3 [158 kB]
+[INFO] Get:12 http://deb.debian.org/debian buster/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-1+deb10u1 [69.1 kB]
+[INFO] Get:13 http://deb.debian.org/debian buster/main amd64 libsasl2-2 amd64 2.1.27+dfsg-1+deb10u1 [106 kB]
+[INFO] Get:14 http://deb.debian.org/debian buster/main amd64 libldap-common all 2.4.47+dfsg-3+deb10u6 [90.0 kB]
+[INFO] Get:15 http://deb.debian.org/debian buster/main amd64 libldap-2.4-2 amd64 2.4.47+dfsg-3+deb10u6 [224 kB]
+[INFO] Get:16 http://deb.debian.org/debian buster/main amd64 libnghttp2-14 amd64 1.36.0-2+deb10u1 [85.0 kB]
+[INFO] Get:17 http://deb.debian.org/debian buster/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2 [60.5 kB]
+[INFO] Get:18 http://deb.debian.org/debian buster/main amd64 libssh2-1 amd64 1.8.0-2.1 [140 kB]
+[INFO] Get:19 http://deb.debian.org/debian buster/main amd64 libcurl4 amd64 7.64.0-4+deb10u2 [332 kB]
+[INFO] Get:20 http://deb.debian.org/debian buster/main amd64 curl amd64 7.64.0-4+deb10u2 [265 kB]
+[INFO] Get:21 http://deb.debian.org/debian buster/main amd64 htop amd64 2.2.0-1+b1 [92.8 kB]
+[INFO] Get:22 http://deb.debian.org/debian buster/main amd64 libgpm2 amd64 1.20.7-5 [35.1 kB]
+[INFO] Get:23 http://deb.debian.org/debian buster/main amd64 libsasl2-modules amd64 2.1.27+dfsg-1+deb10u1 [104 kB]
+[INFO] Get:24 http://deb.debian.org/debian buster/main amd64 net-tools amd64 1.60+git20180626.aebd88e-1 [248 kB]
+[INFO] Get:25 http://deb.debian.org/debian buster/main amd64 publicsuffix all 20190415.1030-1 [116 kB]
+[INFO] Get:26 http://deb.debian.org/debian buster/main amd64 vim-runtime all 2:8.1.0875-5 [5775 kB]
+[INFO] Get:27 http://deb.debian.org/debian buster/main amd64 vim amd64 2:8.1.0875-5 [1280 kB]
+[INFO] debconf: unable to initialize frontend: Dialog
+[INFO] debconf: (TERM is not set, so the dialog frontend is not usable.)
+[INFO] debconf: falling back to frontend: Readline
+[INFO] 
+[INFO] debconf: unable to initialize frontend: Readline
+[INFO] debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.28.1 /usr/local/share/perl/5.28.1 /usr/lib/x86_64-linux-gnu/perl5/5.28 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.28 /usr/share/perl/5.28 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7, <> line 27.)
+[INFO] debconf: falling back to frontend: Teletype
+[INFO] 
+[INFO] dpkg-preconfigure: unable to re-open stdin: 
+[INFO] 
+[INFO] Fetched 11.4 MB in 0s (89.5 MB/s)
+[INFO] Selecting previously unselected package xxd.
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 7030 files and directories currently installed.)
+[INFO] Preparing to unpack .../00-xxd_2%3a8.1.0875-5_amd64.deb ...
+[INFO] Unpacking xxd (2:8.1.0875-5) ...
+[INFO] Selecting previously unselected package vim-common.
+[INFO] Preparing to unpack .../01-vim-common_2%3a8.1.0875-5_all.deb ...
+[INFO] Unpacking vim-common (2:8.1.0875-5) ...
+[INFO] Selecting previously unselected package krb5-locales.
+[INFO] Preparing to unpack .../02-krb5-locales_1.17-3+deb10u3_all.deb ...
+[INFO] Unpacking krb5-locales (1.17-3+deb10u3) ...
+[INFO] Selecting previously unselected package libpcre2-8-0:amd64.
+[INFO] Preparing to unpack .../03-libpcre2-8-0_10.32-5_amd64.deb ...
+[INFO] Unpacking libpcre2-8-0:amd64 (10.32-5) ...
+[INFO] Selecting previously unselected package libpsl5:amd64.
+[INFO] Preparing to unpack .../04-libpsl5_0.20.2-2_amd64.deb ...
+[INFO] Unpacking libpsl5:amd64 (0.20.2-2) ...
+[INFO] Selecting previously unselected package wget.
+[INFO] Preparing to unpack .../05-wget_1.20.1-1.1_amd64.deb ...
+[INFO] Unpacking wget (1.20.1-1.1) ...
+[INFO] Selecting previously unselected package libkeyutils1:amd64.
+[INFO] Preparing to unpack .../06-libkeyutils1_1.6-6_amd64.deb ...
+[INFO] Unpacking libkeyutils1:amd64 (1.6-6) ...
+[INFO] Selecting previously unselected package libkrb5support0:amd64.
+[INFO] Preparing to unpack .../07-libkrb5support0_1.17-3+deb10u3_amd64.deb ...
+[INFO] Unpacking libkrb5support0:amd64 (1.17-3+deb10u3) ...
+[INFO] Selecting previously unselected package libk5crypto3:amd64.
+[INFO] Preparing to unpack .../08-libk5crypto3_1.17-3+deb10u3_amd64.deb ...
+[INFO] Unpacking libk5crypto3:amd64 (1.17-3+deb10u3) ...
+[INFO] Selecting previously unselected package libkrb5-3:amd64.
+[INFO] Preparing to unpack .../09-libkrb5-3_1.17-3+deb10u3_amd64.deb ...
+[INFO] Unpacking libkrb5-3:amd64 (1.17-3+deb10u3) ...
+[INFO] Selecting previously unselected package libgssapi-krb5-2:amd64.
+[INFO] Preparing to unpack .../10-libgssapi-krb5-2_1.17-3+deb10u3_amd64.deb ...
+[INFO] Unpacking libgssapi-krb5-2:amd64 (1.17-3+deb10u3) ...
+[INFO] Selecting previously unselected package libsasl2-modules-db:amd64.
+[INFO] Preparing to unpack .../11-libsasl2-modules-db_2.1.27+dfsg-1+deb10u1_amd64.deb ...
+[INFO] Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-1+deb10u1) ...
+[INFO] Selecting previously unselected package libsasl2-2:amd64.
+[INFO] Preparing to unpack .../12-libsasl2-2_2.1.27+dfsg-1+deb10u1_amd64.deb ...
+[INFO] Unpacking libsasl2-2:amd64 (2.1.27+dfsg-1+deb10u1) ...
+[INFO] Selecting previously unselected package libldap-common.
+[INFO] Preparing to unpack .../13-libldap-common_2.4.47+dfsg-3+deb10u6_all.deb ...
+[INFO] Unpacking libldap-common (2.4.47+dfsg-3+deb10u6) ...
+[INFO] Selecting previously unselected package libldap-2.4-2:amd64.
+[INFO] Preparing to unpack .../14-libldap-2.4-2_2.4.47+dfsg-3+deb10u6_amd64.deb ...
+[INFO] Unpacking libldap-2.4-2:amd64 (2.4.47+dfsg-3+deb10u6) ...
+[INFO] Selecting previously unselected package libnghttp2-14:amd64.
+[INFO] Preparing to unpack .../15-libnghttp2-14_1.36.0-2+deb10u1_amd64.deb ...
+[INFO] Unpacking libnghttp2-14:amd64 (1.36.0-2+deb10u1) ...
+[INFO] Selecting previously unselected package librtmp1:amd64.
+[INFO] Preparing to unpack .../16-librtmp1_2.4+20151223.gitfa8646d.1-2_amd64.deb ...
+[INFO] Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2) ...
+[INFO] Selecting previously unselected package libssh2-1:amd64.
+[INFO] Preparing to unpack .../17-libssh2-1_1.8.0-2.1_amd64.deb ...
+[INFO] Unpacking libssh2-1:amd64 (1.8.0-2.1) ...
+[INFO] Selecting previously unselected package libcurl4:amd64.
+[INFO] Preparing to unpack .../18-libcurl4_7.64.0-4+deb10u2_amd64.deb ...
+[INFO] Unpacking libcurl4:amd64 (7.64.0-4+deb10u2) ...
+[INFO] Selecting previously unselected package curl.
+[INFO] Preparing to unpack .../19-curl_7.64.0-4+deb10u2_amd64.deb ...
+[INFO] Unpacking curl (7.64.0-4+deb10u2) ...
+[INFO] Selecting previously unselected package htop.
+[INFO] Preparing to unpack .../20-htop_2.2.0-1+b1_amd64.deb ...
+[INFO] Unpacking htop (2.2.0-1+b1) ...
+[INFO] Selecting previously unselected package libgpm2:amd64.
+[INFO] Preparing to unpack .../21-libgpm2_1.20.7-5_amd64.deb ...
+[INFO] Unpacking libgpm2:amd64 (1.20.7-5) ...
+[INFO] Selecting previously unselected package libsasl2-modules:amd64.
+[INFO] Preparing to unpack .../22-libsasl2-modules_2.1.27+dfsg-1+deb10u1_amd64.deb ...
+[INFO] Unpacking libsasl2-modules:amd64 (2.1.27+dfsg-1+deb10u1) ...
+[INFO] Selecting previously unselected package net-tools.
+[INFO] Preparing to unpack .../23-net-tools_1.60+git20180626.aebd88e-1_amd64.deb ...
+[INFO] Unpacking net-tools (1.60+git20180626.aebd88e-1) ...
+[INFO] Selecting previously unselected package publicsuffix.
+[INFO] Preparing to unpack .../24-publicsuffix_20190415.1030-1_all.deb ...
+[INFO] Unpacking publicsuffix (20190415.1030-1) ...
+[INFO] Selecting previously unselected package vim-runtime.
+[INFO] Preparing to unpack .../25-vim-runtime_2%3a8.1.0875-5_all.deb ...
+[INFO] Adding 'diversion of /usr/share/vim/vim81/doc/help.txt to /usr/share/vim/vim81/doc/help.txt.vim-tiny by vim-runtime'
+[INFO] Adding 'diversion of /usr/share/vim/vim81/doc/tags to /usr/share/vim/vim81/doc/tags.vim-tiny by vim-runtime'
+[INFO] Unpacking vim-runtime (2:8.1.0875-5) ...
+[INFO] Selecting previously unselected package vim.
+[INFO] Preparing to unpack .../26-vim_2%3a8.1.0875-5_amd64.deb ...
+[INFO] Unpacking vim (2:8.1.0875-5) ...
+[INFO] Setting up net-tools (1.60+git20180626.aebd88e-1) ...
+[INFO] Setting up libkeyutils1:amd64 (1.6-6) ...
+[INFO] Setting up libpsl5:amd64 (0.20.2-2) ...
+[INFO] Setting up libgpm2:amd64 (1.20.7-5) ...
+[INFO] Setting up htop (2.2.0-1+b1) ...
+[INFO] Setting up libsasl2-modules:amd64 (2.1.27+dfsg-1+deb10u1) ...
+[INFO] Setting up libnghttp2-14:amd64 (1.36.0-2+deb10u1) ...
+[INFO] Setting up krb5-locales (1.17-3+deb10u3) ...
+[INFO] Setting up libldap-common (2.4.47+dfsg-3+deb10u6) ...
+[INFO] Setting up xxd (2:8.1.0875-5) ...
+[INFO] Setting up libkrb5support0:amd64 (1.17-3+deb10u3) ...
+[INFO] Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-1+deb10u1) ...
+[INFO] Setting up vim-common (2:8.1.0875-5) ...
+[INFO] Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2) ...
+[INFO] Setting up libpcre2-8-0:amd64 (10.32-5) ...
+[INFO] Setting up libk5crypto3:amd64 (1.17-3+deb10u3) ...
+[INFO] Setting up libsasl2-2:amd64 (2.1.27+dfsg-1+deb10u1) ...
+[INFO] Setting up libssh2-1:amd64 (1.8.0-2.1) ...
+[INFO] Setting up libkrb5-3:amd64 (1.17-3+deb10u3) ...
+[INFO] Setting up vim-runtime (2:8.1.0875-5) ...
+[INFO] Setting up publicsuffix (20190415.1030-1) ...
+[INFO] Setting up vim (2:8.1.0875-5) ...
+[INFO] update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+[INFO] update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+[INFO] update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+[INFO] update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+[INFO] update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/da/man1/vi.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group vi) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/de/man1/vi.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group vi) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/fr/man1/vi.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group vi) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/it/man1/vi.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group vi) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/ja/man1/vi.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group vi) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/pl/man1/vi.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group vi) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/ru/man1/vi.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group vi) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/vi.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group vi) doesn't exist
+[INFO] update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/da/man1/view.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group view) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/de/man1/view.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group view) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/fr/man1/view.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group view) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/it/man1/view.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group view) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/ja/man1/view.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group view) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/pl/man1/view.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group view) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/ru/man1/view.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group view) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/view.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group view) doesn't exist
+[INFO] update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/da/man1/ex.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group ex) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/de/man1/ex.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group ex) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/fr/man1/ex.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group ex) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/it/man1/ex.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group ex) doesn't exist
+[INFO] 
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/ja/man1/ex.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group ex) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/pl/man1/ex.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group ex) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/ru/man1/ex.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group ex) doesn't exist
+[INFO] update-alternatives: warning: 
+[INFO] skip creation of /usr/share/man/man1/ex.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group ex) doesn't exist
+[INFO] update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in auto mode
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/da/man1/editor.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group editor) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/de/man1/editor.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group editor) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/fr/man1/editor.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group editor) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/it/man1/editor.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group editor) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/ja/man1/editor.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group editor) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/pl/man1/editor.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group editor) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/ru/man1/editor.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group editor) doesn't exist
+[INFO] update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group editor) doesn't exist
+[INFO] Setting up wget (1.20.1-1.1) ...
+[INFO] Setting up libldap-2.4-2:amd64 (2.4.47+dfsg-3+deb10u6) ...
+[INFO] Setting up libgssapi-krb5-2:amd64 (1.17-3+deb10u3) ...
+[INFO] Setting up libcurl4:amd64 (7.64.0-4+deb10u2) ...
+[INFO] Setting up curl (7.64.0-4+deb10u2) ...
+[INFO] Processing triggers for libc-bin (2.28-10) ...
+[INFO] Reading package lists...
+[INFO] 
+[INFO] Building dependency tree...
+[INFO] 
+[INFO] Reading state information...
+[INFO] 
+[INFO] The following packages will be REMOVED:
+[INFO]   lsb-base
+[INFO] 0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.
+[INFO] After this operation, 50.2 kB disk space will be freed.
+[INFO] (Reading database ... 
+[INFO] (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%
+[INFO] (Reading database ... 75%
+[INFO] (Reading database ... 80%
+[INFO] (Reading database ... 85%
+[INFO] (Reading database ... 90%
+[INFO] (Reading database ... 95%
+[INFO] (Reading database ... 100%(Reading database ... 9219 files and directories currently installed.)
+[INFO] Removing lsb-base (10.2019051400) ...
+[INFO] Removing intermediate container d3edd6ad4a70
+[INFO]  ---> 5a1a290d68f9
+[INFO] Step 6/11 : COPY auto.xml /root/install/auto.xml
+[INFO] 
+[INFO]  ---> 123adc39f70a
+[INFO] Step 7/11 : COPY auto.xml.variables /root/install/auto.xml.variables
+[INFO] 
+[INFO]  ---> e9ba40f15e54
+[INFO] Step 8/11 : COPY docker-start-jboss-fuse.sh /docker-start-jboss-fuse.sh
+[INFO] 
+[INFO]  ---> 6d496dcf5071
+[INFO] Step 9/11 : WORKDIR $EAP_HOME
+[INFO] 
+[INFO]  ---> Running in 37717bdd8cd8
+[INFO] Removing intermediate container 37717bdd8cd8
+[INFO]  ---> eaf07487119e
+[INFO] Step 10/11 : CMD /docker-start-jboss-fuse.sh -daemon
+[INFO] 
+[INFO]  ---> Running in d5005d4a3392
+[INFO] Removing intermediate container d5005d4a3392
+[INFO]  ---> 534b82605262
+[INFO] Step 11/11 : EXPOSE 8080 8181 8101 9990 9443 9999 4447 8443 4712 4713
+[INFO] 
+[INFO]  ---> Running in 486eed6a265c
+[INFO] Removing intermediate container 486eed6a265c
+[INFO]  ---> 7bb749fa17d9
+[INFO] Successfully built 7bb749fa17d9
+[INFO] Successfully tagged infra:1.0-SNAPSHOT
+[INFO] 
+[INFO] Detected build of image with id 7bb749fa17d9
+[INFO] Successfully built infra:1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Transport for Paris :: Parent POM 1.0-SNAPSHOT:
+[INFO] 
+[INFO] Transport for Paris :: Parent POM .................. SUCCESS [  0.129 s]
+[INFO] Transport for Paris :: The Fuse Integration Parent POM SUCCESS [  0.061 s]
+[INFO] Transport for Paris :: JPA Module .................. SUCCESS [  1.635 s]
+[INFO] Transport for Paris :: The Infra Module ............ SUCCESS [ 35.983 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  38.127 s
+[INFO] Finished at: 2021-11-10T14:22:36+01:00
+[INFO] ------------------------------------------------------------------------
