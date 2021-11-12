@@ -73,4 +73,12 @@
       </plugins>
     </pluginManagement>
   </build>
+  <profiles>
+    <profile>
+      <id>docker</id>
+      <modules>
+        <module>infra</module>
+      </modules>
+    </profile>
+  </profiles>
 </project>

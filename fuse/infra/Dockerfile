@@ -8,11 +8,11 @@ USER root
 #
 # Installing JBoss Fuse pre-requisites
 #
-RUN apt-get update \
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
+    && apt-get update \
     && apt-get -y upgrade \
     && apt-get -y install apt-utils \
     && apt-get -y install software-properties-common build-essential \
-    #&& apt-get -y install wget curl htop git maven vim net-tools \
     && apt-get -y install sudo wget curl htop vim net-tools \
     && apt-get -y autoremove \
     && apt-get -y clean \
@@ -28,9 +28,11 @@ RUN apt-get update \
 COPY auto.xml /root/install/auto.xml
 COPY auto.xml.variables /root/install/auto.xml.variables
 COPY docker-start-jboss-fuse.sh /docker-start-jboss-fuse.sh
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY ojdbc8.jdbc /root/install/ojdbc8.jar
 #
 # Start JBoss Fuse
 #
 WORKDIR $EAP_HOME
-CMD /docker-start-jboss-fuse.sh -daemon
+CMD /docker-start-jboss-fuse.sh -daemon && tail -f /dev/null
 EXPOSE 8080 8181 8101 9990 9443 9999 4447 8443 4712 4713
