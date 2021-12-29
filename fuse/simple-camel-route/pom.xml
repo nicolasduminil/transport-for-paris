@@ -24,6 +24,16 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-jpa</artifactId>
       <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.camel</groupId>
+          <artifactId>camel-spring</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
@@ -55,6 +65,10 @@
       <artifactId>jboss-ejb-api_3.2_spec</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>info.schnatterer.moby-names-generator</groupId>
+      <artifactId>moby-names-generator</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <finalName>${project.artifactId}</finalName>
@@ -66,23 +80,10 @@
       <plugin>
         <groupId>org.wildfly.plugins</groupId>
         <artifactId>wildfly-maven-plugin</artifactId>
+        <configuration>
+          <port>19990</port>
+        </configuration>
       </plugin>
     </plugins>
   </build>
-  <profiles>
-    <profile>
-      <id>docker</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.wildfly.plugins</groupId>
-            <artifactId>wildfly-maven-plugin</artifactId>
-            <configuration>
-              <hostname>192.168.96.2</hostname>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>

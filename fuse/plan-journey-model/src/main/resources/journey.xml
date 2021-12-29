@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<journey>
+    <metadata>
+        <metadataCall>metadataCall1</metadataCall>
+        <metadataWhen>02/12/2021 14:48:02</metadataWhen>
+        <metadataVersion>metadataVersion</metadataVersion>
+    </metadata>
+    <metadata>
+        <metadataCall>metadataCall2</metadataCall>
+        <metadataWhen>02/12/2021 15:48:02</metadataWhen>
+        <metadataVersion>metadataVersion</metadataVersion>
+    </metadata>
+    <metadata>
+        <metadataCall>metadataCall3</metadataCall>
+        <metadataWhen>02/12/2021 16:48:02</metadataWhen>
+        <metadataVersion>metadataVersion</metadataVersion>
+    </metadata>
+    <result>
+        <destinations>
+            <platformId>platformId1</platformId>
+            <stationName>stationName1</stationName>
+        </destinations>
+        <destinations>
+            <platformId>platformId2</platformId>
+            <stationName>stationName2</stationName>
+        </destinations>
+        <destinations>
+            <platformId>platformId3</platformId>
+            <stationName>stationName3</stationName>
+        </destinations>
+        <destinations>
+            <platformId>platformId4</platformId>
+            <stationName>stationName4</stationName>
+        </destinations>
+    </result>
+</journey>

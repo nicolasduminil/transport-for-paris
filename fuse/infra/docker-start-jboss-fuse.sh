@@ -22,14 +22,10 @@ if [[ ! -e $EAP_HOME/bin && -e /root/install ]]; then
     echo "### Error installing JBoss EAP 7.4.0"
     exit 1
   fi
-  echo ">>> Patching JBoss EAP 7.4.1 ..."
-  echo "connect
-  patch apply /root/install/jboss-eap-7.4.1-patch.zip
-  shutdown --restart=false" > patch.cli
+  echo ">>> Patching JBoss EAP 7.4.1 and enabling CORS ..."
   $EAP_HOME/bin/standalone.sh &
   waiting_for_jboss
-  $EAP_HOME/bin/jboss-cli.sh --file=patch.cli
-  rm -rf patch.cli
+  $EAP_HOME/bin/jboss-cli.sh -c  --file=/patch-and-set-cors.cli
   echo ">>> Installing JBoss Fuse 7.9.0 ..."
   java -jar /root/install/fuse-eap-installer-7.9.0.jar
   if [[ "0" != "$?" ]]; then
@@ -38,9 +34,6 @@ if [[ ! -e $EAP_HOME/bin && -e /root/install ]]; then
   fi
   echo ">>> JBoss Fuse 7.9.0 has been installed on EAP 7.4.0"
   rm -Rf /root/install
-  echo ">>> Restart JBoss EAP Fuse Integration Server ..."
-  #nohup $EAP_HOME/bin/standalone.sh > $EAP_HOME/standalone/log/server.log &
-  #$EAP_HOME/bin/jboss-cli.sh --connect command=:stop
   $EAP_HOME/bin/standalone.sh
   waiting_for_jboss
 fi

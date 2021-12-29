@@ -12,12 +12,9 @@ import javax.inject.*;
 @ContextName("camel-jpa-context")
 public class JpaRouteBuilder extends RouteBuilder
 {
-  @Inject
-  private OrderService orderService;
-
-  public void configure() throws Exception
+  public void configure()
   {
-    from("timer:new-order?delay=0s&period=10s")
+    from("timer:new-order?delay=0&period=10000")
       .bean("orderService", "generateOrder")
       .toF("jpa:%s", Order.class.getName())
       .log("Inserted new order ${body.id}");
@@ -28,6 +25,6 @@ public class JpaRouteBuilder extends RouteBuilder
         order.setStatus("PROCESSED");
       })
       .toF("jpa:%s", Order.class.getName())
-      .log("Processed order #id ${body.id} with ${body.amount} copies of the «${body.description}» book");
+      .log("Processed order #id ${body.id} with ${body.amount} amount of the «${body.description}» item");
   }
 }

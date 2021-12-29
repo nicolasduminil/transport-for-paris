@@ -4,24 +4,146 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>fr.simplex-software.tfp</groupId>
-    <artifactId>plan-journey</artifactId>
+    <artifactId>transport-for-paris</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>fuse</artifactId>
   <packaging>pom</packaging>
   <name>Transport for Paris :: The Fuse Integration Parent POM</name>
+  <properties>
+    <jboss.home>${project.build.directory}/${jboss.server.name}</jboss.home>
+    <jvmArgs>-Xmx1G -Djava.net.preferIPv4Stack=true</jvmArgs>
+    <jvmDebugArgs>-agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n</jvmDebugArgs>
+    <server.config>standalone.xml</server.config>
+  </properties>
   <modules>
-    <module>simple-camel-route</module>
+    <!--module>simple-camel-route</module>
+    <module>plan-journey</module-->
+    <module>infra</module>
+    <module>plan-journey-model</module>
+    <module>plan-journey-repository</module>
+    <module>plan-journey-facade</module>
+    <module>plan-journey-service</module>
+    <module>plan-journey-jax-rs</module>
   </modules>
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.jboss.bom</groupId>
+        <artifactId>jboss-eap-jakartaee8-with-tools</artifactId>
+        <version>${version.wildfly}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <dependency>
         <groupId>org.jboss.redhat-fuse</groupId>
         <artifactId>fuse-eap-bom</artifactId>
         <version>${version.fuse}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.deltaspike.distribution</groupId>
+        <artifactId>distributions-bom</artifactId>
+        <version>1.9.5</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.platform</groupId>
+        <artifactId>jakarta.jakartaee-api</artifactId>
+        <version>8.0.0</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.ws.rs</groupId>
+        <artifactId>jakarta.ws.rs-api</artifactId>
+        <version>2.1.2</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.xml.bind</groupId>
+        <artifactId>jakarta.xml.bind-api</artifactId>
+        <version>2.3.3.redhat-00001</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.transaction</groupId>
+        <artifactId>jakarta.transaction-api</artifactId>
+        <version>2.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.transaction</groupId>
+        <artifactId>javax.transaction-api</artifactId>
+        <version>1.3</version>
+      </dependency>
+      <dependency>
+        <groupId>info.schnatterer.moby-names-generator</groupId>
+        <artifactId>moby-names-generator</artifactId>
+        <version>20.10.0-r0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-jaxrs</artifactId>
+        <version>1.6.3</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.simplex-software.tfp</groupId>
+        <artifactId>plan-journey-model</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.simplex-software.tfp</groupId>
+        <artifactId>plan-journey-model</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <classifier>tests</classifier>
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>2.0.202</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.simplex-software.tfp</groupId>
+        <artifactId>plan-journey-repository</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.simplex-software.tfp</groupId>
+        <artifactId>plan-journey-facade</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>fr.simplex-software.tfp</groupId>
+        <artifactId>plan-journey-service</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>1.4.2.Final</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.database-rider</groupId>
+        <artifactId>rider-core</artifactId>
+        <version>1.32.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.database-rider</groupId>
+        <artifactId>rider-cdi</artifactId>
+        <!--version>1.7.1</version-->
+        <version>1.32.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>oracle-xe</artifactId>
+        <version>1.15.2</version>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.jdbc</groupId>
+        <artifactId>ojdbc8</artifactId>
+        <version>12.2.0.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -39,8 +161,26 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${version-maven-failsafe-plugin}</version>
+          <executions>
+            <execution>
+              <id>integration-test</id>
+              <phase>integration-test</phase>
+              <goals>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
           <version>${version-maven-war-plugin}</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.wildfly.plugins</groupId>
@@ -61,24 +201,21 @@
           <version>2.5.2</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.2.0</version>
-        </plugin>
-        <plugin>
           <groupId>com.dkanejs.maven.plugins</groupId>
           <artifactId>docker-compose-maven-plugin</artifactId>
           <version>4.0.0</version>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.5.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
-  <profiles>
-    <profile>
-      <id>docker</id>
-      <modules>
-        <module>infra</module>
-      </modules>
-    </profile>
-  </profiles>
 </project>

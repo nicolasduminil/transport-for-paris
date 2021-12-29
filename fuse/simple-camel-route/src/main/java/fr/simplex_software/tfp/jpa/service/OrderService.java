@@ -1,6 +1,7 @@
 package fr.simplex_software.tfp.jpa.service;
 
 import fr.simplex_software.tfp.jpa.model.*;
+import info.schnatterer.mobynamesgenerator.*;
 
 import javax.inject.*;
 import java.util.*;
@@ -16,9 +17,9 @@ public class OrderService
   public Order generateOrder()
   {
     Order order = new Order();
-    order.setItem(counter.incrementAndGet() % 2 == 0 ? "Camel" : "ActiveMQ");
+    order.setItem(MobyNamesGenerator.getRandomName());
     order.setAmount(amount.nextInt(10) + 1);
-    order.setDescription(counter.get() % 2 == 0 ? "Camel in Action" : "ActiveMQ in Action");
+    order.setDescription(MobyNamesGenerator.getRandomName());
     return order;
   }
 }

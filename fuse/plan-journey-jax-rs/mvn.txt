@@ -1,0 +1,117 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< fr.simplex-software.tfp:plan-journey-jax-rs >-------------
+[INFO] Building Transport for Paris :: The plan journey JAX-RS module 1.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ plan-journey-jax-rs ---
+[INFO] fr.simplex-software.tfp:plan-journey-jax-rs:war:1.0-SNAPSHOT
+[INFO] +- jakarta.enterprise:jakarta.enterprise.cdi-api:jar:2.0.2.redhat-00002:provided
+[INFO] |  \- jakarta.inject:jakarta.inject-api:jar:1.0.3.redhat-00001:provided
+[INFO] +- org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:jar:2.0.1.Final-redhat-00001:provided
+[INFO] +- org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec:jar:2.0.1.Final-redhat-00001:provided
+[INFO] +- jakarta.persistence:jakarta.persistence-api:jar:2.2.3.redhat-00001:provided
+[INFO] +- jakarta.transaction:jakarta.transaction-api:jar:2.0.0:provided
+[INFO] +- javax.transaction:javax.transaction-api:jar:1.3:provided
+[INFO] +- org.hibernate:hibernate-entitymanager:jar:5.3.20.Final-redhat-00001:provided
+[INFO] |  +- org.jboss.logging:jboss-logging:jar:3.4.1.Final-redhat-00001:provided
+[INFO] |  +- org.hibernate:hibernate-core:jar:5.3.20.Final-redhat-00001:provided
+[INFO] |  |  +- org.javassist:javassist:jar:3.23.2.GA-redhat-00001:compile
+[INFO] |  |  +- antlr:antlr:jar:2.7.7.redhat-7:provided
+[INFO] |  |  +- org.jboss:jandex:jar:2.2.3.Final-redhat-00001:provided
+[INFO] |  |  \- com.fasterxml:classmate:jar:1.5.1.redhat-00001:provided
+[INFO] |  +- org.dom4j:dom4j:jar:2.1.3.redhat-00001:provided
+[INFO] |  +- org.hibernate.common:hibernate-commons-annotations:jar:5.0.5.Final-redhat-00002:provided
+[INFO] |  \- net.bytebuddy:byte-buddy:jar:1.9.11.redhat-00003:provided
+[INFO] +- io.swagger:swagger-jaxrs:jar:1.6.3:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.12.1.redhat-00001:compile
+[INFO] |  +- io.swagger:swagger-core:jar:1.6.3:compile
+[INFO] |  |  +- org.apache.commons:commons-lang3:jar:3.8.1:compile
+[INFO] |  |  +- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.12.1.redhat-00002:compile
+[INFO] |  |  +- io.swagger:swagger-models:jar:1.6.3:compile
+[INFO] |  |  |  \- io.swagger:swagger-annotations:jar:1.6.3:compile
+[INFO] |  |  \- javax.validation:validation-api:jar:1.1.0.Final:compile
+[INFO] |  +- javax.ws.rs:jsr311-api:jar:1.1.1:compile
+[INFO] |  +- org.reflections:reflections:jar:0.9.11:compile
+[INFO] |  \- com.google.guava:guava:jar:30.1.0.redhat-00001:compile
+[INFO] |     +- com.google.guava:failureaccess:jar:1.0.1.redhat-00002:compile
+[INFO] |     \- com.google.code.findbugs:jsr305:jar:3.0.2:test
+[INFO] +- com.oracle.jdbc:ojdbc8:jar:12.2.0.1:compile
+[INFO] |  \- com.oracle.jdbc:ucp:jar:12.2.0.1:compile
+[INFO] +- org.jboss.resteasy:resteasy-client:jar:3.15.1.Final-redhat-00001:test
+[INFO] |  +- org.jboss.resteasy:resteasy-jaxrs:jar:3.15.1.Final-redhat-00001:test
+[INFO] |  |  +- org.reactivestreams:reactive-streams:jar:1.0.3.redhat-00003:test
+[INFO] |  |  +- jakarta.validation:jakarta.validation-api:jar:2.0.2.redhat-00001:test
+[INFO] |  |  \- com.github.stephenc.jcip:jcip-annotations:jar:1.0-1:test
+[INFO] |  +- org.apache.httpcomponents:httpclient:jar:4.5.13.redhat-00001:test
+[INFO] |  |  \- org.apache.httpcomponents:httpcore:jar:4.4.14.redhat-00001:test
+[INFO] |  +- commons-codec:commons-codec:jar:1.15.0.redhat-00001:test
+[INFO] |  \- commons-io:commons-io:jar:2.5.0.redhat-3:test
+[INFO] +- org.jboss.resteasy:resteasy-jaxb-provider:jar:3.15.1.Final-redhat-00001:test
+[INFO] +- jakarta.activation:jakarta.activation-api:jar:1.2.2:test
+[INFO] +- javax.xml.bind:jaxb-api:jar:2.4.0-b180830.0359:test
+[INFO] |  \- javax.activation:javax.activation-api:jar:1.2.0:test
+[INFO] +- org.glassfish.jaxb:jaxb-runtime:jar:2.3.3.b02-redhat-00001:test
+[INFO] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3.redhat-00001:test
+[INFO] |  +- org.glassfish.jaxb:txw2:jar:2.3.3.b02-redhat-00001:test
+[INFO] |  +- com.sun.istack:istack-commons-runtime:jar:3.0.10.redhat-00001:test
+[INFO] |  \- com.sun.activation:jakarta.activation:jar:1.2.2.redhat-00001:test
+[INFO] +- org.jboss.resteasy:resteasy-jackson2-provider:jar:3.15.1.Final-redhat-00001:test
+[INFO] |  +- com.fasterxml.jackson.core:jackson-core:jar:2.12.1.redhat-00001:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.12.1.redhat-00001:compile
+[INFO] |  +- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.12.1.redhat-00001:test
+[INFO] |  |  +- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.12.1.redhat-00001:test
+[INFO] |  |  \- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.1.redhat-00001:test
+[INFO] |  \- com.github.fge:json-patch:jar:1.9.0.redhat-00002:test
+[INFO] +- org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec:jar:2.0.1.Final-redhat-00001:test
+[INFO] +- fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT:compile
+[INFO] +- fr.simplex-software.tfp:plan-journey-model:test-jar:tests:1.0-SNAPSHOT:test
+[INFO] +- fr.simplex-software.tfp:plan-journey-service:jar:1.0-SNAPSHOT:compile
+[INFO] |  +- fr.simplex-software.tfp:plan-journey-facade:jar:1.0-SNAPSHOT:compile
+[INFO] |  |  \- fr.simplex-software.tfp:plan-journey-repository:jar:1.0-SNAPSHOT:compile
+[INFO] |  |     +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
+[INFO] |  |     +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
+[INFO] |  |     +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
+[INFO] |  |     +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
+[INFO] |  |     +- org.apache.deltaspike.modules:deltaspike-partial-bean-module-api:jar:1.9.5:compile
+[INFO] |  |     +- org.apache.deltaspike.modules:deltaspike-partial-bean-module-impl:jar:1.9.5:runtime
+[INFO] |  |     |  +- org.apache.deltaspike.modules:deltaspike-proxy-module-api:jar:1.9.5:compile
+[INFO] |  |     |  \- org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm:jar:1.9.5:runtime
+[INFO] |  |     \- javax.persistence:javax.persistence-api:jar:2.2:compile
+[INFO] |  \- org.mapstruct:mapstruct:jar:1.4.2.Final:compile
+[INFO] +- junit:junit:jar:4.13.1:test
+[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] +- org.jboss.logging:commons-logging-jboss-logging:jar:1.0.0.Final-redhat-1:test
+[INFO] +- org.slf4j:slf4j-api:jar:1.7.32:test
+[INFO] +- org.slf4j:slf4j-log4j12:jar:1.7.32:test
+[INFO] |  \- log4j:log4j:jar:1.2.17.redhat-3:test
+[INFO] +- com.github.database-rider:rider-core:jar:1.7.1:test
+[INFO] |  +- org.dbunit:dbunit:jar:2.5.3:test
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.2.redhat-2:test
+[INFO] |  |  \- org.apache.poi:poi-ooxml:jar:3.14:test
+[INFO] |  |     +- org.apache.poi:poi:jar:3.14:test
+[INFO] |  |     +- org.apache.poi:poi-ooxml-schemas:jar:3.14:test
+[INFO] |  |     |  \- org.apache.xmlbeans:xmlbeans:jar:2.6.0:test
+[INFO] |  |     |     \- stax:stax-api:jar:1.0.1:test
+[INFO] |  |     \- com.github.virtuald:curvesapi:jar:1.03:test
+[INFO] |  +- org.yaml:snakeyaml:jar:1.28:compile
+[INFO] |  \- org.codehaus.jackson:jackson-mapper-lgpl:jar:1.2.1:test
+[INFO] |     \- org.codehaus.jackson:jackson-core-lgpl:jar:1.2.1:test
+[INFO] +- org.apache.deltaspike.modules:deltaspike-test-control-module-api:jar:1.9.5:test
+[INFO] |  \- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
+[INFO] +- org.apache.deltaspike.modules:deltaspike-test-control-module-impl:jar:1.9.5:test
+[INFO] |  \- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
+[INFO] +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-weld:jar:1.9.5:test
+[INFO] |  \- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
+[INFO] +- org.jboss.weld.se:weld-se-core:jar:4.0.2.Final:test
+[INFO] |  +- org.jboss.weld.environment:weld-environment-common:jar:4.0.2.Final:test
+[INFO] |  |  \- org.jboss.weld:weld-core-impl:jar:3.1.6.Final-redhat-00001:test
+[INFO] |  +- org.jboss.weld.probe:weld-probe-core:jar:3.1.6.Final-redhat-00001:test
+[INFO] |  \- org.jboss.classfilewriter:jboss-classfilewriter:jar:1.2.4.Final-redhat-00001:test
+[INFO] \- org.projectlombok:lombok:jar:1.18.20:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.156 s
+[INFO] Finished at: 2021-12-03T18:27:04+01:00
+[INFO] ------------------------------------------------------------------------

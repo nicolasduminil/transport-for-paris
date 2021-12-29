@@ -2,8 +2,7 @@ FROM openjdk:11.0.7-jdk-slim-buster
 LABEL MAINTAINER="Nicolas DUMINIL nicolas.duminil@simplex-software.fr"
 ENV EAP_HOME=/usr/lib/jboss-fuse \
     JBOSS_USER=root \
-    PATH="${EAP_HOME}/bin:/tmp:${PATH}" \
-    JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0"
+    PATH="${EAP_HOME}/bin:/tmp:${PATH}"
 USER root
 #
 # Installing JBoss Fuse pre-requisites
@@ -27,12 +26,12 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 #
 COPY auto.xml /root/install/auto.xml
 COPY auto.xml.variables /root/install/auto.xml.variables
+COPY patch-and-set-cors.cli /patch-and-set-cors.cli
 COPY docker-start-jboss-fuse.sh /docker-start-jboss-fuse.sh
-COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY ojdbc8.jdbc /root/install/ojdbc8.jar
 #
 # Start JBoss Fuse
 #
 WORKDIR $EAP_HOME
 CMD /docker-start-jboss-fuse.sh -daemon && tail -f /dev/null
-EXPOSE 8080 8181 8101 9990 9443 9999 4447 8443 4712 4713
+EXPOSE 18080 18181 18101 19990 19443 19999 14447 18443 14712 14713

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<journey>
+    <name>MyJourney</name>
+    <result>
+        <destinations>
+            <stationName>stationName1</stationName>
+            <platformId>platformId1</platformId>
+        </destinations>
+        <destinations>
+            <stationName>stationName2</stationName>
+            <platformId>platformId2</platformId>
+        </destinations>
+    </result>
+    <metadata>
+        <metadataCall>metadataCall</metadataCall>
+        <metadataWhen>28/12/2021 18:06:36</metadataWhen>
+        <metadataVersion>metadataVersion</metadataVersion>
+    </metadata>
+</journey>
