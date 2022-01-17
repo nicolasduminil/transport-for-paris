@@ -14,22 +14,22 @@ import org.junit.runners.*;
 
 import javax.persistence.*;
 import java.io.*;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class EntitiesIT extends TestCommons
+public class JourneyEntityIT extends TestCommons
 {
-  private PlanJourneyFacade planJourneyFacade;
-  private PlanJourneyService planJourneyService;
-  private static JourneyEntity journeyEntity;
   private EntityManager em;
+  private static Map<String, Object> entityManagerProviderProperties = new HashMap<>();
+  private static JourneyEntity journeyEntity;
 
   @BeforeClass
-  public static void setUpDatabase()
+  public static void beforeClass()
   {
-    journeyEntity = (JourneyEntity) unmarshalXmlFileToJourneyEntity(new File("src/test/resources/journey.xml"));
+     journeyEntity = (JourneyEntity) unmarshalXmlFileToJourneyEntity(new File("src/test/resources/journey.xml"));
   }
 
   @Rule
@@ -41,16 +41,12 @@ public class EntitiesIT extends TestCommons
   @Before
   public void setUp()
   {
-    planJourneyFacade = new PlanJourneyFacade(entityManagerProvider.getEm());
-    planJourneyService = new PlanJourneyService(planJourneyFacade);
     em = entityManagerProvider.getEm();
   }
 
   @Test
   public void test0()
   {
-    assertNotNull(planJourneyFacade);
-    assertNotNull(planJourneyService);
     assertNotNull(em);
   }
 

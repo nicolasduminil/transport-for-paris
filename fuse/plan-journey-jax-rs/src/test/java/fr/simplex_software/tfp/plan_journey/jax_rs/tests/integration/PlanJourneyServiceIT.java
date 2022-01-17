@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 @RunWith(CdiTestRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Entities2IT extends TestCommons
+public class PlanJourneyServiceIT extends TestCommons
 {
   @Inject
   private PlanJourneyService planJourneyService;
