@@ -3,11 +3,9 @@ package fr.simplex_software.tfp.plan_journey.jax_rs.tests.integration;
 import com.github.database.rider.core.*;
 import com.github.database.rider.core.api.dataset.*;
 import com.github.database.rider.core.util.*;
-import fr.simplex_software.tfp.plan_journey.facade.*;
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
 import fr.simplex_software.tfp.plan_journey.model.tests.unit.*;
-import fr.simplex_software.tfp.plan_journey.service.*;
 import org.junit.*;
 import org.junit.runner.*;
 import org.junit.runners.*;
@@ -20,7 +18,7 @@ import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class JourneyEntityIT extends TestCommons
+public class JourneyEntity1IT extends TestCommons
 {
   private EntityManager em;
   private static Map<String, Object> entityManagerProviderProperties = new HashMap<>();
@@ -29,7 +27,7 @@ public class JourneyEntityIT extends TestCommons
   @BeforeClass
   public static void beforeClass()
   {
-     journeyEntity = (JourneyEntity) unmarshalXmlFileToJourneyEntity(new File("src/test/resources/journey.xml"));
+    journeyEntity = (JourneyEntity) unmarshalXmlFileToJourneyEntity(new File("src/test/resources/journey.xml"));
   }
 
   @Rule

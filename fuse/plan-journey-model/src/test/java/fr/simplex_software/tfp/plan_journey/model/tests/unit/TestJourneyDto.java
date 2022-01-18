@@ -19,13 +19,13 @@ public class TestJourneyDto extends TestCommons
     JourneyDto journeyDto = new JourneyDto("MyJourney", new ResultDto(List.of(new DestinationDto("stationName1",
       "platformId1"), new DestinationDto("stationName2", "platformId2"))),
       new MetadataDto("metadataCall", LocalDateTime.now(), "metadataVersion"));
-    assertTrue(marshalJourneyToXmlFile(journeyDto, new File("journey1.xml")).exists());
+    assertTrue(marshalJourneyToXmlFile(journeyDto, new File("journey.xml")).exists());
   }
 
   @Test
   public void testUnmarshalJourneyDto()
   {
-    JourneyDto journeyDto = (JourneyDto) unmarshalXmlFileToJourneyDto(new File ("journey1.xml"));
+    JourneyDto journeyDto = (JourneyDto) unmarshalXmlFileToJourneyDto(new File ("journey.xml"));
     assertNotNull (journeyDto);
     assertNotNull(journeyDto.getMetadata());
     assertNotNull(journeyDto.getResult());
