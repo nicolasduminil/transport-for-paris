@@ -35,24 +35,6 @@ public class JaxRsJourneyPlanServiceIT
     return ShrinkWrap.createFromZipFile(WebArchive.class, new File("target/plan-journey-jax-rs.war"));
   }
 
-  @Produces
-  @Named("EntityManagerProducerEE")
-  @RequestScoped
-  public EntityManager create()
-  {
-    if (entityManagerFactory == null)
-      Persistence.createEntityManagerFactory("paris-oracle");
-    return this.entityManagerFactory.createEntityManager();
-  }
-
-  public void dispose(@Disposes @Named("EntityManagerProducerEE") EntityManager entityManager)
-  {
-    if (entityManager.isOpen())
-    {
-      entityManager.close();
-    }
-  }
-
   /*@Before
   public void before()
   {

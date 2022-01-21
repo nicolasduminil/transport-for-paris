@@ -9,8 +9,7 @@ import javax.inject.*;
 import javax.persistence.*;
 
 @ApplicationScoped
-@Alternative
-@Named("EntityManagerProducerNoEE")
+//@Alternative
 public class EntityManagerProducerNoEE implements EntityManagerProducer
 {
   @Inject
@@ -22,11 +21,11 @@ public class EntityManagerProducerNoEE implements EntityManagerProducer
   @TransactionScoped
   public EntityManager createEntityManager()
   {
-    return null;
+    return this.entityManagerFactory.createEntityManager();
   }
 
   @Override
-  public void closeEntityManager(@Disposes EntityManager entityManager)
+  public void closeEntityManager(@Disposes @Default EntityManager entityManager)
   {
     if (entityManager.isOpen()) {
       entityManager.close();
