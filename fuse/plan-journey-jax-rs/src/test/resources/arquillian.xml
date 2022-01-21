@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian">
+  <defaultProtocol type="jmx-as7">
+    <property name="enableThreadContextClassLoader">false</property>
+  </defaultProtocol>
+  <engine>
+    <property name="deploymentExportPath">target/deployments</property>
+  </engine>
+  <container qualifier="remote" default="true">
+    <configuration>
+      <property name="managementAddress">localhost</property>
+      <property name="managementPort">19990</property>
+      <property name="username">nicolas</property>
+      <property name="password">California1</property>
+      <!--property name="allowConnectingToRunningServer">true</property-->
+    </configuration>
+  </container>
+</arquillian>

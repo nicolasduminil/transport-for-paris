@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 @RunWith(CdiTestRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class PlanJourneyServiceIT extends TestCommons
+public class PlanJourneyService2IT extends TestCommons
 {
   @Inject
   private PlanJourneyService planJourneyService;
@@ -28,7 +28,6 @@ public class PlanJourneyServiceIT extends TestCommons
   {
     journeyEntity = (JourneyEntity) unmarshalXmlFileToJourneyEntity(new File("src/test/resources/journey.xml"));
   }
-
 
   @Test
   public void test0()
@@ -43,7 +42,7 @@ public class PlanJourneyServiceIT extends TestCommons
     assertNotNull(journeyEntity.getResult());
     assertNotNull(journeyEntity.getMetadata());
     assertNotNull(journeyEntity.getResult().getJourney());
-    assertEquals (0, journeyEntity.getResult().getId().intValue());
+    assertEquals(0, journeyEntity.getResult().getId().intValue());
     assertNotNull(journeyEntity.getResult().getDestinations());
     assertNotNull(journeyEntity.getMetadata().getJourney());
     JourneyDto journeyDto = new JourneyDto(journeyEntity);
@@ -80,8 +79,8 @@ public class PlanJourneyServiceIT extends TestCommons
   public void test4()
   {
     List<JourneyDto> journeyDtos = planJourneyService.getJourneys();
-    assertNotNull (journeyDtos);
-    assertEquals (1, journeyDtos.size());
+    assertNotNull(journeyDtos);
+    assertEquals(1, journeyDtos.size());
   }
 
   @Test

@@ -34,6 +34,6 @@ if [[ ! -e $EAP_HOME/bin && -e /root/install ]]; then
   fi
   echo ">>> JBoss Fuse 7.9.0 has been installed on EAP 7.4.0"
   rm -Rf /root/install
-  $EAP_HOME/bin/standalone.sh
+  $EAP_HOME/bin/standalone.sh --debug
   waiting_for_jboss
 fi
