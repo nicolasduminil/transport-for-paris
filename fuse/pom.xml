@@ -26,6 +26,7 @@
     <module>plan-journey-facade</module>
     <module>plan-journey-service</module>
     <module>plan-journey-jax-rs</module>
+    <module>plan-journey-jax-rs-test</module>
   </modules>
   <dependencyManagement>
     <dependencies>
