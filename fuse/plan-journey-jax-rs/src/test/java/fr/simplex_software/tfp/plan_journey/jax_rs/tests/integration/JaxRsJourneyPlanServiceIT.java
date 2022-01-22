@@ -10,8 +10,6 @@ import org.jboss.shrinkwrap.api.spec.*;
 import org.junit.*;
 import org.junit.runner.*;
 
-import javax.enterprise.context.*;
-import javax.enterprise.inject.*;
 import javax.inject.*;
 import javax.persistence.*;
 import java.io.*;
