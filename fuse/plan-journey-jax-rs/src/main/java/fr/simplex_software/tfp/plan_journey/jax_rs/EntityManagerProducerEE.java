@@ -1,5 +1,7 @@
 package fr.simplex_software.tfp.plan_journey.jax_rs;
 
+import org.apache.deltaspike.core.api.exclude.*;
+import org.apache.deltaspike.core.api.projectstage.*;
 import org.apache.deltaspike.jpa.api.entitymanager.*;
 
 import javax.enterprise.context.*;
@@ -7,17 +9,19 @@ import javax.enterprise.inject.*;
 import javax.inject.*;
 import javax.persistence.*;
 
+@ApplicationScoped
+@Exclude(exceptIfProjectStage = ProjectStage.Production.class)
 public class EntityManagerProducerEE implements EntityManagerProducer
 {
   @Inject
   @PersistenceUnitName("paris-oracle")
   private EntityManagerFactory entityManagerFactory;
-  @PersistenceContext
+  //@PersistenceContext
   private EntityManager entityManager;
 
   @Override
-  /*@Produces
-  @RequestScoped*/
+  @Produces
+  @RequestScoped
   public EntityManager createEntityManager()
   {
     if (entityManager == null)
@@ -30,7 +34,7 @@ public class EntityManagerProducerEE implements EntityManagerProducer
   }
 
   @Override
-  public void closeEntityManager(/*@Disposes @Default*/ EntityManager entityManager)
+  public void closeEntityManager(@Disposes @Default EntityManager entityManager)
   {
     if (entityManager.isOpen())
     {

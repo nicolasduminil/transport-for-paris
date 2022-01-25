@@ -65,6 +65,7 @@ public class JourneysIT extends TestCommons
     List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
     assertNotNull(journeys);
     assertFalse(journeys.isEmpty());
+    assertTrue(journeys.get(0).getName().startsWith("MyJourney"));
   }
 
   @Test

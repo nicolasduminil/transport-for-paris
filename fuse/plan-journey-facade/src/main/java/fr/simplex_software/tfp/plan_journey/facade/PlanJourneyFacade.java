@@ -13,23 +13,6 @@ public class PlanJourneyFacade
 {
   @Inject
   private PlanJourneyRepository planJourneyRepository;
-  /*@PersistenceContext
-  private static EntityManager entityManager;
-
-  public PlanJourneyFacade()
-  {
-  }
-
-  public PlanJourneyFacade (EntityManager entityManager)
-  {
-    PlanJourneyFacade.entityManager = entityManager;
-  }
-
-  public PlanJourneyFacade (EntityManager entityManager, PlanJourneyRepository planJourneyRepository)
-  {
-    this(entityManager);
-    this.planJourneyRepository = planJourneyRepository;
-  }*/
 
   public JourneyEntity createJourney(JourneyEntity journeyEntity)
   {

@@ -5,6 +5,7 @@ import fr.simplex_software.tfp.plan_journey.service.*;
 import io.swagger.annotations.*;
 
 import javax.inject.*;
+import javax.transaction.*;
 import javax.validation.*;
 import javax.ws.rs.Path;
 import javax.ws.rs.*;
