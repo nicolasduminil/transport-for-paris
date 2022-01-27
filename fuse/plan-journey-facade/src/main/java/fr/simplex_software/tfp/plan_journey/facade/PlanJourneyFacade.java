@@ -5,7 +5,6 @@ import fr.simplex_software.tfp.plan_journey.repository.*;
 
 import javax.enterprise.context.*;
 import javax.inject.*;
-import javax.persistence.*;
 import java.util.*;
 
 @ApplicationScoped
