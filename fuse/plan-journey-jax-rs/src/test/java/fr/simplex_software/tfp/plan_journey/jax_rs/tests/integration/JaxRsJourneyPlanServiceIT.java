@@ -2,27 +2,18 @@ package fr.simplex_software.tfp.plan_journey.jax_rs.tests.integration;
 
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.service.*;
-import org.apache.deltaspike.core.api.projectstage.*;
 import org.apache.http.*;
 import org.jboss.arquillian.container.test.api.*;
 import org.jboss.arquillian.junit.*;
-import static org.assertj.core.api.Assertions.*;
-
-import org.jboss.arquillian.test.api.*;
 import org.jboss.shrinkwrap.api.*;
-import org.jboss.shrinkwrap.api.importer.*;
 import org.jboss.shrinkwrap.api.spec.*;
-import org.jboss.shrinkwrap.resolver.api.maven.*;
 import org.junit.*;
 import org.junit.runner.*;
 
 import javax.inject.*;
-import javax.persistence.*;
 import javax.ws.rs.client.*;
-import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.*;
 import java.io.*;
-import java.net.*;
 import java.time.*;
 import java.util.*;
 
@@ -32,13 +23,8 @@ import static org.junit.Assert.*;
 @RunWith(Arquillian.class)
 public class JaxRsJourneyPlanServiceIT
 {
-  /*@Inject
-  private PlanJourneyService planJourneyService;
   @Inject
-  @Named("toto")
-  private ProjectStage projectStage;
-  @PersistenceContext
-  private EntityManager entityManager;*/
+  private PlanJourneyService planJourneyService;
   private static final String url = "http://localhost:18080/plan-journey-jax-rs/tfp/journeys";
   private Client client;
   private WebTarget webTarget;
@@ -95,13 +81,6 @@ public class JaxRsJourneyPlanServiceIT
   }
 
   @Test
-  public void test0()
-  {
-    System.out.println ("### finalUri: " + finalUri.toString());
-    //assertNotNull(planJourneyService);
-  }
-
-  @Test
   public void test1()
   {
     RestAssured.given()
@@ -144,7 +123,7 @@ public class JaxRsJourneyPlanServiceIT
     MetadataDto metadataDto = new MetadataDto("metadataCall", LocalDateTime.now(), "metadataVersion");
     List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
     ResultDto resultDto = new ResultDto(destinationDtos);
-    Response response = webTarget.request().post(Entity.entity(new JourneyDto("MyJourney", resultDto, metadataDto), "application/xml"));
+    Response response = webTarget.request().post(Entity.entity(new JourneyDto("MyJourney822", resultDto, metadataDto), "application/xml"));
     assertNotNull(response);
     assertEquals(HttpStatus.SC_CREATED, response.getStatus());
   }
@@ -192,8 +171,17 @@ public class JaxRsJourneyPlanServiceIT
     assertNotNull(journey);
   }
 
-  /*@Test
-  public void test1()
+
+  @Test
+  @RunAsClient
+  public void test5()
+  {
+    Response response = webTarget.path("1").request().accept(MediaType.APPLICATION_XML).delete();
+    assertEquals(HttpStatus.SC_NO_CONTENT, response.getStatus());
+  }
+
+  @Test
+  public void test10()
   {
     MetadataDto metadataDto = new MetadataDto("metadataCall", LocalDateTime.now(), "metadataVersion");
     List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
@@ -202,8 +190,8 @@ public class JaxRsJourneyPlanServiceIT
     assertNotNull(journeyDto);
     assertNotNull(journeyDto.getResult());
     assertNotNull(journeyDto.getMetadata());
-    assertThat(journeyDto.getMetadata().getMetadataCall()).isEqualTo("metadataCall");
-    assertThat(journeyDto.getResult().getDestinations().get(0).getStationName()).isEqualTo("stationName");
-    assertThat(journeyDto.getResult().getDestinations().get(0).getPlatformId()).isEqualTo("platformId");
-  }*/
+    assertEquals("metadataCall", journeyDto.getMetadata().getMetadataCall());
+    assertEquals("stationName", journeyDto.getResult().getDestinations().get(0).getStationName());
+    assertEquals("platformId", journeyDto.getResult().getDestinations().get(0).getPlatformId());
+  }
 }

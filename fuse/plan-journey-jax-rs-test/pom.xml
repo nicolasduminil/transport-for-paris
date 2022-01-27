@@ -63,6 +63,11 @@
       <artifactId>plan-journey-service</artifactId>
     </dependency>
     <dependency>
+      <groupId>fr.simplex-software.tfp</groupId>
+      <artifactId>plan-journey-jax-rs</artifactId>
+      <type>war</type>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
@@ -79,6 +84,45 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.wildfly.plugins</groupId>
+        <artifactId>wildfly-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>deploy</id>
+            <phase>install</phase>
+            <goals>
+              <goal>deploy-artifact</goal>
+            </goals>
+            <configuration>
+              <groupId>fr.simplex-software.tfp</groupId>
+              <artifactId>plan-journey-jax-rs</artifactId>
+              <name>pj.war</name>
+              <hostname>localhost</hostname>
+              <port>19990</port>
+              <username>nicolas</username>
+              <password>California1</password>
+            </configuration>
+          </execution>
+          <execution>
+            <id>undeploy</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>undeploy-artifact</goal>
+            </goals>
+            <configuration>
+              <groupId>fr.simplex-software.tfp</groupId>
+              <artifactId>plan-journey-jax-rs</artifactId>
+              <name>pj.war</name>
+              <hostname>localhost</hostname>
+              <port>19990</port>
+              <username>nicolas</username>
+              <password>California1</password>
+              <ignoreMissingDeployment>true</ignoreMissingDeployment>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

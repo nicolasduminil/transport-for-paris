@@ -255,6 +255,9 @@
         <artifactId>maven-failsafe-plugin</artifactId>
         <configuration>
           <runOrder>alphabetical</runOrder>
+          <classpathDependencyExcludes>
+            <classpathDependencyExclude>testing:test-weld</classpathDependencyExclude>
+          </classpathDependencyExcludes>
         </configuration>
       </plugin>
     </plugins>

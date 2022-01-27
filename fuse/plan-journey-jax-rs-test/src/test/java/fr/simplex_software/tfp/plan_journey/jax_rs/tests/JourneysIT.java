@@ -19,7 +19,7 @@ public class JourneysIT extends TestCommons
 {
   private Client client;
   private WebTarget webTarget;
-  private final static String url = "http://localhost:18080/plan-journey-jax-rs/tfp/journeys";
+  private final static String url = "http://localhost:18080/pj/tfp/journeys";
   private static JourneyEntity journeyEntity;
   private static String gen;
 
