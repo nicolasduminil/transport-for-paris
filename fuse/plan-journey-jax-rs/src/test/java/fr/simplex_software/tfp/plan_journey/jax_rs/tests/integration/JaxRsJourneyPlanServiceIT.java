@@ -43,7 +43,7 @@ public class JaxRsJourneyPlanServiceIT
   private Client client;
   private WebTarget webTarget;
 
-  @Deployment(testable = false)
+  @Deployment
   public static WebArchive createDeployment()
   {
     /*System.out.println ("######################################");
@@ -138,18 +138,58 @@ public class JaxRsJourneyPlanServiceIT
   }*/
 
   @Test
+  @RunAsClient
   public void test0()
   {
-    /*assertNotNull(projectStage);
-    assertEquals(ProjectStage.Production, projectStage);
-    assertNotNull(planJourneyService);
-    assertThat(entityManager).isNotNull();*/
     MetadataDto metadataDto = new MetadataDto("metadataCall", LocalDateTime.now(), "metadataVersion");
     List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
     ResultDto resultDto = new ResultDto(destinationDtos);
     Response response = webTarget.request().post(Entity.entity(new JourneyDto("MyJourney", resultDto, metadataDto), "application/xml"));
     assertNotNull(response);
     assertEquals(HttpStatus.SC_CREATED, response.getStatus());
+  }
+
+  @Test
+  @RunAsClient
+  public void test1()
+  {
+    Response response = webTarget.request().get();
+    assertEquals(HttpStatus.SC_OK, response.getStatus());
+    List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
+    assertNotNull(journeys);
+    assertFalse(journeys.isEmpty());
+    assertTrue(journeys.get(0).getName().startsWith("MyJourney"));
+  }
+
+  @Test
+  @RunAsClient
+  public void test2()
+  {
+    Response response = webTarget.path("1").request().get();
+    assertEquals(HttpStatus.SC_OK, response.getStatus());
+    JourneyDto journey = response.readEntity(JourneyDto.class);
+    assertNotNull(journey);
+  }
+
+  @Test
+  @RunAsClient
+  public void test3()
+  {
+    Response response = webTarget.request().accept(MediaType.APPLICATION_XML).get();
+    assertEquals(HttpStatus.SC_OK, response.getStatus());
+    List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
+    assertNotNull(journeys);
+    assertFalse(journeys.isEmpty());
+  }
+
+  @Test
+  @RunAsClient
+  public void test4()
+  {
+    Response response = webTarget.path("1").request().accept(MediaType.APPLICATION_XML).get();
+    assertEquals(HttpStatus.SC_OK, response.getStatus());
+    JourneyDto journey = response.readEntity(JourneyDto.class);
+    assertNotNull(journey);
   }
 
   /*@Test
