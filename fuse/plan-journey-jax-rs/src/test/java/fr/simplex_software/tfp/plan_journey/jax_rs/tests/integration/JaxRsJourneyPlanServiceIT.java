@@ -2,6 +2,7 @@ package fr.simplex_software.tfp.plan_journey.jax_rs.tests.integration;
 
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.service.*;
+import io.restassured.*;
 import org.apache.http.*;
 import org.jboss.arquillian.container.test.api.*;
 import org.jboss.arquillian.junit.*;
@@ -15,6 +16,8 @@ import javax.inject.*;
 import javax.ws.rs.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.*;
+import javax.xml.bind.*;
+import javax.xml.transform.stream.*;
 import java.io.*;
 import java.time.*;
 import java.util.*;
@@ -79,42 +82,6 @@ public class JaxRsJourneyPlanServiceIT
       .path("tfp")
       .path("journeys")
       .build();
-  }
-
-  @Test
-  public void test1()
-  {
-    RestAssured.given()
-      .accept(MediaType.APPLICATION_XML)
-      .contentType(MediaType.APPLICATION_XML)
-      .body(journeyEntity)
-      .when()
-      .post(finalUri)
-      .then()
-      .statusCode(HttpStatus.SC_CREATED)
-      .extract()
-      .header("Location");
-  }
-
-  @Test
-  public void test2() throws JAXBException
-  {
-    List<JourneyDto> journeyDtos = new ArrayList<JourneyDto>();
-    String xml = RestAssured.given()
-      .accept(MediaType.APPLICATION_XML)
-      .contentType(MediaType.APPLICATION_XML)
-      .when()
-      .get(finalUri)
-      .then()
-      .statusCode(HttpStatus.SC_OK)
-      .extract()
-      .body()
-      .asString();
-    journeyDtos = (List<JourneyDto>) JAXBContext.newInstance(journeyDtos.getClass()).createUnmarshaller()
-      .unmarshal(new StringReader(xml));
-    assertThat(journeyDtos).isNotNull();
-    assertThat(journeyDtos.size()).isEqualTo(1);
-    assertThat(journeyDtos.get(0).getName()).isEqualTo("MyJourney");
   }*/
 
   @Test
@@ -244,5 +211,39 @@ public class JaxRsJourneyPlanServiceIT
     List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
     ResultDto resultDto = new ResultDto(destinationDtos);
     return new JourneyDto("MyJourney822", resultDto, metadataDto);
+  }
+
+  @Test
+  @RunAsClient
+  public void testD()
+  {
+    RestAssured.given()
+      .accept(MediaType.APPLICATION_XML)
+      .contentType(MediaType.APPLICATION_XML)
+      .body(journeyDto)
+      .when()
+      .post(url)
+      .then()
+      .statusCode(HttpStatus.SC_CREATED)
+      .extract()
+      .header("Location");
+  }
+
+  @Test
+  @RunAsClient
+  public void testE() throws JAXBException
+  {
+    List<JourneyDto> journeyDtos = new ArrayList<JourneyDto>();
+    String xml = RestAssured.given()
+      .accept(MediaType.APPLICATION_XML)
+      .contentType(MediaType.APPLICATION_XML)
+      .when()
+      .get(url)
+      .then()
+      .statusCode(HttpStatus.SC_OK)
+      .extract()
+      .body()
+      .asString();
+    assertEquals("<name>MyJourney822", xml.substring(xml.indexOf("<name>"), xml.indexOf("</name")));
   }
 }
