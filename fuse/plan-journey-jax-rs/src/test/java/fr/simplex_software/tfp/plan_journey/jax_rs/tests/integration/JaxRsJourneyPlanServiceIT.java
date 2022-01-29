@@ -5,12 +5,14 @@ import fr.simplex_software.tfp.plan_journey.service.*;
 import org.apache.http.*;
 import org.jboss.arquillian.container.test.api.*;
 import org.jboss.arquillian.junit.*;
+import org.jboss.arquillian.test.spi.*;
 import org.jboss.shrinkwrap.api.*;
 import org.jboss.shrinkwrap.api.spec.*;
 import org.junit.*;
 import org.junit.runner.*;
 
 import javax.inject.*;
+import javax.ws.rs.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.*;
 import java.io.*;
@@ -28,28 +30,27 @@ public class JaxRsJourneyPlanServiceIT
   private static final String url = "http://localhost:18080/plan-journey-jax-rs/tfp/journeys";
   private Client client;
   private WebTarget webTarget;
+  private static JourneyDto journeyDto;
 
   @Deployment
   public static WebArchive createDeployment()
   {
-    /*System.out.println ("######################################");
-    File[] files = Maven.resolver().loadPomFromFile("pom.xml")
-      .importDependencies(ScopeType.COMPILE, ScopeType.TEST, ScopeType.PROVIDED, ScopeType.RUNTIME)
-      .resolve().withTransitivity().asFile();
-    for (File f : files)
-      for (String fileName : Objects.requireNonNull(f.list()))
-          System.out.println ("### " + fileName);
-    return ShrinkWrap.create(ZipImporter.class, "pj.war")
-      .importFrom(new File("target/plan-journey-jax-rs.war")).as(WebArchive.class);*/
-    WebArchive war = ShrinkWrap.createFromZipFile(WebArchive.class, new File("target/plan-journey-jax-rs.war"));
-    /*File props = new File("src/test/resources/META-INF","apache-deltaspike.properties");
-    if (props == null)
-      System.out.println ("### Props missing");
-    else
-      System.out.println ("### Props okay " + props.getAbsolutePath());
-    war.addAsWebInfResource(props);*/
-    return war;
+    return ShrinkWrap.createFromZipFile(WebArchive.class, new File("target/plan-journey-jax-rs.war"));
   }
+
+  @BeforeClass
+  public static void beforeClass()
+  {
+    journeyDto = getJourneyDto();
+  }
+
+  @AfterClass
+  public static void afterClass()
+  {
+    journeyDto = null;
+  }
+
+
   @Before
   public void setUp()
   {
@@ -120,10 +121,7 @@ public class JaxRsJourneyPlanServiceIT
   @RunAsClient
   public void test0()
   {
-    MetadataDto metadataDto = new MetadataDto("metadataCall", LocalDateTime.now(), "metadataVersion");
-    List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
-    ResultDto resultDto = new ResultDto(destinationDtos);
-    Response response = webTarget.request().post(Entity.entity(new JourneyDto("MyJourney822", resultDto, metadataDto), "application/xml"));
+    Response response = webTarget.request().post(Entity.entity(journeyDto, "application/xml"));
     assertNotNull(response);
     assertEquals(HttpStatus.SC_CREATED, response.getStatus());
   }
@@ -134,7 +132,9 @@ public class JaxRsJourneyPlanServiceIT
   {
     Response response = webTarget.request().get();
     assertEquals(HttpStatus.SC_OK, response.getStatus());
-    List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
+    List<JourneyDto> journeys = response.readEntity(new GenericType<>()
+    {
+    });
     assertNotNull(journeys);
     assertFalse(journeys.isEmpty());
     assertTrue(journeys.get(0).getName().startsWith("MyJourney"));
@@ -156,7 +156,9 @@ public class JaxRsJourneyPlanServiceIT
   {
     Response response = webTarget.request().accept(MediaType.APPLICATION_XML).get();
     assertEquals(HttpStatus.SC_OK, response.getStatus());
-    List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
+    List<JourneyDto> journeys = response.readEntity(new GenericType<>()
+    {
+    });
     assertNotNull(journeys);
     assertFalse(journeys.isEmpty());
   }
@@ -180,18 +182,67 @@ public class JaxRsJourneyPlanServiceIT
     assertEquals(HttpStatus.SC_NO_CONTENT, response.getStatus());
   }
 
+  @Test(expected = ProcessingException.class)
+  public void test60()
+  {
+    Response response = webTarget.request().get();
+  }
+
+  @Test(expected= ArquillianProxyException.class)
+  public void test61()
+  {
+    planJourneyService.getJourneys();
+  }
+
   @Test
-  public void test10()
+  public void test7()
+  {
+    journeyDto = getJourneyDto();
+    JourneyDto journeyDto2 = planJourneyService.createJourney(journeyDto);
+    assertNotNull(journeyDto2);
+    assertNotNull(journeyDto.getResult());
+    assertNotNull(journeyDto.getMetadata());
+    assertEquals("metadataCall", journeyDto2.getMetadata().getMetadataCall());
+    assertEquals("stationName", journeyDto2.getResult().getDestinations().get(0).getStationName());
+    assertEquals("platformId", journeyDto2.getResult().getDestinations().get(0).getPlatformId());
+  }
+
+  @Test
+  public void test8()
+  {
+    JourneyDto journey = planJourneyService.findByName("MyJourney822");
+    assertNotNull(journey);
+    assertEquals("MyJourney822", journey.getName());
+  }
+
+  @Test
+  public void test9()
+  {
+    List<JourneyDto> journeyDtos = planJourneyService.getJourneys();
+    assertNotNull(journeyDtos);
+    assertEquals(1, journeyDtos.size());
+  }
+
+  @Test
+  public void testA()
+  {
+    journeyDto.getMetadata().setMetadataCall("metadataCall100");
+    planJourneyService.updateJourney(journeyDto);
+    JourneyDto journeyDto2 = planJourneyService.findByName("MyJourney822");
+    assertEquals("metadataCall100", journeyDto2.getMetadata().getMetadataCall());
+  }
+
+  @Test
+  public void testB()
+  {
+    planJourneyService.removeJourney(journeyDto);
+  }
+
+  private static JourneyDto getJourneyDto()
   {
     MetadataDto metadataDto = new MetadataDto("metadataCall", LocalDateTime.now(), "metadataVersion");
     List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
     ResultDto resultDto = new ResultDto(destinationDtos);
-    JourneyDto journeyDto = planJourneyService.createJourney(new JourneyDto("MyJourney", resultDto, metadataDto));
-    assertNotNull(journeyDto);
-    assertNotNull(journeyDto.getResult());
-    assertNotNull(journeyDto.getMetadata());
-    assertEquals("metadataCall", journeyDto.getMetadata().getMetadataCall());
-    assertEquals("stationName", journeyDto.getResult().getDestinations().get(0).getStationName());
-    assertEquals("platformId", journeyDto.getResult().getDestinations().get(0).getPlatformId());
+    return new JourneyDto("MyJourney822", resultDto, metadataDto);
   }
 }

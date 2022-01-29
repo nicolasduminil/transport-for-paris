@@ -5,6 +5,8 @@ import fr.simplex_software.tfp.plan_journey.repository.*;
 
 import javax.enterprise.context.*;
 import javax.inject.*;
+import javax.transaction.*;
+import javax.ws.rs.*;
 import java.util.*;
 
 @ApplicationScoped
@@ -13,11 +15,13 @@ public class PlanJourneyFacade
   @Inject
   private PlanJourneyRepository planJourneyRepository;
 
+  @Transactional
   public JourneyEntity createJourney(JourneyEntity journeyEntity)
   {
     return planJourneyRepository.saveAndFlushAndRefresh(journeyEntity);
   }
 
+  @Transactional
   public JourneyEntity updateJourney (JourneyEntity journeyEntity)
   {
     return planJourneyRepository.merge(journeyEntity);
@@ -33,9 +37,13 @@ public class PlanJourneyFacade
     return Optional.ofNullable(planJourneyRepository.findBy(id));
   }
 
+  @Transactional
   public void removeJourney (JourneyEntity journeyEntity)
   {
-    planJourneyRepository.remove(journeyEntity);
+    String name = journeyEntity.getName();
+    Optional<JourneyEntity> je = planJourneyRepository.findByName(name);
+    planJourneyRepository.remove(je.orElseThrow(() -> new NotFoundException(">>> The journey entity having the name "
+      + name + " has not been found at this time in the data store")));
   }
 
   public Optional<JourneyEntity> getJourneyByName(String name)
