@@ -16,8 +16,6 @@ import javax.inject.*;
 import javax.ws.rs.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.*;
-import javax.xml.bind.*;
-import javax.xml.transform.stream.*;
 import java.io.*;
 import java.time.*;
 import java.util.*;
@@ -34,6 +32,7 @@ public class JaxRsJourneyPlanServiceIT
   private Client client;
   private WebTarget webTarget;
   private static JourneyDto journeyDto;
+  private Long id;
 
   @Deployment
   public static WebArchive createDeployment()
@@ -72,18 +71,6 @@ public class JaxRsJourneyPlanServiceIT
     webTarget = null;
   }
 
-  /*@Before
-  public void before()
-  {
-    finalUri = UriBuilder.fromPath("plan-journey-jax-rs")
-      .scheme("http")
-      .host("localhost")
-      .port(18080)
-      .path("tfp")
-      .path("journeys")
-      .build();
-  }*/
-
   @Test
   @RunAsClient
   public void test0()
@@ -99,9 +86,7 @@ public class JaxRsJourneyPlanServiceIT
   {
     Response response = webTarget.request().get();
     assertEquals(HttpStatus.SC_OK, response.getStatus());
-    List<JourneyDto> journeys = response.readEntity(new GenericType<>()
-    {
-    });
+    List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
     assertNotNull(journeys);
     assertFalse(journeys.isEmpty());
     assertTrue(journeys.get(0).getName().startsWith("MyJourney"));
@@ -123,9 +108,7 @@ public class JaxRsJourneyPlanServiceIT
   {
     Response response = webTarget.request().accept(MediaType.APPLICATION_XML).get();
     assertEquals(HttpStatus.SC_OK, response.getStatus());
-    List<JourneyDto> journeys = response.readEntity(new GenericType<>()
-    {
-    });
+    List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
     assertNotNull(journeys);
     assertFalse(journeys.isEmpty());
   }
@@ -231,7 +214,7 @@ public class JaxRsJourneyPlanServiceIT
 
   @Test
   @RunAsClient
-  public void testE() throws JAXBException
+  public void testE()
   {
     List<JourneyDto> journeyDtos = new ArrayList<JourneyDto>();
     String xml = RestAssured.given()
@@ -245,5 +228,80 @@ public class JaxRsJourneyPlanServiceIT
       .body()
       .asString();
     assertEquals("<name>MyJourney822", xml.substring(xml.indexOf("<name>"), xml.indexOf("</name")));
+  }
+
+  @Test
+  @RunAsClient
+  public void testF()
+  {
+    String xml = RestAssured.given()
+      .accept(MediaType.APPLICATION_XML)
+      .contentType(MediaType.APPLICATION_XML)
+      .when()
+      .get(UriBuilder.fromUri(url).path("ref/{journeyName}").build("MyJourney822"))
+      .then()
+      .statusCode(HttpStatus.SC_OK)
+      .extract()
+      .body()
+      .asString();
+    assertNotNull(xml);
+    assertEquals("<name>MyJourney822", xml.substring(xml.indexOf("<name>"), xml.indexOf("</name")));
+  }
+
+  @Test
+  @RunAsClient
+  public void testG()
+  {
+    journeyDto.getMetadata().setMetadataCall("meta123");
+    RestAssured.given()
+      .accept(MediaType.APPLICATION_XML)
+      .contentType(MediaType.APPLICATION_XML)
+      .body(journeyDto)
+      .when()
+      .put(url)
+      .then()
+      .statusCode(HttpStatus.SC_NO_CONTENT);
+  }
+
+  @Test
+  @RunAsClient
+  public void testH()
+  {
+    Long id = Long.parseLong(RestAssured.given()
+      .accept(MediaType.APPLICATION_XML)
+      .contentType(MediaType.APPLICATION_XML)
+      .when()
+      .get(UriBuilder.fromUri(url).path("id/{journeyName}").build("MyJourney822"))
+      .then()
+      .statusCode(HttpStatus.SC_OK)
+      .extract()
+      .body()
+      .asString());
+    RestAssured.given()
+      .accept(MediaType.APPLICATION_XML)
+      .contentType(MediaType.APPLICATION_XML)
+      .when()
+      .delete(UriBuilder.fromUri(url).path("{id}").build(id))
+      .then()
+      .statusCode(HttpStatus.SC_NO_CONTENT);
+  }
+
+  @Test
+  @RunAsClient
+  public void testI()
+  {
+    /*String xml = RestAssured.given()
+      .accept(MediaType.APPLICATION_XML)
+      .contentType(MediaType.APPLICATION_XML)
+      .when()
+      .get(UriBuilder.fromUri(url).path("destinations/{type}/{line}").build(TransportType.SUBWAY.name(), "8"))
+      .then()
+      .statusCode(HttpStatus.SC_OK)
+      .extract()
+      .body()
+      .asString();
+    assertNotNull(xml);
+    System.out.println (">>> xml: " + xml);
+    assertEquals("<name>MyJourney822", xml.substring(xml.indexOf("<name>"), xml.indexOf("</name")));*/
   }
 }

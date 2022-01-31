@@ -69,4 +69,11 @@ public class PlanJourneyService
       .orElseThrow(() -> new NotFoundException(">>> The journey entity having the name "
         + name + " has not been found at this time in the data store")));
   }
+
+  public Long getJourneyIdByName(String name)
+  {
+    JourneyEntity journeyEntity = planJourneyFacade.getJourneyByName(name).orElseThrow(() -> new NotFoundException(">>> The journey entity having the name "
+      + name + " has not been found at this time in the data store"));
+    return journeyEntity.getId();
+  }
 }

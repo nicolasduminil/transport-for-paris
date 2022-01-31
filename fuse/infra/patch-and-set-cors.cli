@@ -9,6 +9,8 @@ patch apply /root/install/jboss-eap-7.4.1-patch.zip
 /subsystem=undertow/server=default-server/host=default-host/filter-ref="Access-Control-Allow-Headers":add()
 /subsystem=undertow/server=default-server/host=default-host/filter-ref="Access-Control-Allow-Credentials":add()
 /subsystem=undertow/server=default-server/host=default-host/filter-ref="Access-Control-Max-Age":add()
+/subsystem=logging/logger=org.hibernate.tool.schema.internal:add
+/subsystem=logging/logger=org.hibernate.tool.schema.internal:write-attribute(name="level", value="ERROR")
 echo ">>> Have applied the patch and enabled the CORS"
 shutdown --restart=false
 

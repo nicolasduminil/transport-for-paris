@@ -5,7 +5,6 @@ import fr.simplex_software.tfp.plan_journey.service.*;
 import io.swagger.annotations.*;
 
 import javax.inject.*;
-import javax.transaction.*;
 import javax.validation.*;
 import javax.ws.rs.Path;
 import javax.ws.rs.*;
@@ -36,7 +35,21 @@ public class JaxRsJourneyPlanService
   @Path("/{journeyId}")
   public Response getJourney(@PathParam("journeyId") Long journeyId)
   {
-    return Response.ok().entity(new JourneyDto()).build();
+    return Response.ok().entity(planJourneyService.getJourney(journeyId)).build();
+  }
+
+  @GET
+  @Path("id/{journeyName}")
+  public Response getJourneyIdByName (@PathParam("journeyName") final String name)
+  {
+    return Response.ok(Long.toString(planJourneyService.getJourneyIdByName(name))).build();
+  }
+
+  @GET
+  @Path("ref/{journeyName}")
+  public Response getJourneyByName(@PathParam("journeyName") String journeyName)
+  {
+    return Response.ok().entity(planJourneyService.findByName(journeyName)).build();
   }
 
   @PUT
