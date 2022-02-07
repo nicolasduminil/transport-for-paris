@@ -33,6 +33,16 @@ public class JourneyDto implements Serializable
     this (journeyEntity.getName(), new ResultDto(journeyEntity.getResult()), new MetadataDto(journeyEntity.getMetadata()));
   }
 
+  public JourneyDto (ResponseDto responseDto)
+  {
+    this ("", responseDto.getResult(), responseDto.getMetadata());
+  }
+
+  public JourneyDto (String name, ResponseDto responseDto)
+  {
+    this (name, responseDto.getResult(), responseDto.getMetadata());
+  }
+
   public ResultDto getResult()
   {
     return result;

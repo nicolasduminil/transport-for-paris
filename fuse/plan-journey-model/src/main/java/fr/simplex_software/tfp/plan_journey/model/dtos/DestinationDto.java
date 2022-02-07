@@ -3,6 +3,7 @@ package fr.simplex_software.tfp.plan_journey.model.dtos;
 import com.fasterxml.jackson.annotation.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
 
+import javax.json.bind.annotation.*;
 import javax.xml.bind.annotation.*;
 import java.io.*;
 
@@ -11,7 +12,11 @@ import java.io.*;
 @JsonRootName("destination")
 public class DestinationDto implements Serializable
 {
+  @JsonProperty("name")
+  @JsonbProperty("name")
   private String stationName;
+  @JsonProperty("way")
+  @JsonbProperty("way")
   private String platformId;
 
   public DestinationDto()

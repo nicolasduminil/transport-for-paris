@@ -166,6 +166,11 @@
         <version>12.2.0.1</version>
       </dependency>
       <dependency>
+        <groupId>org.eclipse</groupId>
+        <artifactId>yasson</artifactId>
+        <version>1.0.6</version>
+      </dependency>
+      <dependency>
         <groupId>org.testcontainers</groupId>
         <artifactId>testcontainers</artifactId>
         <version>1.16.2</version>

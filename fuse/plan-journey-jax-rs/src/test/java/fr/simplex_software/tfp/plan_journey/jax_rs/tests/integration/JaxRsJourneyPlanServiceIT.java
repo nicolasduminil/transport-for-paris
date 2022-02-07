@@ -13,11 +13,13 @@ import org.junit.*;
 import org.junit.runner.*;
 
 import javax.inject.*;
+import javax.json.bind.*;
 import javax.ws.rs.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.*;
 import java.io.*;
 import java.time.*;
+import java.time.format.*;
 import java.util.*;
 
 import static org.junit.Assert.*;
@@ -75,7 +77,7 @@ public class JaxRsJourneyPlanServiceIT
   @RunAsClient
   public void test0()
   {
-    Response response = webTarget.request().post(Entity.entity(journeyDto, "application/xml"));
+    Response response = webTarget.request().accept(MediaType.APPLICATION_XML).post(Entity.entity(journeyDto, MediaType.APPLICATION_XML));
     assertNotNull(response);
     assertEquals(HttpStatus.SC_CREATED, response.getStatus());
   }
@@ -84,33 +86,12 @@ public class JaxRsJourneyPlanServiceIT
   @RunAsClient
   public void test1()
   {
-    Response response = webTarget.request().get();
-    assertEquals(HttpStatus.SC_OK, response.getStatus());
-    List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
-    assertNotNull(journeys);
-    assertFalse(journeys.isEmpty());
-    assertTrue(journeys.get(0).getName().startsWith("MyJourney"));
-  }
-
-  @Test
-  @RunAsClient
-  public void test2()
-  {
-    Response response = webTarget.path("1").request().get();
-    assertEquals(HttpStatus.SC_OK, response.getStatus());
-    JourneyDto journey = response.readEntity(JourneyDto.class);
-    assertNotNull(journey);
-  }
-
-  @Test
-  @RunAsClient
-  public void test3()
-  {
     Response response = webTarget.request().accept(MediaType.APPLICATION_XML).get();
     assertEquals(HttpStatus.SC_OK, response.getStatus());
     List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
     assertNotNull(journeys);
     assertFalse(journeys.isEmpty());
+    assertTrue(journeys.get(0).getName().startsWith("MyJourney"));
   }
 
   @Test
@@ -190,7 +171,7 @@ public class JaxRsJourneyPlanServiceIT
 
   private static JourneyDto getJourneyDto()
   {
-    MetadataDto metadataDto = new MetadataDto("metadataCall", LocalDateTime.now(), "metadataVersion");
+    MetadataDto metadataDto = new MetadataDto("metadataCall", ZonedDateTime.now(), "metadataVersion");
     List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
     ResultDto resultDto = new ResultDto(destinationDtos);
     return new JourneyDto("MyJourney822", resultDto, metadataDto);
@@ -290,9 +271,9 @@ public class JaxRsJourneyPlanServiceIT
   @RunAsClient
   public void testI()
   {
-    /*String xml = RestAssured.given()
+    String json = RestAssured.given()
       .accept(MediaType.APPLICATION_XML)
-      .contentType(MediaType.APPLICATION_XML)
+      .contentType(MediaType.APPLICATION_JSON)
       .when()
       .get(UriBuilder.fromUri(url).path("destinations/{type}/{line}").build(TransportType.SUBWAY.name(), "8"))
       .then()
@@ -300,8 +281,29 @@ public class JaxRsJourneyPlanServiceIT
       .extract()
       .body()
       .asString();
-    assertNotNull(xml);
-    System.out.println (">>> xml: " + xml);
-    assertEquals("<name>MyJourney822", xml.substring(xml.indexOf("<name>"), xml.indexOf("</name")));*/
+    assertNotNull(json);
+    System.out.println (">>> json: " + json);
+    Jsonb jsonb = JsonbBuilder.create();
+    ResponseDto responseDto = jsonb.fromJson(json, ResponseDto.class);
+    assertNotNull(responseDto);
+    assertNotNull(responseDto.getMetadata());
+    assertNotNull(responseDto.getMetadata().getMetadataCall());
+    assertNotNull(responseDto.getMetadata().getMetadataVersion());
+    assertEquals("4", responseDto.getMetadata().getMetadataVersion());
+  }
+
+  @Test
+  @RunAsClient
+  public void testJ()
+  {
+    Response response = webTarget.path("destinations/{type}/8").resolveTemplate("type", TransportType.SUBWAY.name()).request().accept(MediaType.APPLICATION_XML).get();
+    assertEquals(HttpStatus.SC_OK, response.getStatus());
+    ResponseDto responseDto = response.readEntity(ResponseDto.class);
+    assertNotNull(responseDto);
+    assertNotNull(responseDto.getMetadata());
+    assertNotNull(responseDto.getMetadata().getMetadataCall());
+    assertEquals("GET /destinations/metros/8", responseDto.getMetadata().getMetadataCall());
+    assertNotNull(responseDto.getMetadata().getMetadataVersion());
+    assertEquals("4", responseDto.getMetadata().getMetadataVersion());
   }
 }

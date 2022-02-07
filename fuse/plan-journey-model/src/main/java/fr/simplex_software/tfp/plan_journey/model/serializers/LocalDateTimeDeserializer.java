@@ -10,7 +10,7 @@ import java.time.format.*;
 
 public class LocalDateTimeDeserializer extends StdDeserializer<LocalDateTime>
 {
-  protected LocalDateTimeDeserializer()
+  public LocalDateTimeDeserializer()
   {
     super(LocalDateTime.class);
   }
@@ -18,6 +18,6 @@ public class LocalDateTimeDeserializer extends StdDeserializer<LocalDateTime>
   @Override
   public LocalDateTime deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException
   {
-    return LocalDateTime.parse(jsonParser.readValueAs(String.class), DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss OOOO"));
+    return LocalDateTime.parse(jsonParser.readValueAs(String.class), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
   }
 }

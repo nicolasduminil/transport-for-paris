@@ -8,6 +8,7 @@ import java.io.*;
 import java.time.*;
 import java.util.*;
 
+import static java.time.format.DateTimeFormatter.*;
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -18,7 +19,7 @@ public class TestJourneyDto extends TestCommons
   {
     JourneyDto journeyDto = new JourneyDto("MyJourney", new ResultDto(List.of(new DestinationDto("stationName1",
       "platformId1"), new DestinationDto("stationName2", "platformId2"))),
-      new MetadataDto("metadataCall", LocalDateTime.now(), "metadataVersion"));
+      new MetadataDto("metadataCall", LocalDateTime.now().atOffset(ZoneOffset.of("+01:00")).toZonedDateTime(), "metadataVersion"));
     assertTrue(marshalJourneyToXmlFile(journeyDto, new File("journey.xml")).exists());
   }
 
@@ -31,5 +32,8 @@ public class TestJourneyDto extends TestCommons
     assertNotNull(journeyDto.getResult());
     assertEquals("platformId1", journeyDto.getResult().getDestinations().get(0).getPlatformId());
     assertEquals("metadataCall", journeyDto.getMetadata().getMetadataCall());
+    ZonedDateTime zonedDateTime = journeyDto.getMetadata().getMetadataWhen();
+    assertNotNull(zonedDateTime);
+    String zdt = zonedDateTime.format(ISO_OFFSET_DATE_TIME);
   }
 }

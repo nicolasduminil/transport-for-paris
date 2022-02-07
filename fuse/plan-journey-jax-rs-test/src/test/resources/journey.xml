@@ -21,7 +21,7 @@
     <id>0</id>
     <journey/>
     <metadataCall>metadataCall</metadataCall>
-    <metadataWhen>03/12/2021 16:12:55</metadataWhen>
+    <metadataWhen>2021-03-12T16:12:55+01:00</metadataWhen>
     <metadataVersion>metadataVersion</metadataVersion>
   </metadata>
 </journey>

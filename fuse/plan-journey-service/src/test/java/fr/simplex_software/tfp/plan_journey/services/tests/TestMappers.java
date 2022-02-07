@@ -28,7 +28,7 @@ public class TestMappers
   @Test
   public void testJourneyMapper()
   {
-    LocalDateTime now = LocalDateTime.now();
+    ZonedDateTime now = ZonedDateTime.now();
     JourneyDto journeyDto = new JourneyDto("MyJourney", new ResultDto(new ArrayList<>()), new MetadataDto("metadataCall", now, "metadataVersion"));
     JourneyEntity journeyEntity = new JourneyEntity(journeyDto);
     assertNotNull(journeyEntity.getResult());
@@ -53,7 +53,7 @@ public class TestMappers
   @Test
   public void testMetadataMapper()
   {
-    LocalDateTime now = LocalDateTime.now();
+    ZonedDateTime now = ZonedDateTime.now();
     MetadataDto metadataDto = new MetadataDto("metadataCall", now, "metadataVersion");
     MetadataEntity metadataEntity = new MetadataEntity(metadataDto);
     assertEquals("metadataCall", metadataEntity.getMetadataCall());

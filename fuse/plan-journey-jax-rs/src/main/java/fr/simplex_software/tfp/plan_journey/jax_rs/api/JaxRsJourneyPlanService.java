@@ -11,6 +11,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.*;
 import java.net.*;
+import java.time.format.*;
 import java.util.*;
 
 @Path("/journeys")
@@ -23,6 +24,37 @@ public class JaxRsJourneyPlanService
   private static WebTarget webTarget = ClientBuilder.newClient().target(pierreGrimaudRatpApiUrl);
   @Inject
   private PlanJourneyService planJourneyService;
+  @Context
+  private Context context;
+
+  /*@PostConstruct
+  public void init()
+  {
+    Configuration configuration = webTarget.getConfiguration();
+    HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
+    requestFactory.setHttpClient(HttpClients.custom().setSSLHostnameVerifier(new NoopHostnameVerifier()).build());
+    try {
+
+      final SSLContext context = SSLContext.getInstance("TLSv1");
+      final TrustManager[] trustManagerArray = {new NullX509TrustManager()};
+
+      context.init(null, trustManagerArray, null);
+
+      final Client client = ClientBuilder.newBuilder()
+        .hostnameVerifier(new NullHostnameVerifier())
+        .sslContext(context)
+        .build();
+
+      final WebTarget webTarget = client.target(url.toString());
+      return webTarget;
+
+    } catch (Exception ex) {
+
+      //Log the error
+      return buildSecureWebTarget(url);
+
+    }
+  }*/
 
   @GET
   public Response getJourneys()
@@ -59,9 +91,9 @@ public class JaxRsJourneyPlanService
   }
 
   @POST
-  public Response createJourney(JourneyDto journey)
+  public Response createJourney(JourneyDto journeyDto)
   {
-    return Response.created(URI.create("/journeys/")).entity(planJourneyService.createJourney(journey)).build();
+    return Response.created(URI.create("/journeys/")).entity(planJourneyService.createJourney(journeyDto)).build();
   }
 
   @DELETE
@@ -78,6 +110,11 @@ public class JaxRsJourneyPlanService
   public Response getAllDestinationsByTypeAndLine(@ApiParam(value = "The transport type", required = true) @Valid @PathParam(value = "type") TransportType transportType, @ApiParam(value = "The line ID", required = true) @Valid @PathParam(value = "line") String lineId)
   {
     String path = String.format ("/destinations/%s/%s", transportType.getTransportTypeName(), lineId);
-    return Response.ok().entity(webTarget.path(path).request().get()).build();
+    /*System.out.println (">>> URI: " + webTarget.path(path).getUri().toString());
+    Response res = webTarget.path(path).request().get();
+    String xml = res.readEntity(String.class);
+    System.out.println ("XML : " + xml);*/
+    //return Response.ok().entity(webTarget.path(path).request().get()).build();
+    return webTarget.path(path).request().get();
   }
 }

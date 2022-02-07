@@ -19,7 +19,7 @@ public class JourneysIT extends TestCommons
 {
   private Client client;
   private WebTarget webTarget;
-  private final static String url = "http://localhost:18080/pj/tfp/journeys";
+  private final static String url = "http://localhost:18080/plan-journey-jax-rs/tfp/journeys";
   private static JourneyEntity journeyEntity;
   private static String gen;
 
@@ -52,7 +52,7 @@ public class JourneysIT extends TestCommons
   public void test0()
   {
     journeyEntity.setName(journeyEntity.getName() + "_" + gen);
-    Response response = webTarget.request().post(Entity.entity(journeyEntity, "application/xml"));
+    Response response = webTarget.request().accept(MediaType.APPLICATION_XML).post(Entity.entity(new JourneyDto(journeyEntity), MediaType.APPLICATION_XML));
     assertNotNull(response);
     assertEquals(HttpStatus.SC_CREATED, response.getStatus());
   }
@@ -60,7 +60,7 @@ public class JourneysIT extends TestCommons
   @Test
   public void test1()
   {
-    Response response = webTarget.request().get();
+    Response response = webTarget.request().accept(MediaType.APPLICATION_XML).get();
     assertEquals(HttpStatus.SC_OK, response.getStatus());
     List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
     assertNotNull(journeys);
@@ -70,25 +70,6 @@ public class JourneysIT extends TestCommons
 
   @Test
   public void test2()
-  {
-    Response response = webTarget.path("1").request().get();
-    assertEquals(HttpStatus.SC_OK, response.getStatus());
-    JourneyDto journey = response.readEntity(JourneyDto.class);
-    assertNotNull(journey);
-  }
-
-  @Test
-  public void test3()
-  {
-    Response response = webTarget.request().accept(MediaType.APPLICATION_XML).get();
-    assertEquals(HttpStatus.SC_OK, response.getStatus());
-    List<JourneyDto> journeys = response.readEntity(new GenericType<>(){});
-    assertNotNull(journeys);
-    assertFalse(journeys.isEmpty());
-  }
-
-  @Test
-  public void test4()
   {
     Response response = webTarget.path("1").request().accept(MediaType.APPLICATION_XML).get();
     assertEquals(HttpStatus.SC_OK, response.getStatus());

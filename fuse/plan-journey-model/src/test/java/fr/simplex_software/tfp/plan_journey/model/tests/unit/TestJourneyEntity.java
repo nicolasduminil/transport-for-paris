@@ -18,7 +18,7 @@ public class TestJourneyEntity extends TestCommons
   {
     JourneyEntity journeyEntity = new JourneyEntity("MyJourney", new ResultEntity(List.of(new DestinationEntity("stationName1", "platformId1"),
       new DestinationEntity("stationName2", "platformId2"))),
-      new MetadataEntity("metadataCall", LocalDateTime.now(), "metadataVersion"));
+      new MetadataEntity("metadataCall", ZonedDateTime.now(), "metadataVersion"));
     assertTrue(marshalJourneyToXmlFile(journeyEntity, new File ("journey2.xml")).exists());
   }
 
