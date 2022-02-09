@@ -75,7 +75,6 @@ public class JourneyEntity1IT extends TestCommons
   public void test2()
   {
     em.getTransaction().begin();
-    System.out.println ("### Calling persist " + journeyEntity.getMetadata().getMetadataWhen().format(ISO_ZONED_DATE_TIME));
     em.persist(journeyEntity);
     em.getTransaction().commit();
   }

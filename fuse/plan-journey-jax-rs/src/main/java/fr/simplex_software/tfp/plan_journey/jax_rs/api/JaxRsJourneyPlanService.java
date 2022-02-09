@@ -5,13 +5,13 @@ import fr.simplex_software.tfp.plan_journey.service.*;
 import io.swagger.annotations.*;
 
 import javax.inject.*;
+import javax.json.bind.*;
 import javax.validation.*;
 import javax.ws.rs.Path;
 import javax.ws.rs.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.*;
 import java.net.*;
-import java.time.format.*;
 import java.util.*;
 
 @Path("/journeys")
@@ -24,8 +24,8 @@ public class JaxRsJourneyPlanService
   private static WebTarget webTarget = ClientBuilder.newClient().target(pierreGrimaudRatpApiUrl);
   @Inject
   private PlanJourneyService planJourneyService;
-  @Context
-  private Context context;
+  /*@Context
+  private Context context;*/
 
   /*@PostConstruct
   public void init()
@@ -116,5 +116,13 @@ public class JaxRsJourneyPlanService
     System.out.println ("XML : " + xml);*/
     //return Response.ok().entity(webTarget.path(path).request().get()).build();
     return webTarget.path(path).request().get();
+  }
+
+  @POST
+  @Path("/new")
+  public Response createJourney (JourneyParams journeyParams)
+  {
+    String json = getAllDestinationsByTypeAndLine(journeyParams.getTransportType(), journeyParams.getLineId()).readEntity(String.class);
+    return Response.created(URI.create("/journeys/")).entity(planJourneyService.createJourney(new JourneyDto(JsonbBuilder.create().fromJson(json, ResponseDto.class)))).build();
   }
 }

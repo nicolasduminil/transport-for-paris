@@ -6,6 +6,7 @@ import lombok.extern.slf4j.*;
 
 import javax.xml.bind.annotation.*;
 import java.io.*;
+import java.util.*;
 
 @XmlRootElement(name = "journey")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -28,19 +29,20 @@ public class JourneyDto implements Serializable
     this.metadata = metadata;
   }
 
-  public JourneyDto (JourneyEntity journeyEntity)
+  public JourneyDto(JourneyEntity journeyEntity)
   {
-    this (journeyEntity.getName(), new ResultDto(journeyEntity.getResult()), new MetadataDto(journeyEntity.getMetadata()));
+    this(journeyEntity.getName(), new ResultDto(journeyEntity.getResult()), new MetadataDto(journeyEntity.getMetadata()));
   }
 
-  public JourneyDto (ResponseDto responseDto)
+  public JourneyDto(ResponseDto responseDto)
   {
-    this ("", responseDto.getResult(), responseDto.getMetadata());
+    this(new Random().ints(97, 122).limit(10).collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString(),
+      responseDto.getResult(), responseDto.getMetadata());
   }
 
-  public JourneyDto (String name, ResponseDto responseDto)
+  public JourneyDto(String name, ResponseDto responseDto)
   {
-    this (name, responseDto.getResult(), responseDto.getMetadata());
+    this(name, responseDto.getResult(), responseDto.getMetadata());
   }
 
   public ResultDto getResult()

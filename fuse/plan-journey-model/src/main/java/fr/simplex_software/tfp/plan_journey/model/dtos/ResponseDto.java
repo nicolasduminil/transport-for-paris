@@ -12,9 +12,9 @@ import javax.json.bind.annotation.*;
 public class ResponseDto
 {
   @JsonbProperty("result")
-  @JsonProperty("result")
+  //@JsonProperty("result")
   private ResultDto result;
   @JsonbProperty("_metadata")
-  @JsonProperty("_metadata")
+  //@JsonProperty("_metadata")
   private MetadataDto metadata;
 }

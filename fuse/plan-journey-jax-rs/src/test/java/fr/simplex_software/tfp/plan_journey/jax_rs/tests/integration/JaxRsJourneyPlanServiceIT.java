@@ -282,7 +282,6 @@ public class JaxRsJourneyPlanServiceIT
       .body()
       .asString();
     assertNotNull(json);
-    System.out.println (">>> json: " + json);
     Jsonb jsonb = JsonbBuilder.create();
     ResponseDto responseDto = jsonb.fromJson(json, ResponseDto.class);
     assertNotNull(responseDto);
@@ -298,12 +297,26 @@ public class JaxRsJourneyPlanServiceIT
   {
     Response response = webTarget.path("destinations/{type}/8").resolveTemplate("type", TransportType.SUBWAY.name()).request().accept(MediaType.APPLICATION_XML).get();
     assertEquals(HttpStatus.SC_OK, response.getStatus());
-    ResponseDto responseDto = response.readEntity(ResponseDto.class);
+    String json = response.readEntity(String.class);
+    assertNotNull(json);
+    assertTrue(json.startsWith("{"));
+    assertTrue(json.endsWith("}"));
+    //ResponseDto responseDto = response.readEntity(ResponseDto.class);
+    ResponseDto responseDto = JsonbBuilder.create().fromJson(json, ResponseDto.class);
     assertNotNull(responseDto);
     assertNotNull(responseDto.getMetadata());
     assertNotNull(responseDto.getMetadata().getMetadataCall());
     assertEquals("GET /destinations/metros/8", responseDto.getMetadata().getMetadataCall());
     assertNotNull(responseDto.getMetadata().getMetadataVersion());
     assertEquals("4", responseDto.getMetadata().getMetadataVersion());
+  }
+
+  @Test
+  @RunAsClient
+  public void testK()
+  {
+    Response response = webTarget.path("new").request().accept(MediaType.APPLICATION_XML).post(Entity.entity(new JourneyParams(TransportType.SUBWAY, "8"), MediaType.APPLICATION_XML));
+    assertNotNull(response);
+    assertEquals(HttpStatus.SC_CREATED, response.getStatus());
   }
 }

@@ -1,9 +1,7 @@
 package fr.simplex_software.tfp.plan_journey.model.tests.unit;
 
-import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
 import fr.simplex_software.tfp.plan_journey.model.serializers.*;
-import org.codehaus.jackson.map.ext.*;
 import org.junit.*;
 
 import java.io.*;

@@ -1,12 +1,8 @@
 package fr.simplex_software.tfp.plan_journey.model.entities;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
 import fr.simplex_software.tfp.plan_journey.model.converters.*;
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
-import fr.simplex_software.tfp.plan_journey.model.serializers.*;
 
-import javax.json.bind.annotation.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import javax.xml.bind.annotation.*;
@@ -34,12 +30,6 @@ public class MetadataEntity implements Serializable
   @NotNull
   @Column(name = "JOURNEY_DATE", nullable = false, length = 40)
   @XmlJavaTypeAdapter(ZonedDateTimeXmlAdapter.class)
-  @JsonProperty("date")
-  @JsonSerialize(using = ZonedDateTimeSerializer.class)
-  @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss xxx")
-  @JsonbDateFormat(value = "yyyy-MM-dd'T'HH:mm:ss xxx")
-  @Convert(converter = ZonedDateTime2TimestampConverter.class)
   private ZonedDateTime metadataWhen;
   @NotEmpty
   @Column(name = "METADATA_VERSION", nullable = false, length = 40)

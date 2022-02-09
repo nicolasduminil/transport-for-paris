@@ -12,10 +12,10 @@ import java.io.*;
 @JsonRootName("destination")
 public class DestinationDto implements Serializable
 {
-  @JsonProperty("name")
+  //@JsonProperty("name")
   @JsonbProperty("name")
   private String stationName;
-  @JsonProperty("way")
+  //@JsonProperty("way")
   @JsonbProperty("way")
   private String platformId;
 

@@ -13,6 +13,17 @@
   <name>Transport for Paris :: The plan journey JAX-RS module</name>
   <dependencies>
     <dependency>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.json.bind</groupId>
+      <artifactId>jakarta.json.bind-api</artifactId>
+      <!--version>1.0.2.redhat-00001</version-->
+      <scope>provided></scope>
+    </dependency>
+    <dependency>
       <groupId>jakarta.enterprise</groupId>
       <artifactId>jakarta.enterprise.cdi-api</artifactId>
       <scope>provided</scope>
@@ -63,7 +74,7 @@
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-jaxb-provider</artifactId>
-      <scope>test</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>jakarta.activation</groupId>
@@ -81,7 +92,7 @@
       <artifactId>jaxb-runtime</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!--dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-jackson2-provider</artifactId>
       <scope>test</scope>
@@ -91,6 +102,38 @@
       <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>jakarta.json.bind</groupId>
+      <artifactId>jakarta.json.bind-api</artifactId>
+      <version>2.0.4</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.json</groupId>
+      <artifactId>jakarta.json-api</artifactId>
+      <version>2.0.4</version>
+      <scope>provided</scope>
+    </dependency-->
+    <dependency>
+      <groupId>javax.json.bind</groupId>
+      <artifactId>javax.json.bind-api</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <!--dependency>
+      <groupId>org.eclipse</groupId>
+      <artifactId>yasson</artifactId>
+    </dependency-->
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <!--artifactId>jakarta.json</artifactId-->
+      <artifactId>javax.json</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <!--dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-json-binding-provider</artifactId>
+      <scope>provided</scope>
+    </dependency-->
     <dependency>
       <groupId>fr.simplex-software.tfp</groupId>
       <artifactId>plan-journey-model</artifactId>
@@ -233,11 +276,6 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.platform</groupId>
-      <artifactId>jakarta.jakartaee-api</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
