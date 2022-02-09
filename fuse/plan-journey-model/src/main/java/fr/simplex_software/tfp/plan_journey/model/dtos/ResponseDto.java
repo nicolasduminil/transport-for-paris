@@ -1,6 +1,6 @@
 package fr.simplex_software.tfp.plan_journey.model.dtos;
 
-import com.fasterxml.jackson.annotation.*;
+//import com.fasterxml.jackson.annotation.*;
 import lombok.*;
 
 import javax.json.bind.annotation.*;
@@ -12,9 +12,7 @@ import javax.json.bind.annotation.*;
 public class ResponseDto
 {
   @JsonbProperty("result")
-  //@JsonProperty("result")
   private ResultDto result;
   @JsonbProperty("_metadata")
-  //@JsonProperty("_metadata")
   private MetadataDto metadata;
 }

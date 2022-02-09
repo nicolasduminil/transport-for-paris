@@ -4,8 +4,6 @@ import javax.persistence.*;
 import java.sql.*;
 import java.time.*;
 
-import static java.time.format.DateTimeFormatter.*;
-
 @Converter(autoApply = true)
 public class ZonedDateTime2TimestampConverter implements AttributeConverter<ZonedDateTime, Timestamp>
 {

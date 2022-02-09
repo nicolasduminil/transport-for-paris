@@ -2,7 +2,6 @@ package fr.simplex_software.tfp.plan_journey.model.converters;
 
 import javax.xml.bind.annotation.adapters.*;
 import java.time.*;
-import java.time.format.*;
 
 import static java.time.format.DateTimeFormatter.*;
 

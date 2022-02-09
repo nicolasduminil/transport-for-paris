@@ -12,20 +12,6 @@
   <name>Transport for Paris :: The Fuse Integration model module</name>
   <dependencies>
     <dependency>
-      <groupId>jakarta.persistence</groupId>
-      <artifactId>jakarta.persistence-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.json.bind</groupId>
-      <artifactId>jakarta.json.bind-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-jsr310</artifactId>
-    </dependency>
-    <dependency>
       <groupId>jakarta.platform</groupId>
       <artifactId>jakarta.jakartaee-api</artifactId>
       <scope>provided</scope>
@@ -39,18 +25,6 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-    </dependency>
-    <!--dependency>
-      <groupId>jakarta.json.bind</groupId>
-      <artifactId>jakarta.json.bind-api</artifactId>
-    </dependency-->
-    <dependency>
-      <groupId>org.eclipse</groupId>
-      <artifactId>yasson</artifactId>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

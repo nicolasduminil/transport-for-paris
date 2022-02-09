@@ -1,6 +1,5 @@
 package fr.simplex_software.tfp.plan_journey.model.dtos;
 
-import com.fasterxml.jackson.annotation.*;
 import fr.simplex_software.tfp.plan_journey.model.converters.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
 
@@ -12,17 +11,13 @@ import java.time.*;
 
 @XmlRootElement(name = "metadata")
 @XmlAccessorType(XmlAccessType.FIELD)
-@JsonRootName("metadata")
 public class MetadataDto implements Serializable
 {
-  //@JsonProperty("call")
   @JsonbProperty("call")
   private String metadataCall;
   @XmlJavaTypeAdapter(ZonedDateTimeXmlAdapter.class)
-  //@JsonProperty("date")
   @JsonbProperty("date")
   private ZonedDateTime metadataWhen;
-  //@JsonProperty("version")
   @JsonbProperty("version")
   private String metadataVersion;
 

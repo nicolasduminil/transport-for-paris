@@ -17,21 +17,6 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>jakarta.enterprise</groupId>
-      <artifactId>jakarta.enterprise.cdi-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.inject</groupId>
-      <artifactId>jakarta.inject-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.persistence</groupId>
-      <artifactId>jakarta.persistence-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>fr.simplex-software.tfp</groupId>
       <artifactId>plan-journey-model</artifactId>
     </dependency>

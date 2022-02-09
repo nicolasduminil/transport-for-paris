@@ -1,6 +1,5 @@
 package fr.simplex_software.tfp.plan_journey.model.dtos;
 
-import com.fasterxml.jackson.annotation.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
 import lombok.extern.slf4j.*;
 
@@ -10,7 +9,6 @@ import java.util.*;
 
 @XmlRootElement(name = "journey")
 @XmlAccessorType(XmlAccessType.FIELD)
-@JsonRootName("journey")
 @Slf4j
 public class JourneyDto implements Serializable
 {

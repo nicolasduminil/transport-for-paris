@@ -18,42 +18,6 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>jakarta.json.bind</groupId>
-      <artifactId>jakarta.json.bind-api</artifactId>
-      <!--version>1.0.2.redhat-00001</version-->
-      <scope>provided></scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.enterprise</groupId>
-      <artifactId>jakarta.enterprise.cdi-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.spec.javax.annotation</groupId>
-      <artifactId>jboss-annotations-api_1.3_spec</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.spec.javax.ws.rs</groupId>
-      <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.persistence</groupId>
-      <artifactId>jakarta.persistence-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.transaction</groupId>
-      <artifactId>jakarta.transaction-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.transaction</groupId>
-      <artifactId>javax.transaction-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <scope>provided</scope>
@@ -65,6 +29,7 @@
     <dependency>
       <groupId>com.oracle.database.jdbc</groupId>
       <artifactId>ojdbc8</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
@@ -77,12 +42,6 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>jakarta.activation</groupId>
-      <artifactId>jakarta.activation-api</artifactId>
-      <version>1.2.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>javax.xml.bind</groupId>
       <artifactId>jaxb-api</artifactId>
       <scope>test</scope>
@@ -92,48 +51,15 @@
       <artifactId>jaxb-runtime</artifactId>
       <scope>test</scope>
     </dependency>
-    <!--dependency>
-      <groupId>org.jboss.resteasy</groupId>
-      <artifactId>resteasy-jackson2-provider</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.spec.javax.xml.bind</groupId>
-      <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.json.bind</groupId>
-      <artifactId>jakarta.json.bind-api</artifactId>
-      <version>2.0.4</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.json</groupId>
-      <artifactId>jakarta.json-api</artifactId>
-      <version>2.0.4</version>
-      <scope>provided</scope>
-    </dependency-->
-    <dependency>
-      <groupId>javax.json.bind</groupId>
-      <artifactId>javax.json.bind-api</artifactId>
-      <version>1.0</version>
-    </dependency>
-    <!--dependency>
-      <groupId>org.eclipse</groupId>
-      <artifactId>yasson</artifactId>
-    </dependency-->
     <dependency>
       <groupId>org.glassfish</groupId>
-      <!--artifactId>jakarta.json</artifactId-->
       <artifactId>javax.json</artifactId>
-      <version>1.1</version>
+      <scope>test</scope>
     </dependency>
-    <!--dependency>
-      <groupId>org.jboss.resteasy</groupId>
-      <artifactId>resteasy-json-binding-provider</artifactId>
-      <scope>provided</scope>
-    </dependency-->
+    <dependency>
+      <groupId>org.eclipse</groupId>
+      <artifactId>yasson</artifactId>
+    </dependency>
     <dependency>
       <groupId>fr.simplex-software.tfp</groupId>
       <artifactId>plan-journey-model</artifactId>
@@ -224,18 +150,6 @@
       <groupId>org.jboss.weld</groupId>
       <artifactId>weld-spi</artifactId>
       <version>3.1.Final</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.interceptor</groupId>
-      <artifactId>javax.interceptor-api</artifactId>
-      <version>1.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.el</groupId>
-      <artifactId>el-api</artifactId>
-      <version>2.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>

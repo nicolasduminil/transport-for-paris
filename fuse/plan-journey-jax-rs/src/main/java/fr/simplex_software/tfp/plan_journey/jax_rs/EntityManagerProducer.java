@@ -1,6 +1,5 @@
 package fr.simplex_software.tfp.plan_journey.jax_rs;
 
-import jakarta.transaction.*;
 import org.apache.deltaspike.jpa.api.entitymanager.*;
 
 import javax.enterprise.context.*;
@@ -9,7 +8,7 @@ import javax.inject.*;
 import javax.persistence.*;
 
 @ApplicationScoped
-public class EntityManagerProducerEE
+public class EntityManagerProducer
 {
   @Inject
   @PersistenceUnitName("paris-oracle")

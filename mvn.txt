@@ -1,0 +1,445 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Transport for Paris :: Parent POM                                  [pom]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration Parent POM             [pom]
+[[1;34mINFO[m] Transport for Paris :: The Infra Module                            [jar]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration model module           [jar]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration repository module      [jar]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration facade module          [jar]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration service module         [jar]
+[[1;34mINFO[m] Transport for Paris :: The plan journey JAX-RS module              [war]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36mfr.simplex-software.tfp:transport-for-paris[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding Transport for Paris :: Parent POM 1.0-SNAPSHOT            [1/8][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mtransport-for-paris[0;1m ---[m
+[[1;34mINFO[m] fr.simplex-software.tfp:transport-for-paris:pom:1.0-SNAPSHOT
+[[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
+[[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
+[[1;34mINFO[m]    \- log4j:log4j:jar:1.2.17:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mfr.simplex-software.tfp:fuse[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding Transport for Paris :: The Fuse Integration Parent POM 1.0-SNAPSHOT [2/8][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mfuse[0;1m ---[m
+[[1;34mINFO[m] fr.simplex-software.tfp:fuse:pom:1.0-SNAPSHOT
+[[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
+[[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
+[[1;34mINFO[m]    \- log4j:log4j:jar:1.2.17.redhat-3:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------< [0;36mfr.simplex-software.tfp:infra[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding Transport for Paris :: The Infra Module 1.0-SNAPSHOT      [3/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36minfra[0;1m ---[m
+[[1;34mINFO[m] fr.simplex-software.tfp:infra:jar:1.0-SNAPSHOT
+[[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
+[[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
+[[1;34mINFO[m]    \- log4j:log4j:jar:1.2.17.redhat-3:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------< [0;36mfr.simplex-software.tfp:plan-journey-model[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding Transport for Paris :: The Fuse Integration model module 1.0-SNAPSHOT [4/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mplan-journey-model[0;1m ---[m
+[[1;34mINFO[m] fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT
+[[1;34mINFO[m] +- jakarta.platform:jakarta.jakartaee-api:jar:8.0.0:provided
+[[1;34mINFO[m] +- javax.xml.bind:jaxb-api:jar:2.4.0-b180830.0359:provided
+[[1;34mINFO[m] |  \- javax.activation:javax.activation-api:jar:1.2.0:provided
+[[1;34mINFO[m] +- org.hibernate:hibernate-entitymanager:jar:5.3.20.Final-redhat-00001:provided
+[[1;34mINFO[m] |  +- org.jboss.logging:jboss-logging:jar:3.4.1.Final-redhat-00001:provided
+[[1;34mINFO[m] |  +- org.hibernate:hibernate-core:jar:5.3.20.Final-redhat-00001:provided
+[[1;34mINFO[m] |  |  +- org.javassist:javassist:jar:3.23.2.GA-redhat-00001:provided
+[[1;34mINFO[m] |  |  +- antlr:antlr:jar:2.7.7.redhat-7:provided
+[[1;34mINFO[m] |  |  +- org.jboss:jandex:jar:2.2.3.Final-redhat-00001:provided
+[[1;34mINFO[m] |  |  \- com.fasterxml:classmate:jar:1.5.1.redhat-00001:provided
+[[1;34mINFO[m] |  +- org.dom4j:dom4j:jar:2.1.3.redhat-00001:provided
+[[1;34mINFO[m] |  +- org.hibernate.common:hibernate-commons-annotations:jar:5.0.5.Final-redhat-00002:provided
+[[1;34mINFO[m] |  \- net.bytebuddy:byte-buddy:jar:1.9.11.redhat-00003:provided
+[[1;34mINFO[m] +- junit:junit:jar:4.13.1:test
+[[1;34mINFO[m] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[[1;34mINFO[m] +- org.glassfish.jaxb:jaxb-runtime:jar:2.3.3.b02-redhat-00001:test
+[[1;34mINFO[m] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3.redhat-00001:test
+[[1;34mINFO[m] |  +- org.glassfish.jaxb:txw2:jar:2.3.3.b02-redhat-00001:test
+[[1;34mINFO[m] |  +- com.sun.istack:istack-commons-runtime:jar:3.0.10.redhat-00001:test
+[[1;34mINFO[m] |  \- com.sun.activation:jakarta.activation:jar:1.2.2.redhat-00001:test
+[[1;34mINFO[m] +- com.github.database-rider:rider-core:jar:1.32.0:test
+[[1;34mINFO[m] |  +- org.dbunit:dbunit:jar:2.7.0:test
+[[1;34mINFO[m] |  |  +- commons-collections:commons-collections:jar:3.2.2.redhat-2:test
+[[1;34mINFO[m] |  |  +- org.apache.poi:poi-ooxml:jar:3.17:test
+[[1;34mINFO[m] |  |  |  +- org.apache.poi:poi:jar:3.17:test
+[[1;34mINFO[m] |  |  |  |  +- commons-codec:commons-codec:jar:1.15.0.redhat-00001:test
+[[1;34mINFO[m] |  |  |  |  \- org.apache.commons:commons-collections4:jar:4.1:test
+[[1;34mINFO[m] |  |  |  +- org.apache.poi:poi-ooxml-schemas:jar:3.17:test
+[[1;34mINFO[m] |  |  |  |  \- org.apache.xmlbeans:xmlbeans:jar:2.6.0:test
+[[1;34mINFO[m] |  |  |  |     \- stax:stax-api:jar:1.0.1:test
+[[1;34mINFO[m] |  |  |  \- com.github.virtuald:curvesapi:jar:1.04:test
+[[1;34mINFO[m] |  |  \- org.postgresql:postgresql:jar:42.2.5:test
+[[1;34mINFO[m] |  +- org.yaml:snakeyaml:jar:1.28:test
+[[1;34mINFO[m] |  +- org.codehaus.jackson:jackson-mapper-lgpl:jar:1.9.13:test
+[[1;34mINFO[m] |  |  \- org.codehaus.jackson:jackson-core-lgpl:jar:1.9.13:test
+[[1;34mINFO[m] |  \- mysql:mysql-connector-java:jar:8.0.25:test
+[[1;34mINFO[m] |     \- com.google.protobuf:protobuf-java:jar:3.11.4:test
+[[1;34mINFO[m] +- com.github.database-rider:rider-cdi:jar:1.32.0:test
+[[1;34mINFO[m] |  \- javax.enterprise:cdi-api:jar:1.2:test
+[[1;34mINFO[m] |     +- javax.el:javax.el-api:jar:3.0.0:test
+[[1;34mINFO[m] |     +- javax.interceptor:javax.interceptor-api:jar:1.2:test
+[[1;34mINFO[m] |     \- javax.inject:javax.inject:jar:1:test
+[[1;34mINFO[m] +- com.h2database:h2:jar:2.0.202:test
+[[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
+[[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
+[[1;34mINFO[m]    \- log4j:log4j:jar:1.2.17.redhat-3:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------< [0;36mfr.simplex-software.tfp:plan-journey-repository[0;1m >-----------[m
+[[1;34mINFO[m] [1mBuilding Transport for Paris :: The Fuse Integration repository module 1.0-SNAPSHOT [5/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mplan-journey-repository[0;1m ---[m
+[[1;34mINFO[m] fr.simplex-software.tfp:plan-journey-repository:jar:1.0-SNAPSHOT
+[[1;34mINFO[m] +- jakarta.platform:jakarta.jakartaee-api:jar:8.0.0:provided
+[[1;34mINFO[m] +- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-partial-bean-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-partial-bean-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-proxy-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |  \- org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm:jar:1.9.5:runtime
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
+[[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
+[[1;34mINFO[m]    \- log4j:log4j:jar:1.2.17.redhat-3:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36mfr.simplex-software.tfp:plan-journey-facade[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding Transport for Paris :: The Fuse Integration facade module 1.0-SNAPSHOT [6/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mplan-journey-facade[0;1m ---[m
+[[1;34mINFO[m] fr.simplex-software.tfp:plan-journey-facade:jar:1.0-SNAPSHOT
+[[1;34mINFO[m] +- jakarta.platform:jakarta.jakartaee-api:jar:8.0.0:provided
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-repository:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] |  +- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
+[[1;34mINFO[m] |  +- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |  +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
+[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-partial-bean-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |  \- org.apache.deltaspike.modules:deltaspike-partial-bean-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-proxy-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |     \- org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
+[[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
+[[1;34mINFO[m]    \- log4j:log4j:jar:1.2.17.redhat-3:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36mfr.simplex-software.tfp:plan-journey-service[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding Transport for Paris :: The Fuse Integration service module 1.0-SNAPSHOT [7/8][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mplan-journey-service[0;1m ---[m
+[[1;34mINFO[m] fr.simplex-software.tfp:plan-journey-service:jar:1.0-SNAPSHOT
+[[1;34mINFO[m] +- jakarta.platform:jakarta.jakartaee-api:jar:8.0.0:provided
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-facade:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] |  +- fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] |  \- fr.simplex-software.tfp:plan-journey-repository:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] |     +- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
+[[1;34mINFO[m] |     +- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |     +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
+[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-partial-bean-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |     \- org.apache.deltaspike.modules:deltaspike-partial-bean-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |        +- org.apache.deltaspike.modules:deltaspike-proxy-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |        \- org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm:jar:1.9.5:runtime
+[[1;34mINFO[m] +- junit:junit:jar:4.13.1:test
+[[1;34mINFO[m] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
+[[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
+[[1;34mINFO[m]    \- log4j:log4j:jar:1.2.17.redhat-3:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------< [0;36mfr.simplex-software.tfp:plan-journey-jax-rs[0;1m >-------------[m
+[[1;34mINFO[m] [1mBuilding Transport for Paris :: The plan journey JAX-RS module 1.0-SNAPSHOT [8/8][m
+[[1;34mINFO[m] [1m--------------------------------[ war ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mplan-journey-jax-rs[0;1m ---[m
+[[1;34mINFO[m] fr.simplex-software.tfp:plan-journey-jax-rs:war:1.0-SNAPSHOT
+[[1;34mINFO[m] +- jakarta.platform:jakarta.jakartaee-api:jar:8.0.0:provided
+[[1;34mINFO[m] +- org.hibernate:hibernate-entitymanager:jar:5.3.20.Final-redhat-00001:provided
+[[1;34mINFO[m] |  +- org.jboss.logging:jboss-logging:jar:3.4.1.Final-redhat-00001:provided
+[[1;34mINFO[m] |  +- org.hibernate:hibernate-core:jar:5.3.20.Final-redhat-00001:provided
+[[1;34mINFO[m] |  |  +- org.javassist:javassist:jar:3.23.2.GA-redhat-00001:compile
+[[1;34mINFO[m] |  |  +- antlr:antlr:jar:2.7.7.redhat-7:provided
+[[1;34mINFO[m] |  |  +- org.jboss:jandex:jar:2.2.3.Final-redhat-00001:provided
+[[1;34mINFO[m] |  |  \- com.fasterxml:classmate:jar:1.5.1.redhat-00001:provided
+[[1;34mINFO[m] |  +- org.dom4j:dom4j:jar:2.1.3.redhat-00001:provided
+[[1;34mINFO[m] |  +- org.hibernate.common:hibernate-commons-annotations:jar:5.0.5.Final-redhat-00002:provided
+[[1;34mINFO[m] |  \- net.bytebuddy:byte-buddy:jar:1.9.11.redhat-00003:provided
+[[1;34mINFO[m] +- io.swagger:swagger-jaxrs:jar:1.6.3:compile
+[[1;34mINFO[m] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  +- io.swagger:swagger-core:jar:1.6.3:compile
+[[1;34mINFO[m] |  |  +- org.apache.commons:commons-lang3:jar:3.8.1:compile
+[[1;34mINFO[m] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  |  +- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.12.1.redhat-00002:compile
+[[1;34mINFO[m] |  |  +- io.swagger:swagger-models:jar:1.6.3:compile
+[[1;34mINFO[m] |  |  |  \- io.swagger:swagger-annotations:jar:1.6.3:compile
+[[1;34mINFO[m] |  |  \- javax.validation:validation-api:jar:1.1.0.Final:compile
+[[1;34mINFO[m] |  +- javax.ws.rs:jsr311-api:jar:1.1.1:compile
+[[1;34mINFO[m] |  +- org.reflections:reflections:jar:0.9.11:compile
+[[1;34mINFO[m] |  \- com.google.guava:guava:jar:30.1.0.redhat-00001:compile
+[[1;34mINFO[m] |     +- com.google.guava:failureaccess:jar:1.0.1.redhat-00002:compile
+[[1;34mINFO[m] |     \- com.google.code.findbugs:jsr305:jar:3.0.2:test
+[[1;34mINFO[m] +- com.oracle.database.jdbc:ojdbc8:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.jdbc:ucp:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.security:oraclepki:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.security:osdt_cert:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.security:osdt_core:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.ha:simplefan:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  \- com.oracle.database.ha:ons:jar:12.2.0.1:runtime
+[[1;34mINFO[m] +- org.jboss.resteasy:resteasy-client:jar:3.15.1.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- org.jboss.spec.javax.ws.rs:jboss-jaxrs-api_2.1_spec:jar:2.0.1.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- org.jboss.resteasy:resteasy-jaxrs:jar:3.15.1.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  +- org.jboss.spec.javax.xml.bind:jboss-jaxb-api_2.3_spec:jar:2.0.1.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  +- org.reactivestreams:reactive-streams:jar:1.0.3.redhat-00003:test
+[[1;34mINFO[m] |  |  +- jakarta.validation:jakarta.validation-api:jar:2.0.2.redhat-00001:test
+[[1;34mINFO[m] |  |  +- org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:jar:2.0.1.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  \- com.github.stephenc.jcip:jcip-annotations:jar:1.0-1:test
+[[1;34mINFO[m] |  +- org.apache.httpcomponents:httpclient:jar:4.5.13.redhat-00001:test
+[[1;34mINFO[m] |  |  \- org.apache.httpcomponents:httpcore:jar:4.4.14.redhat-00001:test
+[[1;34mINFO[m] |  +- commons-codec:commons-codec:jar:1.15.0.redhat-00001:test
+[[1;34mINFO[m] |  \- commons-io:commons-io:jar:2.5.0.redhat-3:test
+[[1;34mINFO[m] +- org.jboss.resteasy:resteasy-jaxb-provider:jar:3.15.1.Final-redhat-00001:provided
+[[1;34mINFO[m] +- javax.xml.bind:jaxb-api:jar:2.4.0-b180830.0359:test
+[[1;34mINFO[m] |  \- javax.activation:javax.activation-api:jar:1.2.0:test
+[[1;34mINFO[m] +- org.glassfish.jaxb:jaxb-runtime:jar:2.3.3.b02-redhat-00001:test
+[[1;34mINFO[m] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3.redhat-00001:test
+[[1;34mINFO[m] |  +- org.glassfish.jaxb:txw2:jar:2.3.3.b02-redhat-00001:test
+[[1;34mINFO[m] |  +- com.sun.istack:istack-commons-runtime:jar:3.0.10.redhat-00001:test
+[[1;34mINFO[m] |  \- com.sun.activation:jakarta.activation:jar:1.2.2.redhat-00001:test
+[[1;34mINFO[m] +- org.glassfish:javax.json:jar:1.1:test
+[[1;34mINFO[m] +- org.eclipse:yasson:jar:1.0:compile
+[[1;34mINFO[m] |  +- javax.json.bind:javax.json.bind-api:jar:1.0:compile
+[[1;34mINFO[m] |  +- javax.json:javax.json-api:jar:1.1:compile
+[[1;34mINFO[m] |  \- javax.enterprise:cdi-api:jar:2.0:compile
+[[1;34mINFO[m] |     +- javax.el:javax.el-api:jar:3.0.0:compile
+[[1;34mINFO[m] |     +- javax.interceptor:javax.interceptor-api:jar:1.2:compile
+[[1;34mINFO[m] |     \- javax.inject:javax.inject:jar:1:compile
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:test-jar:tests:1.0-SNAPSHOT:test
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-service:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] |  \- fr.simplex-software.tfp:plan-journey-facade:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] |     \- fr.simplex-software.tfp:plan-journey-repository:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] +- junit:junit:jar:4.13.1:test
+[[1;34mINFO[m] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[[1;34mINFO[m] +- org.jboss.logging:commons-logging-jboss-logging:jar:1.0.0.Final-redhat-1:test
+[[1;34mINFO[m] +- com.github.database-rider:rider-core:jar:1.32.0:test
+[[1;34mINFO[m] |  +- org.dbunit:dbunit:jar:2.7.0:test
+[[1;34mINFO[m] |  |  +- commons-collections:commons-collections:jar:3.2.2.redhat-2:test
+[[1;34mINFO[m] |  |  +- org.apache.poi:poi-ooxml:jar:3.17:test
+[[1;34mINFO[m] |  |  |  +- org.apache.poi:poi:jar:3.17:test
+[[1;34mINFO[m] |  |  |  |  \- org.apache.commons:commons-collections4:jar:4.1:test
+[[1;34mINFO[m] |  |  |  +- org.apache.poi:poi-ooxml-schemas:jar:3.17:test
+[[1;34mINFO[m] |  |  |  |  \- org.apache.xmlbeans:xmlbeans:jar:2.6.0:test
+[[1;34mINFO[m] |  |  |  |     \- stax:stax-api:jar:1.0.1:test
+[[1;34mINFO[m] |  |  |  \- com.github.virtuald:curvesapi:jar:1.04:test
+[[1;34mINFO[m] |  |  \- org.postgresql:postgresql:jar:42.2.5:test
+[[1;34mINFO[m] |  +- org.yaml:snakeyaml:jar:1.28:compile
+[[1;34mINFO[m] |  +- org.codehaus.jackson:jackson-mapper-lgpl:jar:1.9.13:test
+[[1;34mINFO[m] |  |  \- org.codehaus.jackson:jackson-core-lgpl:jar:1.9.13:test
+[[1;34mINFO[m] |  \- mysql:mysql-connector-java:jar:8.0.25:test
+[[1;34mINFO[m] |     \- com.google.protobuf:protobuf-java:jar:3.11.4:test
+[[1;34mINFO[m] +- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |  \- org.apache.deltaspike.modules:deltaspike-partial-bean-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |  \- org.apache.deltaspike.modules:deltaspike-partial-bean-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-proxy-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |     \- org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-test-control-module-api:jar:1.9.5:test
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-test-control-module-impl:jar:1.9.5:test
+[[1;34mINFO[m] +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-weld:jar:1.9.5:test
+[[1;34mINFO[m] +- org.jboss.weld.se:weld-se:jar:2.4.8.Final:test
+[[1;34mINFO[m] +- org.jboss.weld.se:weld-se-core:jar:3.1.8.Final:test
+[[1;34mINFO[m] |  +- org.jboss.weld.environment:weld-environment-common:jar:3.1.8.Final:test
+[[1;34mINFO[m] |  |  \- org.jboss.weld:weld-core-impl:jar:3.1.6.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- org.jboss.weld.probe:weld-probe-core:jar:3.1.6.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- jakarta.enterprise:jakarta.enterprise.cdi-api:jar:2.0.2.redhat-00002:test
+[[1;34mINFO[m] |  |  \- jakarta.inject:jakarta.inject-api:jar:1.0.3.redhat-00001:test
+[[1;34mINFO[m] |  \- org.jboss.classfilewriter:jboss-classfilewriter:jar:1.2.4.Final-redhat-00001:test
+[[1;34mINFO[m] +- org.jboss.weld:weld-spi:jar:3.1.Final:test
+[[1;34mINFO[m] |  \- org.jboss.weld:weld-api:jar:3.1.0.SP3-redhat-00001:test
+[[1;34mINFO[m] +- com.h2database:h2:jar:2.0.202:test
+[[1;34mINFO[m] +- org.testcontainers:testcontainers:jar:1.16.2:test
+[[1;34mINFO[m] |  +- org.apache.commons:commons-compress:jar:1.21:test
+[[1;34mINFO[m] |  +- org.rnorth.duct-tape:duct-tape:jar:1.0.8:test
+[[1;34mINFO[m] |  |  \- org.jetbrains:annotations:jar:17.0.0:test
+[[1;34mINFO[m] |  +- com.github.docker-java:docker-java-api:jar:3.2.12:test
+[[1;34mINFO[m] |  \- com.github.docker-java:docker-java-transport-zerodep:jar:3.2.12:test
+[[1;34mINFO[m] |     +- com.github.docker-java:docker-java-transport:jar:3.2.12:test
+[[1;34mINFO[m] |     \- net.java.dev.jna:jna:jar:5.8.0:test
+[[1;34mINFO[m] +- org.testcontainers:oracle-xe:jar:1.16.2:test
+[[1;34mINFO[m] |  \- org.testcontainers:jdbc:jar:1.16.2:test
+[[1;34mINFO[m] |     \- org.testcontainers:database-commons:jar:1.16.2:test
+[[1;34mINFO[m] +- org.wildfly.arquillian:wildfly-arquillian-container-remote:jar:3.0.1.Final:test
+[[1;34mINFO[m] |  +- org.wildfly.arquillian:wildfly-arquillian-common:jar:3.0.1.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.testenricher:arquillian-testenricher-cdi:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.testenricher:arquillian-testenricher-ejb:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.testenricher:arquillian-testenricher-initialcontext:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.testenricher:arquillian-testenricher-resource:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.protocol:arquillian-protocol-servlet:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.wildfly.arquillian:wildfly-arquillian-testenricher-msc:jar:3.0.1.Final:test
+[[1;34mINFO[m] |  |  |  \- org.wildfly.core:wildfly-server:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.wildfly.core:wildfly-controller:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     |  +- org.wildfly.core:wildfly-core-security:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     |  |  \- org.wildfly.core:wildfly-core-security-api:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     |  +- org.jboss.logmanager:jboss-logmanager:jar:2.1.18.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     |  +- org.jboss:staxmapper:jar:1.3.0.Final-redhat-1:test
+[[1;34mINFO[m] |  |  |     |  \- org.projectodd.vdx:vdx-wildfly:jar:1.1.6.redhat-1:test
+[[1;34mINFO[m] |  |  |     |     \- org.projectodd.vdx:vdx-core:jar:1.1.6.redhat-1:test
+[[1;34mINFO[m] |  |  |     +- org.wildfly.core:wildfly-core-management-client:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.wildfly.core:wildfly-domain-http-interface:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     |  \- org.wildfly.security.elytron-web:undertow-server:jar:1.9.0.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.wildfly.core:wildfly-deployment-repository:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.wildfly.core:wildfly-platform-mbean:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.wildfly.core:wildfly-process-controller:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.wildfly.core:wildfly-network:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.wildfly.core:wildfly-version:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.jboss.invocation:jboss-invocation:jar:1.6.0.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.jboss.modules:jboss-modules:jar:1.11.0.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.jboss.remoting:jboss-remoting:jar:5.0.20.SP1-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.jboss.stdio:jboss-stdio:jar:1.1.0.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.jboss:jboss-vfs:jar:3.2.15.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- io.undertow:undertow-core:jar:2.2.5.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.eclipse.jgit:org.eclipse.jgit.ssh.apache:jar:5.10.0.202012080955-r-redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.eclipse.jgit:org.eclipse.jgit:jar:5.10.0.202012080955-r-redhat-00001:test
+[[1;34mINFO[m] |  |  |     |  \- com.googlecode.javaewah:JavaEWAH:jar:1.1.7.redhat-00001:test
+[[1;34mINFO[m] |  |  |     +- org.apache.sshd:sshd-common:jar:2.4.0.redhat-00001:test
+[[1;34mINFO[m] |  |  |     \- org.apache.sshd:sshd-core:jar:2.4.0.redhat-00001:test
+[[1;34mINFO[m] |  |  +- org.wildfly.core:wildfly-controller-client:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |  +- org.wildfly.core:wildfly-protocol:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |  |  +- org.jboss.xnio:xnio-api:jar:3.8.4.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |  |  \- org.jboss.xnio:xnio-nio:jar:3.8.4.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |  +- org.jboss:jboss-dmr:jar:1.5.1.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  |  \- org.jboss.threads:jboss-threads:jar:2.4.0.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  +- org.wildfly.core:wildfly-launcher:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  +- org.wildfly.plugins:wildfly-plugin-core:jar:2.0.2.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-impl-base:jar:2.0.0:test
+[[1;34mINFO[m] |  |  \- org.wildfly.common:wildfly-common:jar:1.5.4.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- org.wildfly.arquillian:wildfly-arquillian-protocol-jmx:jar:3.0.1.Final:test
+[[1;34mINFO[m] |  |  +- org.wildfly.security:wildfly-elytron:jar:1.15.3.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.core:arquillian-core-spi:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.protocol:arquillian-protocol-jmx:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  \- org.wildfly.core:wildfly-jmx:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |     +- org.jboss.msc:jboss-msc:jar:1.4.12.Final-redhat-00001:test
+[[1;34mINFO[m] |  |     +- org.jboss.remotingjmx:remoting-jmx:jar:3.0.4.Final-redhat-00001:test
+[[1;34mINFO[m] |  |     |  \- org.wildfly.client:wildfly-client-config:jar:1.0.1.Final-redhat-00001:test
+[[1;34mINFO[m] |  |     \- org.wildfly.core:wildfly-remoting:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |        +- org.wildfly.core:wildfly-domain-management:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  |        |  \- org.picketbox:picketbox:jar:5.0.3.Final-redhat-00007:test
+[[1;34mINFO[m] |  |        \- org.wildfly.core:wildfly-io:jar:15.0.2.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- org.jboss.marshalling:jboss-marshalling-river:jar:2.0.11.Final-redhat-00001:test
+[[1;34mINFO[m] |  |  \- org.jboss.marshalling:jboss-marshalling:jar:2.0.11.Final-redhat-00001:test
+[[1;34mINFO[m] |  \- org.jboss.arquillian.core:arquillian-core-api:jar:1.6.0.Final:test
+[[1;34mINFO[m] +- org.jboss.arquillian.junit:arquillian-junit-container:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.junit:arquillian-junit-core:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.test:arquillian-test-api:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.test:arquillian-test-spi:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.container:arquillian-container-test-api:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.shrinkwrap:shrinkwrap-api:jar:1.2.6:test
+[[1;34mINFO[m] |  |  \- org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-api-base:jar:2.0.0:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.container:arquillian-container-test-spi:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  \- org.jboss.arquillian.container:arquillian-container-spi:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.core:arquillian-core-impl-base:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.test:arquillian-test-impl-base:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.container:arquillian-container-impl-base:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.config:arquillian-config-api:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  +- org.jboss.arquillian.config:arquillian-config-impl-base:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  |  \- org.jboss.arquillian.config:arquillian-config-spi:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  |  \- org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-spi:jar:2.0.0:test
+[[1;34mINFO[m] |  +- org.jboss.arquillian.container:arquillian-container-test-impl-base:jar:1.6.0.Final:test
+[[1;34mINFO[m] |  \- org.jboss.shrinkwrap:shrinkwrap-impl-base:jar:1.2.6:test
+[[1;34mINFO[m] |     \- org.jboss.shrinkwrap:shrinkwrap-spi:jar:1.2.6:test
+[[1;34mINFO[m] +- org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-impl-maven:jar:2.2.7:test
+[[1;34mINFO[m] |  +- org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:jar:2.2.7:test
+[[1;34mINFO[m] |  |  \- org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api:jar:2.2.7:test
+[[1;34mINFO[m] |  +- org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-spi-maven:jar:2.2.7:test
+[[1;34mINFO[m] |  |  \- org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-spi:jar:2.2.7:test
+[[1;34mINFO[m] |  +- org.eclipse.aether:aether-api:jar:1.0.0.v20140518:test
+[[1;34mINFO[m] |  +- org.eclipse.aether:aether-impl:jar:1.0.0.v20140518:test
+[[1;34mINFO[m] |  +- org.eclipse.aether:aether-spi:jar:1.0.0.v20140518:test
+[[1;34mINFO[m] |  +- org.eclipse.aether:aether-util:jar:1.0.0.v20140518:test
+[[1;34mINFO[m] |  +- org.eclipse.aether:aether-connector-basic:jar:1.0.0.v20140518:test
+[[1;34mINFO[m] |  +- org.eclipse.aether:aether-transport-wagon:jar:1.0.0.v20140518:test
+[[1;34mINFO[m] |  +- org.apache.maven:maven-aether-provider:jar:3.2.5:test
+[[1;34mINFO[m] |  +- org.apache.maven:maven-model:jar:3.6.3:test
+[[1;34mINFO[m] |  +- org.apache.maven:maven-model-builder:jar:3.6.3:test
+[[1;34mINFO[m] |  |  +- org.apache.maven:maven-artifact:jar:3.6.3:test
+[[1;34mINFO[m] |  |  +- org.apache.maven:maven-builder-support:jar:3.6.3:test
+[[1;34mINFO[m] |  |  \- org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.3.4:test
+[[1;34mINFO[m] |  +- org.apache.maven:maven-repository-metadata:jar:3.6.3:test
+[[1;34mINFO[m] |  +- org.apache.maven:maven-settings:jar:3.6.3:test
+[[1;34mINFO[m] |  +- org.apache.maven:maven-settings-builder:jar:3.6.3:test
+[[1;34mINFO[m] |  +- org.codehaus.plexus:plexus-interpolation:jar:1.25:test
+[[1;34mINFO[m] |  +- org.codehaus.plexus:plexus-utils:jar:3.2.1:test
+[[1;34mINFO[m] |  +- org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4:test
+[[1;34mINFO[m] |  |  \- org.sonatype.plexus:plexus-cipher:jar:1.7:test
+[[1;34mINFO[m] |  +- org.apache.maven.wagon:wagon-provider-api:jar:3.3.4:test
+[[1;34mINFO[m] |  +- org.apache.maven.wagon:wagon-file:jar:3.3.4:test
+[[1;34mINFO[m] |  \- org.apache.maven.wagon:wagon-http-lightweight:jar:2.6:test
+[[1;34mINFO[m] |     \- org.apache.maven.wagon:wagon-http-shared:jar:2.6:test
+[[1;34mINFO[m] |        +- org.jsoup:jsoup:jar:1.12.1:test
+[[1;34mINFO[m] |        \- commons-lang:commons-lang:jar:2.6.0.redhat-7:test
+[[1;34mINFO[m] +- io.rest-assured:rest-assured:jar:3.0.6:test
+[[1;34mINFO[m] |  +- org.codehaus.groovy:groovy:jar:2.5.4:test
+[[1;34mINFO[m] |  +- org.codehaus.groovy:groovy-xml:jar:2.5.4:test
+[[1;34mINFO[m] |  +- org.apache.httpcomponents:httpmime:jar:4.5.13.redhat-00002:test
+[[1;34mINFO[m] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[[1;34mINFO[m] |  +- org.ccil.cowan.tagsoup:tagsoup:jar:1.2.1:test
+[[1;34mINFO[m] |  +- io.rest-assured:json-path:jar:3.0.6:test
+[[1;34mINFO[m] |  |  +- org.codehaus.groovy:groovy-json:jar:2.4.12:test
+[[1;34mINFO[m] |  |  \- io.rest-assured:rest-assured-common:jar:3.0.6:test
+[[1;34mINFO[m] |  \- io.rest-assured:xml-path:jar:3.0.6:test
+[[1;34mINFO[m] +- org.assertj:assertj-core:jar:3.22.0:test
+[[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
+[[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
+[[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
+[[1;34mINFO[m]    \- log4j:log4j:jar:1.2.17.redhat-3:compile
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for Transport for Paris :: Parent POM 1.0-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Transport for Paris :: Parent POM .................. [1;32mSUCCESS[m [  0.347 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration Parent POM [1;32mSUCCESS[m [  0.025 s]
+[[1;34mINFO[m] Transport for Paris :: The Infra Module ............ [1;32mSUCCESS[m [  0.039 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration model module [1;32mSUCCESS[m [  0.133 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration repository module [1;32mSUCCESS[m [  0.054 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration facade module [1;32mSUCCESS[m [  0.018 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration service module [1;32mSUCCESS[m [  0.018 s]
+[[1;34mINFO[m] Transport for Paris :: The plan journey JAX-RS module [1;32mSUCCESS[m [  0.392 s]
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  1.335 s
+[[1;34mINFO[m] Finished at: 2022-02-10T00:19:42+01:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
