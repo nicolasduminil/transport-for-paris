@@ -2,6 +2,7 @@ package fr.simplex_software.tfp.plan_journey.facade;
 
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
 import fr.simplex_software.tfp.plan_journey.repository.*;
+import lombok.*;
 
 import javax.enterprise.context.*;
 import javax.inject.*;
@@ -10,6 +11,9 @@ import javax.ws.rs.*;
 import java.util.*;
 
 @ApplicationScoped
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class PlanJourneyFacade
 {
   @Inject
