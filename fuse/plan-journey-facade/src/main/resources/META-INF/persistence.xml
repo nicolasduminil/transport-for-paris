@@ -3,22 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="paris-oracle-test-rest" transaction-type="RESOURCE_LOCAL">
-    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <class>fr.simplex_software.tfp.plan_journey.model.entities.JourneyEntity</class>
-    <class>fr.simplex_software.tfp.plan_journey.model.entities.ResultEntity</class>
-    <class>fr.simplex_software.tfp.plan_journey.model.entities.MetadataEntity</class>
-    <class>fr.simplex_software.tfp.plan_journey.model.entities.DestinationEntity</class>
-    <properties>
-      <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:49161:xe" />
-      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-      <property name="javax.persistence.jdbc.user" value="nicolas"/>
-      <property name="javax.persistence.jdbc.password" value="California1"/>
-      <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
-    </properties>
-  </persistence-unit>
-  <persistence-unit name="paris-oracle" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="paris-oracle-test-facade" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>fr.simplex_software.tfp.plan_journey.model.entities.JourneyEntity</class>
     <class>fr.simplex_software.tfp.plan_journey.model.entities.ResultEntity</class>

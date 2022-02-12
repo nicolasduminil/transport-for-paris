@@ -32,7 +32,7 @@ public class JourneyEntity1IT extends TestCommons
   }
 
   @Rule
-  public EntityManagerProvider entityManagerProvider = EntityManagerProvider.instance("paris-oracle");
+  public EntityManagerProvider entityManagerProvider = EntityManagerProvider.instance("paris-oracle-test-rest");
 
   @Rule
   public DBUnitRule dbUnitRule = DBUnitRule.instance(entityManagerProvider.connection());

@@ -30,7 +30,7 @@ public class JourneyEntity2IT extends TestBase
   }
 
   @Rule
-  public EntityManagerProvider entityManagerProvider = EntityManagerProvider.instance("paris-oracle", entityManagerProviderProperties);
+  public EntityManagerProvider entityManagerProvider = EntityManagerProvider.instance("paris-oracle-test-rest", entityManagerProviderProperties);
 
   @Rule
   public DBUnitRule dbUnitRule = DBUnitRule.instance(entityManagerProvider.connection());

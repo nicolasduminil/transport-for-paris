@@ -1,4 +1,4 @@
-package fr.simplex_software.tfp.plan_journey.facade.tests;
+package fr.simplex_software.tfp.plan_journey.facade.tests.unit;
 
 import fr.simplex_software.tfp.plan_journey.facade.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;

@@ -21,7 +21,7 @@ public class TestBase extends TestCommons
       .withEnv("ORACLE_DISABLE_ASYNCH_IO", "true")
       .withClasspathResourceMapping("scripts/oracle", "/docker-entrypoint-initdb.d", BindMode.READ_WRITE)
       .withLogConsumer(new Slf4jLogConsumer(log))
-      .withReuse(true)
+      //.withReuse(true)
       .waitingFor(Wait.forLogMessage(".*SQL>.*", 1));
     oracle.start();
   }

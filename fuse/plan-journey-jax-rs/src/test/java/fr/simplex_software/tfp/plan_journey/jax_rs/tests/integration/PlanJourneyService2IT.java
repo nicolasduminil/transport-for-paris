@@ -1,8 +1,9 @@
 package fr.simplex_software.tfp.plan_journey.jax_rs.tests.integration;
 
+import com.github.database.rider.core.*;
+import com.github.database.rider.core.util.*;
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
-import fr.simplex_software.tfp.plan_journey.model.tests.unit.*;
 import fr.simplex_software.tfp.plan_journey.service.*;
 import org.apache.deltaspike.testcontrol.api.junit.*;
 import org.junit.*;
@@ -10,6 +11,7 @@ import org.junit.runner.*;
 import org.junit.runners.*;
 
 import javax.inject.*;
+import javax.persistence.*;
 import java.io.*;
 import java.util.*;
 
@@ -17,21 +19,36 @@ import static org.junit.Assert.*;
 
 @RunWith(CdiTestRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class PlanJourneyService2IT extends TestCommons
+public class PlanJourneyService2IT extends TestBase
 {
   @Inject
   private PlanJourneyService planJourneyService;
-  private static JourneyEntity journeyEntity;
+  private EntityManager em;
+  private static Map<String, Object> entityManagerProviderProperties = new HashMap<>();
 
   @BeforeClass
-  public static void setup()
+  public static void setUpDatabase()
   {
+    entityManagerProviderProperties.put("javax.persistence.jdbc.url", String.format("jdbc:oracle:thin:@%s:%d:xe", oracle.getHost(), oracle.getMappedPort(1521)));
     journeyEntity = (JourneyEntity) unmarshalXmlFileToJourneyEntity(new File("src/test/resources/journey.xml"));
+  }
+
+  @Rule
+  public EntityManagerProvider entityManagerProvider = EntityManagerProvider.instance("paris-oracle-test-rest", entityManagerProviderProperties);
+
+  @Rule
+  public DBUnitRule dbUnitRule = DBUnitRule.instance(entityManagerProvider.connection());
+
+  @Before
+  public void setUp()
+  {
+    em = entityManagerProvider.getEm();
   }
 
   @Test
   public void test0()
   {
+    assertNotNull(em);
     assertNotNull(planJourneyService);
   }
 
