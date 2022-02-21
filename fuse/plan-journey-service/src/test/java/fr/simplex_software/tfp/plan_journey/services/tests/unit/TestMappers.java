@@ -1,4 +1,4 @@
-package fr.simplex_software.tfp.plan_journey.services.tests;
+package fr.simplex_software.tfp.plan_journey.services.tests.unit;
 
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;

@@ -1,11 +1,8 @@
 package fr.simplex_software.tfp.plan_journey.jax_rs.tests.integration;
 
-import com.github.database.rider.core.*;
-import com.github.database.rider.core.api.dataset.*;
 import com.github.database.rider.core.util.*;
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
-import fr.simplex_software.tfp.plan_journey.model.tests.unit.*;
 import org.junit.*;
 import org.junit.runner.*;
 import org.junit.runners.*;
@@ -14,28 +11,24 @@ import javax.persistence.*;
 import java.io.*;
 import java.util.*;
 
-import static java.time.format.DateTimeFormatter.*;
 import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class JourneyEntity1IT extends TestCommons
+public class ITJourneyEntity extends TestBase
 {
   private EntityManager em;
   private static Map<String, Object> entityManagerProviderProperties = new HashMap<>();
-  private static JourneyEntity journeyEntity;
 
   @BeforeClass
-  public static void beforeClass()
+  public static void setUpDatabase()
   {
+    entityManagerProviderProperties.put("javax.persistence.jdbc.url", String.format("jdbc:oracle:thin:@%s:%d:xe", oracle.getHost(), oracle.getMappedPort(1521)));
     journeyEntity = (JourneyEntity) unmarshalXmlFileToJourneyEntity(new File("src/test/resources/journey.xml"));
   }
 
   @Rule
-  public EntityManagerProvider entityManagerProvider = EntityManagerProvider.instance("paris-oracle-test-rest");
-
-  @Rule
-  public DBUnitRule dbUnitRule = DBUnitRule.instance(entityManagerProvider.connection());
+  public EntityManagerProvider entityManagerProvider = EntityManagerProvider.instance("paris-oracle-test-rest", entityManagerProviderProperties);
 
   @Before
   public void setUp()
@@ -70,8 +63,6 @@ public class JourneyEntity1IT extends TestCommons
   }
 
   @Test
-  @DataSet(cleanBefore = true, cleanAfter = true)
-  @ExpectedDataSet(value = "datasets/j1.xml", ignoreCols = {"METADATA_WHEN", "RESULT_RESULT_ID"})
   public void test2()
   {
     em.getTransaction().begin();
@@ -80,32 +71,34 @@ public class JourneyEntity1IT extends TestCommons
   }
 
   @Test
-  @DataSet(cleanBefore = true, cleanAfter = true, value = "datasets/j2.xml", strategy = SeedStrategy.CLEAN_INSERT)
-  @ExpectedDataSet(value = "datasets/j1.xml", ignoreCols = {"METADATA_WHEN", "RESULT_RESULT_ID"})
   public void test3()
   {
-    em.getTransaction().begin();
-    JourneyEntity je = em.getReference(JourneyEntity.class, 2L);
-    em.remove(je);
-    em.getTransaction().commit();
+    List<JourneyEntity> journeyEntityList = em.createQuery("select je from JourneyEntity je").getResultList();
+    assertNotNull(journeyEntityList);
+    assertEquals(1, journeyEntityList.size());
+    assertNotNull(journeyEntityList.get(0));
+    assertEquals("MyJourney", journeyEntityList.get(0).getName());
   }
 
   @Test
-  @DataSet(cleanBefore = true, cleanAfter = true, value = "datasets/j2.xml", strategy = SeedStrategy.CLEAN_INSERT)
-  @ExpectedDataSet(value = "datasets/j3.xml")
   public void test4()
   {
     em.getTransaction().begin();
-    JourneyEntity je = em.getReference(JourneyEntity.class, 2L);
-    je.setName("MyJourney100");
-    em.merge(je);
+    JourneyEntity journeyEntity = (JourneyEntity) em.createQuery("select je from JourneyEntity je where je.name = 'MyJourney'").getSingleResult();
+    assertNotNull(journeyEntity);
+    journeyEntity.setName("MyJourney100");
+    em.merge(journeyEntity);
     em.getTransaction().commit();
   }
 
   @Test
-  @DataSet(cleanBefore = true, cleanAfter = true, value = "datasets/j2.xml", strategy = SeedStrategy.UPDATE)
   public void test5()
   {
-    assertEquals(2, em.createQuery("select je from JourneyEntity je").getResultList().size());
+    em.getTransaction().begin();
+    JourneyEntity journeyEntity = (JourneyEntity) em.createQuery("select je from JourneyEntity je where je.name = 'MyJourney100'").getSingleResult();
+    assertNotNull(journeyEntity);
+    em.remove(journeyEntity);
+    em.getTransaction().commit();
+    assertEquals(0, em.createQuery("select je from JourneyEntity je").getResultList().size());
   }
 }

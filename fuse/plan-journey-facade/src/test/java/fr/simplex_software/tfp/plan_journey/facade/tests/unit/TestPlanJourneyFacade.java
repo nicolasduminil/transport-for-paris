@@ -56,7 +56,7 @@ public class TestPlanJourneyFacade extends TestCommons
   @Test
   public void testGetJourneys()
   {
-    when (planJourneyRepository.findAll()).thenReturn (Arrays.asList(journeyEntity));
+    when (planJourneyRepository.findAll()).thenReturn (List.of(journeyEntity));
     assertEquals ("MyJourney", new PlanJourneyFacade(planJourneyRepository).getJourneys().get(0).getName());
     verify(planJourneyRepository).findAll();
   }
@@ -65,7 +65,7 @@ public class TestPlanJourneyFacade extends TestCommons
   public void testGetJourney()
   {
     when (planJourneyRepository.findBy(any(Long.class))).thenReturn (journeyEntity);
-    assertEquals ("MyJourney", new PlanJourneyFacade(planJourneyRepository).getJourney(Long.valueOf(1)).orElse(journeyEntity).getName());
+    assertEquals ("MyJourney", new PlanJourneyFacade(planJourneyRepository).getJourney(1L).orElse(journeyEntity).getName());
     verify(planJourneyRepository).findBy(Long.valueOf(1));
   }
 

@@ -5,6 +5,8 @@ import fr.simplex_software.tfp.plan_journey.model.entities.*;
 
 import javax.xml.bind.*;
 import java.io.*;
+import java.time.*;
+import java.util.*;
 
 public class TestCommons
 {
@@ -51,5 +53,20 @@ public class TestCommons
       e.printStackTrace();
     }
     return journey;
+  }
+
+  public static JourneyDto getJourneyDto()
+  {
+    MetadataDto metadataDto = new MetadataDto("metadataCall", ZonedDateTime.now(), "metadataVersion");
+    List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
+    ResultDto resultDto = new ResultDto(destinationDtos);
+    return new JourneyDto("MyJourney822", resultDto, metadataDto);
+  }
+
+  public static JourneyEntity getJourneyEntity()
+  {
+    JourneyEntity journeyEntity = new JourneyEntity(getJourneyDto());
+    journeyEntity.getResult().getDestinations().get(0).setResult(journeyEntity.getResult());
+    return journeyEntity;
   }
 }

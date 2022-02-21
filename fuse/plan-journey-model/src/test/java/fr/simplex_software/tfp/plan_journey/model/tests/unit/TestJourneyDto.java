@@ -34,6 +34,5 @@ public class TestJourneyDto extends TestCommons
     assertEquals("metadataCall", journeyDto.getMetadata().getMetadataCall());
     ZonedDateTime zonedDateTime = journeyDto.getMetadata().getMetadataWhen();
     assertNotNull(zonedDateTime);
-    String zdt = zonedDateTime.format(ISO_OFFSET_DATE_TIME);
   }
 }

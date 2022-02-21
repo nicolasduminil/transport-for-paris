@@ -3,30 +3,24 @@ package fr.simplex_software.tfp.plan_journey.service;
 import fr.simplex_software.tfp.plan_journey.facade.*;
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
+import lombok.*;
 import lombok.extern.slf4j.*;
 import org.apache.deltaspike.jpa.api.transaction.*;
 
 import javax.inject.*;
 import javax.ws.rs.*;
-import java.time.format.*;
 import java.util.*;
 import java.util.stream.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Transactional
 @Slf4j
 public class PlanJourneyService
 {
   @Inject
   private PlanJourneyFacade planJourneyFacade;
-
-  public PlanJourneyService()
-  {
-  }
-
-  public PlanJourneyService(PlanJourneyFacade planJourneyFacade)
-  {
-    this.planJourneyFacade = planJourneyFacade;
-  }
 
   public JourneyDto createJourney(JourneyDto journeyDto)
   {

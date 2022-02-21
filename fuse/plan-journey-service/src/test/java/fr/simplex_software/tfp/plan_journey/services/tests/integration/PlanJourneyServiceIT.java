@@ -1,4 +1,4 @@
-package fr.simplex_software.tfp.plan_journey.jax_rs.tests.integration;
+package fr.simplex_software.tfp.plan_journey.services.tests.integration;
 
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.model.entities.*;
@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 @RunWith(CdiTestRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class PlanJourneyService1IT extends TestCommons
+public class PlanJourneyServiceIT extends TestCommons
 {
   @Inject
   private PlanJourneyService planJourneyService;
@@ -28,7 +28,6 @@ public class PlanJourneyService1IT extends TestCommons
   {
     journeyEntity = (JourneyEntity) unmarshalXmlFileToJourneyEntity(new File("src/test/resources/journey.xml"));
   }
-
 
   @Test
   public void test0()

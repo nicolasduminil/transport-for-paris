@@ -35,7 +35,7 @@ public class ResultEntity implements Serializable
 
   public ResultEntity (ResultDto resultDto)
   {
-    this (new ArrayList<DestinationEntity>());
+    this (new ArrayList<>());
     resultDto.getDestinations().forEach(d -> this.getDestinations().add(new DestinationEntity(d)));
   }
 

@@ -24,42 +24,12 @@ public class JaxRsJourneyPlanService
   private static WebTarget webTarget = ClientBuilder.newClient().target(pierreGrimaudRatpApiUrl);
   @Inject
   private PlanJourneyService planJourneyService;
-  /*@Context
-  private Context context;*/
-
-  /*@PostConstruct
-  public void init()
-  {
-    Configuration configuration = webTarget.getConfiguration();
-    HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-    requestFactory.setHttpClient(HttpClients.custom().setSSLHostnameVerifier(new NoopHostnameVerifier()).build());
-    try {
-
-      final SSLContext context = SSLContext.getInstance("TLSv1");
-      final TrustManager[] trustManagerArray = {new NullX509TrustManager()};
-
-      context.init(null, trustManagerArray, null);
-
-      final Client client = ClientBuilder.newBuilder()
-        .hostnameVerifier(new NullHostnameVerifier())
-        .sslContext(context)
-        .build();
-
-      final WebTarget webTarget = client.target(url.toString());
-      return webTarget;
-
-    } catch (Exception ex) {
-
-      //Log the error
-      return buildSecureWebTarget(url);
-
-    }
-  }*/
-
   @GET
   public Response getJourneys()
   {
-    GenericEntity<List<JourneyDto>> journeys = new GenericEntity<List<JourneyDto>>(planJourneyService.getJourneys()){};
+    GenericEntity<List<JourneyDto>> journeys = new GenericEntity<>(planJourneyService.getJourneys())
+    {
+    };
     return Response.ok().entity(journeys).build();
   }
 
@@ -110,11 +80,6 @@ public class JaxRsJourneyPlanService
   public Response getAllDestinationsByTypeAndLine(@ApiParam(value = "The transport type", required = true) @Valid @PathParam(value = "type") TransportType transportType, @ApiParam(value = "The line ID", required = true) @Valid @PathParam(value = "line") String lineId)
   {
     String path = String.format ("/destinations/%s/%s", transportType.getTransportTypeName(), lineId);
-    /*System.out.println (">>> URI: " + webTarget.path(path).getUri().toString());
-    Response res = webTarget.path(path).request().get();
-    String xml = res.readEntity(String.class);
-    System.out.println ("XML : " + xml);*/
-    //return Response.ok().entity(webTarget.path(path).request().get()).build();
     return webTarget.path(path).request().get();
   }
 
@@ -124,5 +89,10 @@ public class JaxRsJourneyPlanService
   {
     String json = getAllDestinationsByTypeAndLine(journeyParams.getTransportType(), journeyParams.getLineId()).readEntity(String.class);
     return Response.created(URI.create("/journeys/")).entity(planJourneyService.createJourney(new JourneyDto(JsonbBuilder.create().fromJson(json, ResponseDto.class)))).build();
+  }
+
+  public void setWebTarget (WebTarget webTarget)
+  {
+    JaxRsJourneyPlanService.webTarget = webTarget;
   }
 }

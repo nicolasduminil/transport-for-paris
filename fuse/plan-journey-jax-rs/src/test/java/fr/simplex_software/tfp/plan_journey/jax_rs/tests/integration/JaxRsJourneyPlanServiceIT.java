@@ -33,7 +33,6 @@ public class JaxRsJourneyPlanServiceIT
   private Client client;
   private WebTarget webTarget;
   private static JourneyDto journeyDto;
-  private Long id;
 
   @Deployment
   public static WebArchive createDeployment()
@@ -166,14 +165,6 @@ public class JaxRsJourneyPlanServiceIT
   public void testB()
   {
     planJourneyService.removeJourney(journeyDto);
-  }
-
-  private static JourneyDto getJourneyDto()
-  {
-    MetadataDto metadataDto = new MetadataDto("metadataCall", ZonedDateTime.now(), "metadataVersion");
-    List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
-    ResultDto resultDto = new ResultDto(destinationDtos);
-    return new JourneyDto("MyJourney822", resultDto, metadataDto);
   }
 
   @Test
@@ -317,5 +308,13 @@ public class JaxRsJourneyPlanServiceIT
     Response response = webTarget.path("new").request().accept(MediaType.APPLICATION_XML).post(Entity.entity(new JourneyParams(TransportType.SUBWAY, "8"), MediaType.APPLICATION_XML));
     assertNotNull(response);
     assertEquals(HttpStatus.SC_CREATED, response.getStatus());
+  }
+
+  public static JourneyDto getJourneyDto()
+  {
+    MetadataDto metadataDto = new MetadataDto("metadataCall", ZonedDateTime.now(), "metadataVersion");
+    List<DestinationDto> destinationDtos = List.of(new DestinationDto("stationName", "platformId"));
+    ResultDto resultDto = new ResultDto(destinationDtos);
+    return new JourneyDto("MyJourney822", resultDto, metadataDto);
   }
 }

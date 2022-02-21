@@ -127,21 +127,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <configuration>
-          <runOrder>alphabetical</runOrder>
-          <classpathDependencyExcludes>
-            <classpathDependencyExclude>testing:test-weld</classpathDependencyExclude>
-          </classpathDependencyExcludes>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>integration-test</phase>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>

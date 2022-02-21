@@ -1,4 +1,4 @@
-package fr.simplex_software.tfp.plan_journey.facade.tests.producer;
+package fr.simplex_software.tfp.plan_journey.facade.producer;
 
 import org.apache.deltaspike.jpa.api.entitymanager.*;
 

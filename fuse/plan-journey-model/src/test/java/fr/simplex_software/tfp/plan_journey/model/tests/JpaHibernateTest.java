@@ -13,7 +13,7 @@ public class JpaHibernateTest extends TestCommons
   private static EntityManager em;
 
   @BeforeClass
-  public static void init() throws FileNotFoundException, SQLException
+  public static void init()
   {
     emf = Persistence.createEntityManagerFactory("paris-test");
     em = emf.createEntityManager();
