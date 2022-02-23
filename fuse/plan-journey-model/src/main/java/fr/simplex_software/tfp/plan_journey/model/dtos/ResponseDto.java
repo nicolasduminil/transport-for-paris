@@ -1,6 +1,5 @@
 package fr.simplex_software.tfp.plan_journey.model.dtos;
 
-//import com.fasterxml.jackson.annotation.*;
 import lombok.*;
 
 import javax.json.bind.annotation.*;

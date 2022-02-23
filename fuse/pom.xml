@@ -127,11 +127,13 @@
         <groupId>com.github.database-rider</groupId>
         <artifactId>rider-core</artifactId>
         <version>1.32.0</version>
+        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.github.database-rider</groupId>
         <artifactId>rider-cdi</artifactId>
         <version>1.32.0</version>
+        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.oracle.database.jdbc</groupId>
@@ -204,6 +206,18 @@
         <groupId>org.jboss.weld</groupId>
         <artifactId>weld-spi</artifactId>
         <version>3.1.Final</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.2.3</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>7.2.3</version>
         <scope>test</scope>
       </dependency>
     </dependencies>

@@ -1,0 +1,4 @@
+jbf:
+  image: jboss-fuse-eap-7.9.0:1.0-SNAPSHOT
+ora:
+  image: oracleinanutshell/oracle-xe-11g:latest
