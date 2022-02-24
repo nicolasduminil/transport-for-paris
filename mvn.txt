@@ -129,19 +129,60 @@
 [[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mplan-journey-facade[0;1m ---[m
 [[1;34mINFO[m] fr.simplex-software.tfp:plan-journey-facade:jar:1.0-SNAPSHOT
 [[1;34mINFO[m] +- jakarta.platform:jakarta.jakartaee-api:jar:8.0.0:provided
+[[1;34mINFO[m] +- org.hibernate:hibernate-entitymanager:jar:5.3.20.Final-redhat-00001:provided
+[[1;34mINFO[m] |  +- org.jboss.logging:jboss-logging:jar:3.4.1.Final-redhat-00001:provided
+[[1;34mINFO[m] |  +- org.hibernate:hibernate-core:jar:5.3.20.Final-redhat-00001:provided
+[[1;34mINFO[m] |  |  +- org.javassist:javassist:jar:3.23.2.GA-redhat-00001:provided
+[[1;34mINFO[m] |  |  +- antlr:antlr:jar:2.7.7.redhat-7:provided
+[[1;34mINFO[m] |  |  +- org.jboss:jandex:jar:2.2.3.Final-redhat-00001:provided
+[[1;34mINFO[m] |  |  \- com.fasterxml:classmate:jar:1.5.1.redhat-00001:provided
+[[1;34mINFO[m] |  +- org.dom4j:dom4j:jar:2.1.3.redhat-00001:provided
+[[1;34mINFO[m] |  +- org.hibernate.common:hibernate-commons-annotations:jar:5.0.5.Final-redhat-00002:provided
+[[1;34mINFO[m] |  \- net.bytebuddy:byte-buddy:jar:1.9.11.redhat-00003:provided
+[[1;34mINFO[m] +- com.oracle.database.jdbc:ojdbc8:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.jdbc:ucp:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.security:oraclepki:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.security:osdt_cert:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.security:osdt_core:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  +- com.oracle.database.ha:simplefan:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  \- com.oracle.database.ha:ons:jar:12.2.0.1:runtime
 [[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT:compile
 [[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-repository:jar:1.0-SNAPSHOT:compile
-[[1;34mINFO[m] |  +- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
-[[1;34mINFO[m] |  +- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
-[[1;34mINFO[m] |  +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
-[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
-[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
-[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
-[[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
 [[1;34mINFO[m] |  +- org.apache.deltaspike.modules:deltaspike-partial-bean-module-api:jar:1.9.5:compile
 [[1;34mINFO[m] |  \- org.apache.deltaspike.modules:deltaspike-partial-bean-module-impl:jar:1.9.5:runtime
 [[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-proxy-module-api:jar:1.9.5:compile
 [[1;34mINFO[m] |     \- org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm:jar:1.9.5:runtime
+[[1;34mINFO[m] +- junit:junit:jar:4.13.1:test
+[[1;34mINFO[m] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[[1;34mINFO[m] +- org.mockito:mockito-all:jar:1.10.19:test
+[[1;34mINFO[m] +- javax.xml.bind:jaxb-api:jar:2.4.0-b180830.0359:test
+[[1;34mINFO[m] |  \- javax.activation:javax.activation-api:jar:1.2.0:test
+[[1;34mINFO[m] +- org.glassfish.jaxb:jaxb-runtime:jar:2.3.3.b02-redhat-00001:test
+[[1;34mINFO[m] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3.redhat-00001:test
+[[1;34mINFO[m] |  +- org.glassfish.jaxb:txw2:jar:2.3.3.b02-redhat-00001:test
+[[1;34mINFO[m] |  +- com.sun.istack:istack-commons-runtime:jar:3.0.10.redhat-00001:test
+[[1;34mINFO[m] |  \- com.sun.activation:jakarta.activation:jar:1.2.2.redhat-00001:test
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:test-jar:tests:1.0-SNAPSHOT:test
+[[1;34mINFO[m] +- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-test-control-module-api:jar:1.9.5:test
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-test-control-module-impl:jar:1.9.5:test
+[[1;34mINFO[m] +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-weld:jar:1.9.5:test
+[[1;34mINFO[m] +- org.jboss.weld.se:weld-se:jar:2.4.8.Final:test
+[[1;34mINFO[m] +- org.jboss.weld.se:weld-se-core:jar:3.1.8.Final:test
+[[1;34mINFO[m] |  +- org.jboss.weld.environment:weld-environment-common:jar:3.1.8.Final:test
+[[1;34mINFO[m] |  |  \- org.jboss.weld:weld-core-impl:jar:3.1.6.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- org.jboss.weld.probe:weld-probe-core:jar:3.1.6.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- jakarta.enterprise:jakarta.enterprise.cdi-api:jar:2.0.2.redhat-00002:test
+[[1;34mINFO[m] |  |  \- jakarta.inject:jakarta.inject-api:jar:1.0.3.redhat-00001:test
+[[1;34mINFO[m] |  \- org.jboss.classfilewriter:jboss-classfilewriter:jar:1.2.4.Final-redhat-00001:test
+[[1;34mINFO[m] +- org.jboss.weld:weld-spi:jar:3.1.Final:test
+[[1;34mINFO[m] |  \- org.jboss.weld:weld-api:jar:3.1.0.SP3-redhat-00001:test
 [[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
 [[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
 [[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
@@ -154,22 +195,62 @@
 [[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:2.8:tree[m [1m(default-cli)[m @ [36mplan-journey-service[0;1m ---[m
 [[1;34mINFO[m] fr.simplex-software.tfp:plan-journey-service:jar:1.0-SNAPSHOT
 [[1;34mINFO[m] +- jakarta.platform:jakarta.jakartaee-api:jar:8.0.0:provided
+[[1;34mINFO[m] +- org.hibernate:hibernate-entitymanager:jar:5.3.20.Final-redhat-00001:provided
+[[1;34mINFO[m] |  +- org.jboss.logging:jboss-logging:jar:3.4.1.Final-redhat-00001:provided
+[[1;34mINFO[m] |  +- org.hibernate:hibernate-core:jar:5.3.20.Final-redhat-00001:provided
+[[1;34mINFO[m] |  |  +- org.javassist:javassist:jar:3.23.2.GA-redhat-00001:provided
+[[1;34mINFO[m] |  |  +- antlr:antlr:jar:2.7.7.redhat-7:provided
+[[1;34mINFO[m] |  |  +- org.jboss:jandex:jar:2.2.3.Final-redhat-00001:provided
+[[1;34mINFO[m] |  |  \- com.fasterxml:classmate:jar:1.5.1.redhat-00001:provided
+[[1;34mINFO[m] |  +- org.dom4j:dom4j:jar:2.1.3.redhat-00001:provided
+[[1;34mINFO[m] |  +- org.hibernate.common:hibernate-commons-annotations:jar:5.0.5.Final-redhat-00002:provided
+[[1;34mINFO[m] |  \- net.bytebuddy:byte-buddy:jar:1.9.11.redhat-00003:provided
 [[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-facade:jar:1.0-SNAPSHOT:compile
+[[1;34mINFO[m] |  +- com.oracle.database.jdbc:ojdbc8:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  |  +- com.oracle.database.jdbc:ucp:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  |  +- com.oracle.database.security:oraclepki:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  |  +- com.oracle.database.security:osdt_cert:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  |  +- com.oracle.database.security:osdt_core:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  |  +- com.oracle.database.ha:simplefan:jar:12.2.0.1:runtime
+[[1;34mINFO[m] |  |  \- com.oracle.database.ha:ons:jar:12.2.0.1:runtime
 [[1;34mINFO[m] |  +- fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT:compile
 [[1;34mINFO[m] |  \- fr.simplex-software.tfp:plan-journey-repository:jar:1.0-SNAPSHOT:compile
-[[1;34mINFO[m] |     +- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
-[[1;34mINFO[m] |     +- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
-[[1;34mINFO[m] |     +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
-[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
-[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
-[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
-[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
-[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-partial-bean-module-api:jar:1.9.5:compile
-[[1;34mINFO[m] |     \- org.apache.deltaspike.modules:deltaspike-partial-bean-module-impl:jar:1.9.5:runtime
-[[1;34mINFO[m] |        +- org.apache.deltaspike.modules:deltaspike-proxy-module-api:jar:1.9.5:compile
-[[1;34mINFO[m] |        \- org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm:jar:1.9.5:runtime
 [[1;34mINFO[m] +- junit:junit:jar:4.13.1:test
 [[1;34mINFO[m] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[[1;34mINFO[m] +- org.mockito:mockito-all:jar:1.10.19:test
+[[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:test-jar:tests:1.0-SNAPSHOT:test
+[[1;34mINFO[m] +- org.assertj:assertj-core:jar:3.22.0:test
+[[1;34mINFO[m] +- javax.xml.bind:jaxb-api:jar:2.4.0-b180830.0359:test
+[[1;34mINFO[m] |  \- javax.activation:javax.activation-api:jar:1.2.0:test
+[[1;34mINFO[m] +- org.glassfish.jaxb:jaxb-runtime:jar:2.3.3.b02-redhat-00001:test
+[[1;34mINFO[m] |  +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3.redhat-00001:test
+[[1;34mINFO[m] |  +- org.glassfish.jaxb:txw2:jar:2.3.3.b02-redhat-00001:test
+[[1;34mINFO[m] |  +- com.sun.istack:istack-commons-runtime:jar:3.0.10.redhat-00001:test
+[[1;34mINFO[m] |  \- com.sun.activation:jakarta.activation:jar:1.2.2.redhat-00001:test
+[[1;34mINFO[m] +- org.apache.deltaspike.core:deltaspike-core-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.core:deltaspike-core-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-jpa-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-jpa-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-data-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |  \- org.apache.deltaspike.modules:deltaspike-partial-bean-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-data-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |  \- org.apache.deltaspike.modules:deltaspike-partial-bean-module-impl:jar:1.9.5:runtime
+[[1;34mINFO[m] |     +- org.apache.deltaspike.modules:deltaspike-proxy-module-api:jar:1.9.5:compile
+[[1;34mINFO[m] |     \- org.apache.deltaspike.modules:deltaspike-proxy-module-impl-asm:jar:1.9.5:runtime
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-test-control-module-api:jar:1.9.5:test
+[[1;34mINFO[m] +- org.apache.deltaspike.modules:deltaspike-test-control-module-impl:jar:1.9.5:test
+[[1;34mINFO[m] +- org.apache.deltaspike.cdictrl:deltaspike-cdictrl-weld:jar:1.9.5:test
+[[1;34mINFO[m] +- org.jboss.weld.se:weld-se:jar:2.4.8.Final:test
+[[1;34mINFO[m] +- org.jboss.weld.se:weld-se-core:jar:3.1.8.Final:test
+[[1;34mINFO[m] |  +- org.jboss.weld.environment:weld-environment-common:jar:3.1.8.Final:test
+[[1;34mINFO[m] |  |  \- org.jboss.weld:weld-core-impl:jar:3.1.6.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- org.jboss.weld.probe:weld-probe-core:jar:3.1.6.Final-redhat-00001:test
+[[1;34mINFO[m] |  +- jakarta.enterprise:jakarta.enterprise.cdi-api:jar:2.0.2.redhat-00002:test
+[[1;34mINFO[m] |  |  \- jakarta.inject:jakarta.inject-api:jar:1.0.3.redhat-00001:test
+[[1;34mINFO[m] |  \- org.jboss.classfilewriter:jboss-classfilewriter:jar:1.2.4.Final-redhat-00001:test
+[[1;34mINFO[m] +- org.jboss.weld:weld-spi:jar:3.1.Final:test
+[[1;34mINFO[m] |  \- org.jboss.weld:weld-api:jar:3.1.0.SP3-redhat-00001:test
 [[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
 [[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
 [[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
@@ -192,21 +273,6 @@
 [[1;34mINFO[m] |  +- org.dom4j:dom4j:jar:2.1.3.redhat-00001:provided
 [[1;34mINFO[m] |  +- org.hibernate.common:hibernate-commons-annotations:jar:5.0.5.Final-redhat-00002:provided
 [[1;34mINFO[m] |  \- net.bytebuddy:byte-buddy:jar:1.9.11.redhat-00003:provided
-[[1;34mINFO[m] +- io.swagger:swagger-jaxrs:jar:1.6.3:compile
-[[1;34mINFO[m] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.12.1.redhat-00001:compile
-[[1;34mINFO[m] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.12.1.redhat-00001:compile
-[[1;34mINFO[m] |  +- io.swagger:swagger-core:jar:1.6.3:compile
-[[1;34mINFO[m] |  |  +- org.apache.commons:commons-lang3:jar:3.8.1:compile
-[[1;34mINFO[m] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.12.1.redhat-00001:compile
-[[1;34mINFO[m] |  |  +- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.12.1.redhat-00002:compile
-[[1;34mINFO[m] |  |  +- io.swagger:swagger-models:jar:1.6.3:compile
-[[1;34mINFO[m] |  |  |  \- io.swagger:swagger-annotations:jar:1.6.3:compile
-[[1;34mINFO[m] |  |  \- javax.validation:validation-api:jar:1.1.0.Final:compile
-[[1;34mINFO[m] |  +- javax.ws.rs:jsr311-api:jar:1.1.1:compile
-[[1;34mINFO[m] |  +- org.reflections:reflections:jar:0.9.11:compile
-[[1;34mINFO[m] |  \- com.google.guava:guava:jar:30.1.0.redhat-00001:compile
-[[1;34mINFO[m] |     +- com.google.guava:failureaccess:jar:1.0.1.redhat-00002:compile
-[[1;34mINFO[m] |     \- com.google.code.findbugs:jsr305:jar:3.0.2:test
 [[1;34mINFO[m] +- com.oracle.database.jdbc:ojdbc8:jar:12.2.0.1:runtime
 [[1;34mINFO[m] |  +- com.oracle.database.jdbc:ucp:jar:12.2.0.1:runtime
 [[1;34mINFO[m] |  +- com.oracle.database.security:oraclepki:jar:12.2.0.1:runtime
@@ -242,6 +308,34 @@
 [[1;34mINFO[m] |     +- javax.el:javax.el-api:jar:3.0.0:compile
 [[1;34mINFO[m] |     +- javax.interceptor:javax.interceptor-api:jar:1.2:compile
 [[1;34mINFO[m] |     \- javax.inject:javax.inject:jar:1:compile
+[[1;34mINFO[m] +- com.wordnik:swagger-core_2.10:jar:1.3.13:compile
+[[1;34mINFO[m] |  +- com.fasterxml.jackson.module:jackson-module-scala_2.10:jar:2.4.1:compile
+[[1;34mINFO[m] |  |  +- org.scala-lang:scala-reflect:jar:2.10.4:compile
+[[1;34mINFO[m] |  |  +- com.fasterxml.jackson.core:jackson-core:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  |  +- com.thoughtworks.paranamer:paranamer:jar:2.6:compile
+[[1;34mINFO[m] |  |  \- com.google.code.findbugs:jsr305:jar:3.0.2:test
+[[1;34mINFO[m] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  +- com.fasterxml.jackson.module:jackson-module-jsonSchema:jar:2.12.1.redhat-00002:compile
+[[1;34mINFO[m] |  |  \- javax.validation:validation-api:jar:1.1.0.Final-redhat-1:compile
+[[1;34mINFO[m] |  +- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  |  +- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  |  \- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.12.1.redhat-00001:compile
+[[1;34mINFO[m] |  +- org.json4s:json4s-ext_2.10:jar:3.2.11:compile
+[[1;34mINFO[m] |  |  +- joda-time:joda-time:jar:2.9.7.redhat-1:compile
+[[1;34mINFO[m] |  |  \- org.joda:joda-convert:jar:1.6:compile
+[[1;34mINFO[m] |  +- org.json4s:json4s-native_2.10:jar:3.2.11:compile
+[[1;34mINFO[m] |  |  \- org.json4s:json4s-core_2.10:jar:3.2.11:compile
+[[1;34mINFO[m] |  |     +- org.json4s:json4s-ast_2.10:jar:3.2.11:compile
+[[1;34mINFO[m] |  |     \- org.scala-lang:scalap:jar:2.10.0:compile
+[[1;34mINFO[m] |  |        \- org.scala-lang:scala-compiler:jar:2.10.0:compile
+[[1;34mINFO[m] |  \- org.json4s:json4s-jackson_2.10:jar:3.2.11:compile
+[[1;34mINFO[m] +- com.wordnik:swagger-annotations:jar:1.3.13:compile
+[[1;34mINFO[m] +- com.wordnik:swagger-jaxrs_2.10:jar:1.3.13:compile
+[[1;34mINFO[m] |  +- javax.ws.rs:jsr311-api:jar:1.1.1:compile
+[[1;34mINFO[m] |  \- org.reflections:reflections:jar:0.9.9:compile
+[[1;34mINFO[m] |     \- com.google.code.findbugs:annotations:jar:2.0.1:compile
+[[1;34mINFO[m] +- org.scala-lang:scala-library:jar:2.10.4:runtime
 [[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:jar:1.0-SNAPSHOT:compile
 [[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-model:test-jar:tests:1.0-SNAPSHOT:test
 [[1;34mINFO[m] +- fr.simplex-software.tfp:plan-journey-service:jar:1.0-SNAPSHOT:compile
@@ -261,7 +355,7 @@
 [[1;34mINFO[m] |  |  |  |     \- stax:stax-api:jar:1.0.1:test
 [[1;34mINFO[m] |  |  |  \- com.github.virtuald:curvesapi:jar:1.04:test
 [[1;34mINFO[m] |  |  \- org.postgresql:postgresql:jar:42.2.5:test
-[[1;34mINFO[m] |  +- org.yaml:snakeyaml:jar:1.28:compile
+[[1;34mINFO[m] |  +- org.yaml:snakeyaml:jar:1.28:test
 [[1;34mINFO[m] |  +- org.codehaus.jackson:jackson-mapper-lgpl:jar:1.9.13:test
 [[1;34mINFO[m] |  |  \- org.codehaus.jackson:jackson-core-lgpl:jar:1.9.13:test
 [[1;34mINFO[m] |  \- mysql:mysql-connector-java:jar:8.0.25:test
@@ -401,6 +495,8 @@
 [[1;34mINFO[m] |  +- org.apache.maven:maven-repository-metadata:jar:3.6.3:test
 [[1;34mINFO[m] |  +- org.apache.maven:maven-settings:jar:3.6.3:test
 [[1;34mINFO[m] |  +- org.apache.maven:maven-settings-builder:jar:3.6.3:test
+[[1;34mINFO[m] |  +- com.google.guava:guava:jar:30.1.0.redhat-00001:compile
+[[1;34mINFO[m] |  |  \- com.google.guava:failureaccess:jar:1.0.1.redhat-00002:compile
 [[1;34mINFO[m] |  +- org.codehaus.plexus:plexus-interpolation:jar:1.25:test
 [[1;34mINFO[m] |  +- org.codehaus.plexus:plexus-utils:jar:3.2.1:test
 [[1;34mINFO[m] |  +- org.sonatype.plexus:plexus-sec-dispatcher:jar:1.4:test
@@ -421,7 +517,23 @@
 [[1;34mINFO[m] |  |  +- org.codehaus.groovy:groovy-json:jar:2.4.12:test
 [[1;34mINFO[m] |  |  \- io.rest-assured:rest-assured-common:jar:3.0.6:test
 [[1;34mINFO[m] |  \- io.rest-assured:xml-path:jar:3.0.6:test
+[[1;34mINFO[m] |     \- org.apache.commons:commons-lang3:jar:3.8.1:test
 [[1;34mINFO[m] +- org.assertj:assertj-core:jar:3.22.0:test
+[[1;34mINFO[m] +- org.mockito:mockito-all:jar:1.10.19:test
+[[1;34mINFO[m] +- io.cucumber:cucumber-java:jar:7.2.3:test
+[[1;34mINFO[m] |  +- io.cucumber:cucumber-core:jar:7.2.3:test
+[[1;34mINFO[m] |  |  +- io.cucumber:cucumber-gherkin:jar:7.2.3:test
+[[1;34mINFO[m] |  |  +- io.cucumber:cucumber-gherkin-messages:jar:7.2.3:test
+[[1;34mINFO[m] |  |  +- io.cucumber:messages:jar:17.1.1:test
+[[1;34mINFO[m] |  |  +- io.cucumber:tag-expressions:jar:4.1.0:test
+[[1;34mINFO[m] |  |  +- io.cucumber:cucumber-expressions:jar:15.0.1:test
+[[1;34mINFO[m] |  |  +- io.cucumber:datatable:jar:7.2.3:test
+[[1;34mINFO[m] |  |  +- io.cucumber:cucumber-plugin:jar:7.2.3:test
+[[1;34mINFO[m] |  |  +- io.cucumber:docstring:jar:7.2.3:test
+[[1;34mINFO[m] |  |  +- io.cucumber:html-formatter:jar:17.0.0:test
+[[1;34mINFO[m] |  |  \- io.cucumber:ci-environment:jar:8.1.0:test
+[[1;34mINFO[m] |  \- org.apiguardian:apiguardian-api:jar:1.1.2:test
+[[1;34mINFO[m] +- io.cucumber:cucumber-junit:jar:7.2.3:test
 [[1;34mINFO[m] +- org.projectlombok:lombok:jar:1.18.20:compile
 [[1;34mINFO[m] +- org.slf4j:slf4j-api:jar:1.7.32:compile
 [[1;34mINFO[m] \- org.slf4j:slf4j-log4j12:jar:1.7.32:compile
@@ -429,17 +541,17 @@
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1mReactor Summary for Transport for Paris :: Parent POM 1.0-SNAPSHOT:[m
 [[1;34mINFO[m] 
-[[1;34mINFO[m] Transport for Paris :: Parent POM .................. [1;32mSUCCESS[m [  0.347 s]
-[[1;34mINFO[m] Transport for Paris :: The Fuse Integration Parent POM [1;32mSUCCESS[m [  0.025 s]
-[[1;34mINFO[m] Transport for Paris :: The Infra Module ............ [1;32mSUCCESS[m [  0.039 s]
-[[1;34mINFO[m] Transport for Paris :: The Fuse Integration model module [1;32mSUCCESS[m [  0.133 s]
-[[1;34mINFO[m] Transport for Paris :: The Fuse Integration repository module [1;32mSUCCESS[m [  0.054 s]
-[[1;34mINFO[m] Transport for Paris :: The Fuse Integration facade module [1;32mSUCCESS[m [  0.018 s]
-[[1;34mINFO[m] Transport for Paris :: The Fuse Integration service module [1;32mSUCCESS[m [  0.018 s]
-[[1;34mINFO[m] Transport for Paris :: The plan journey JAX-RS module [1;32mSUCCESS[m [  0.392 s]
+[[1;34mINFO[m] Transport for Paris :: Parent POM .................. [1;32mSUCCESS[m [  0.339 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration Parent POM [1;32mSUCCESS[m [  0.027 s]
+[[1;34mINFO[m] Transport for Paris :: The Infra Module ............ [1;32mSUCCESS[m [  0.040 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration model module [1;32mSUCCESS[m [  0.135 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration repository module [1;32mSUCCESS[m [  0.063 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration facade module [1;32mSUCCESS[m [  0.099 s]
+[[1;34mINFO[m] Transport for Paris :: The Fuse Integration service module [1;32mSUCCESS[m [  0.053 s]
+[[1;34mINFO[m] Transport for Paris :: The plan journey JAX-RS module [1;32mSUCCESS[m [  0.445 s]
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
 [[1;34mINFO[m] [1;32mBUILD SUCCESS[m
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
-[[1;34mINFO[m] Total time:  1.335 s
-[[1;34mINFO[m] Finished at: 2022-02-10T00:19:42+01:00
+[[1;34mINFO[m] Total time:  1.538 s
+[[1;34mINFO[m] Finished at: 2022-02-23T19:41:50+01:00
 [[1;34mINFO[m] [1m------------------------------------------------------------------------[m

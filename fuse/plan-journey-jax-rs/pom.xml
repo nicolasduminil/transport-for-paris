@@ -23,10 +23,6 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>io.swagger</groupId>
-      <artifactId>swagger-jaxrs</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.oracle.database.jdbc</groupId>
       <artifactId>ojdbc8</artifactId>
       <scope>runtime</scope>
@@ -59,6 +55,10 @@
     <dependency>
       <groupId>org.eclipse</groupId>
       <artifactId>yasson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-jaxrs</artifactId>
     </dependency>
     <dependency>
       <groupId>fr.simplex-software.tfp</groupId>

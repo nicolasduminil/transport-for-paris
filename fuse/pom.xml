@@ -78,7 +78,7 @@
       <dependency>
         <groupId>io.swagger</groupId>
         <artifactId>swagger-jaxrs</artifactId>
-        <version>1.6.3</version>
+        <version>1.6.5</version>
       </dependency>
       <dependency>
         <groupId>fr.simplex-software.tfp</groupId>
