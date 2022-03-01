@@ -1,6 +1,7 @@
 package fr.simplex_software.tfp.plan_journey.jax_rs.api;
 
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
+import fr.simplex_software.tfp.plan_journey.model.entities.*;
 import fr.simplex_software.tfp.plan_journey.service.*;
 import io.swagger.annotations.*;
 
@@ -75,6 +76,15 @@ public class JaxRsJourneyPlanService
   public Response createJourney(JourneyDto journeyDto)
   {
     return Response.created(URI.create("/journeys/")).entity(planJourneyService.createJourney(journeyDto)).build();
+  }
+
+  @POST
+  @Path("create")
+  @ApiOperation(value = "createJourney2", notes = "Create a journey 2")
+  @ApiResponses(value = {@ApiResponse(code = 201, message = "Successfully created journey", response = JourneyEntity.class), @ApiResponse(code = 500, message = "Server internal erro, see the log file")})
+  public Response createJourney2(JourneyEntity journeyEntity)
+  {
+    return Response.created(URI.create("/journeys/")).build();
   }
 
   @DELETE
