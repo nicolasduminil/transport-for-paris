@@ -1,0 +1,447 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Operations pertaining on the Paris Data API",
+    "version": "1.0.0",
+    "title": "Paris Data API"
+  },
+  "host": "localhost:18080",
+  "basePath": "/plan-journey-jax-rs/tfp",
+  "tags": [
+    {
+      "name": "Paris Data API"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/journeys/{journeyId}": {
+      "get": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "getJourney",
+        "description": "Get a journey by its ID",
+        "operationId": "getJourney",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "journeyId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved journey",
+            "schema": {
+              "$ref": "#/definitions/JourneyDto"
+            }
+          },
+          "404": {
+            "description": "The resource you were trying to reach is not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "cancelJourney",
+        "description": "Remove a journey by its ID",
+        "operationId": "cancelJourney",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "journeyId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully removed journey"
+          },
+          "500": {
+            "description": "Server internal erro, see the log file"
+          }
+        }
+      }
+    },
+    "/journeys/destinations/{type}/{line}": {
+      "get": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "Returns the list of all the destinations for a given transport type and a line ID",
+        "description": "",
+        "operationId": "getAllDestinationsByTypeAndLine",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "description": "The transport type",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "SUBWAY",
+              "BUS",
+              "TRAMWAY",
+              "SUB_URBAN_TRAIN"
+            ]
+          },
+          {
+            "name": "line",
+            "in": "path",
+            "description": "The line ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved list",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "404": {
+            "description": "The resource you were trying to reach is not found"
+          }
+        }
+      }
+    },
+    "/journeys/new": {
+      "post": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "Create a journey using journey's params",
+        "description": "",
+        "operationId": "createJourney",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/JourneyParams"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved list",
+            "schema": {
+              "$ref": "#/definitions/JourneyDto"
+            }
+          },
+          "500": {
+            "description": "Server internal erro, see the log file"
+          }
+        }
+      }
+    },
+    "/journeys": {
+      "get": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "getJourneys",
+        "description": "Get all journeys",
+        "operationId": "getJourneys",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved list",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "404": {
+            "description": "The resource you were trying to reach is not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "createJourney",
+        "description": "Create a journey",
+        "operationId": "createJourney_1",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/JourneyDto"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successfully created journey",
+            "schema": {
+              "$ref": "#/definitions/JourneyDto"
+            }
+          },
+          "500": {
+            "description": "Server internal erro, see the log file"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "updateJourney",
+        "description": "Update a journey",
+        "operationId": "updateJourney",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/JourneyDto"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successfully updated journey"
+          },
+          "500": {
+            "description": "Server internal erro, see the log file"
+          }
+        }
+      }
+    },
+    "/journeys/id/{journeyName}": {
+      "get": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "getJourneyIdByName",
+        "description": "Get a journey ID by its name",
+        "operationId": "getJourneyIdByName",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "journeyName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved jpurney ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "The resource you were trying to reach is not found"
+          }
+        }
+      }
+    },
+    "/journeys/ref/{journeyName}": {
+      "get": {
+        "tags": [
+          "Paris Data API"
+        ],
+        "summary": "getJourneyByName",
+        "description": "Get a journey ID by its name",
+        "operationId": "getJourneyByName",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "journeyName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved journey",
+            "schema": {
+              "$ref": "#/definitions/JourneyDto"
+            }
+          },
+          "404": {
+            "description": "The resource you were trying to reach is not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "DestinationDto": {
+      "type": "object",
+      "properties": {
+        "stationName": {
+          "type": "string"
+        },
+        "platformId": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "destination"
+      }
+    },
+    "JourneyDto": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "result": {
+          "$ref": "#/definitions/ResultDto"
+        },
+        "metadata": {
+          "$ref": "#/definitions/MetadataDto"
+        }
+      },
+      "xml": {
+        "name": "journey"
+      }
+    },
+    "MetadataDto": {
+      "type": "object",
+      "properties": {
+        "metadataCall": {
+          "type": "string"
+        },
+        "metadataWhen": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "metadataVersion": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "metadata"
+      }
+    },
+    "ResultDto": {
+      "type": "object",
+      "properties": {
+        "destinations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DestinationDto"
+          }
+        }
+      },
+      "xml": {
+        "name": "result"
+      }
+    },
+    "JourneyParams": {
+      "type": "object",
+      "properties": {
+        "transportType": {
+          "type": "string",
+          "enum": [
+            "SUBWAY",
+            "BUS",
+            "TRAMWAY",
+            "SUB_URBAN_TRAIN"
+          ]
+        },
+        "lineId": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "params"
+      }
+    }
+  }
+}

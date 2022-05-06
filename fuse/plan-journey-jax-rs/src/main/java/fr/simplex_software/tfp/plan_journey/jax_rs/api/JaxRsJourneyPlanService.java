@@ -3,6 +3,7 @@ package fr.simplex_software.tfp.plan_journey.jax_rs.api;
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
 import fr.simplex_software.tfp.plan_journey.service.*;
 import io.swagger.annotations.*;
+import lombok.extern.slf4j.*;
 
 import javax.inject.*;
 import javax.json.bind.*;
@@ -18,6 +19,7 @@ import java.util.*;
 @Consumes(value = "application/json,application/xml")
 @Produces(value = "application/json,application/xml")
 @Api(value = "Paris Data API", description = "Operations pertaining on the Paris Data API")
+@Slf4j
 public class JaxRsJourneyPlanService
 {
   private static final String pierreGrimaudRatpApiUrl = "https://api-ratp.pierre-grimaud.fr/v4";
@@ -74,6 +76,7 @@ public class JaxRsJourneyPlanService
   @ApiResponses(value = {@ApiResponse(code = 201, message = "Successfully created journey", response = JourneyDto.class), @ApiResponse(code = 500, message = "Server internal erro, see the log file")})
   public Response createJourney(JourneyDto journeyDto)
   {
+    System.out.println ("### JaxRsJourneyPlanService.cancelJourney(): Creating new journey");
     return Response.created(URI.create("/journeys/")).entity(planJourneyService.createJourney(journeyDto)).build();
   }
 
@@ -83,6 +86,8 @@ public class JaxRsJourneyPlanService
   @ApiResponses(value = {@ApiResponse(code = 204, message = "Successfully removed journey"), @ApiResponse(code = 500, message = "Server internal erro, see the log file")})
   public void cancelJourney(@PathParam("journeyId") Long journeyId)
   {
+    log.error("### JaxRsJourneyPlanService.cancelJourney(): Removing Journey with ID {}", journeyId);
+    System.out.println ("### JaxRsJourneyPlanService.cancelJourney(): Removing Journey with ID " + journeyId);
     planJourneyService.removeJourney(planJourneyService.getJourney(journeyId));
   }
 

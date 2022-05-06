@@ -7,9 +7,9 @@ function waiting_for_jboss {
 }
 
 function download_files() {
-  wget -L https://bucketname-12215.s3.eu-central-1.amazonaws.com/fuse-eap-installer-7.9.0.jar -O /root/install/fuse-eap-installer-7.9.0.jar
-  wget -L https://bucketname-12215.s3.eu-central-1.amazonaws.com/jboss-eap-7.4.0-installer.jar -O /root/install/jboss-eap-7.4.0-installer.jar
-  wget -L https://bucketname-12215.s3.eu-central-1.amazonaws.com/jboss-eap-7.4.1-patch.zip -O /root/install/jboss-eap-7.4.1-patch.zip
+  wget -L https://s3.eu-west-3.amazonaws.com/jboss-fuse-eap-7.9.0/fuse-eap-installer-7.9.0.jar -O /root/install/fuse-eap-installer-7.9.0.jar
+  wget -L https://s3.eu-west-3.amazonaws.com/jboss-fuse-eap-7.9.0/jboss-eap-7.4.0-installer.jar -O /root/install/jboss-eap-7.4.0-installer.jar
+  wget -L https://s3.eu-west-3.amazonaws.com/jboss-fuse-eap-7.9.0/jboss-eap-7.4.1-patch.zip -O /root/install/jboss-eap-7.4.1-patch.zip
 }
 
 if [[ ! -e $EAP_HOME/bin && -e /root/install ]]; then

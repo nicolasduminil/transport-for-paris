@@ -55,7 +55,14 @@ public class PlanJourneyService
 
   public void removeJourney(JourneyDto journeyDto)
   {
-    planJourneyFacade.removeJourney(new JourneyEntity(journeyDto));
+    String name = journeyDto.getName();
+    log.info("### PlanJourneyService.removeJourney(): Getting journey with name {}", name);
+    JourneyEntity journeyEntity = planJourneyFacade.getJourneyByName(name)
+      .orElseThrow(() -> new NotFoundException(">>> The journey entity having the name "
+        + name + " has not been found at this time in the data store"));
+    log.info("### PlanJourneyService.removeJourney(): Removing journey with ID {}", journeyEntity.getId());
+    planJourneyFacade.removeJourney(journeyEntity);
+    log.info("### PlanJourneyService.removeJourney(): JOurney with ID {} has been removed", journeyEntity.getId());
   }
 
   public JourneyDto findByName(String name)

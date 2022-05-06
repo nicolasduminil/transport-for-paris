@@ -37,4 +37,8 @@ services:
     ports:
       - "80:8080"
     environment:
-      BASE_URL: http://localhost:80/plan-journey-jax-rs/tfp/journeys
+      BASE_URL: /swagger
+      SWAGGER_JSON: /usr/share/nginx/swagger/specs/tfp.json
+    volumes:
+      - ./swagger/specs:/usr/share/nginx/swagger/specs:ro
+
