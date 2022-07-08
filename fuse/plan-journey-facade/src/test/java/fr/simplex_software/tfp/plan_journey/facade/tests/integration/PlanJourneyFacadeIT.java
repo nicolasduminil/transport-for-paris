@@ -39,6 +39,10 @@ public class PlanJourneyFacadeIT extends TestCommons
     assertNotNull(journeyEntity.getResult().getJourney());
     assertEquals (0, journeyEntity.getResult().getId().intValue());
     assertNotNull(journeyEntity.getResult().getDestinations());
+    assertTrue(journeyEntity.getResult().getDestinations().size() > 0);
+    assertNotNull(journeyEntity.getResult().getDestinations().get(0));
+    assertNotNull(journeyEntity.getResult().getDestinations().get(0).getResult());
+    assertNotNull(journeyEntity.getResult().getDestinations().get(0).getResult().getId());
     assertNotNull(journeyEntity.getMetadata().getJourney());
     JourneyDto journeyDto = new JourneyDto(journeyEntity);
     journeyEntity = new JourneyEntity(journeyDto);

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DestinationType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="ResultType" name="result"/>
+      <xs:element name="stationName" type="xs:string"/>
+      <xs:element name="platformId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DestinationsType">
+    <xs:sequence>
+      <xs:element name="destination" type="DestinationType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="DestinationsType" name="destinations"/>
+      <xs:element type="JourneyType" name="journey"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MetadataType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="JourneyType" name="journey"/>
+      <xs:element type="xs:string" name="metadataCall"/>
+      <xs:element type="xs:string" name="metadataWhen"/>
+      <xs:element type="xs:string" name="metadataVersion"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JourneyType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element type="ResultType" name="result"/>
+      <xs:element type="MetadataType" name="metadata"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="journey" type="JourneyType"/>
+</xs:schema>

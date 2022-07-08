@@ -9,7 +9,8 @@ function waiting_for_jboss {
 function download_files() {
   wget -L https://www.dropbox.com/s/epeihfl2j8p4plh/fuse-eap-installer-7.9.0.jar?dl=0 -O /root/install/fuse-eap-installer-7.9.0.jar
   wget -L https://www.dropbox.com/s/q16k1gp3xbrktex/jboss-eap-7.4.0-installer.jar?dl=0 -O /root/install/jboss-eap-7.4.0-installer.jar
-  wget -L https://www.dropbox.com/s/7l94yym0yc8ukrr/jboss-eap-7.4.1-patch.zip?dl=0 -O /root/install/jboss-eap-7.4.1-patch.zip}
+  wget -L https://www.dropbox.com/s/7l94yym0yc8ukrr/jboss-eap-7.4.1-patch.zip?dl=0 -O /root/install/jboss-eap-7.4.1-patch.zip
+}
 
 if [[ ! -e $EAP_HOME/bin && -e /root/install ]]; then
   cd $EAP_HOME

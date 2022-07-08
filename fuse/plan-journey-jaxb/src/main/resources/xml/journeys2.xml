@@ -1,0 +1,20 @@
+<journey>
+  <id>10</id>
+  <name>string</name>
+  <result>
+    <id>10</id>
+    <destinations>
+      <destination>
+        <id>10</id>
+        <stationName>string</stationName>
+        <platformId>string</platformId>
+      </destination>
+    </destinations>
+  </result>
+  <metadata>
+    <id>10</id>
+    <metadataCall>string</metadataCall>
+    <metadataWhen>string</metadataWhen>
+    <metadataVersion>string</metadataVersion>
+  </metadata>
+</journey>

@@ -1,6 +1,7 @@
 package fr.simplex_software.tfp.plan_journey.model.entities;
 
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -10,6 +11,10 @@ import java.io.*;
 @Table(name = "JOURNEYS")
 @XmlRootElement(name = "journey")
 @XmlAccessorType(XmlAccessType.FIELD)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class JourneyEntity implements Serializable
 {
   @Id
@@ -24,10 +29,6 @@ public class JourneyEntity implements Serializable
   @OneToOne(fetch = FetchType.LAZY, mappedBy = "journey", optional = false, cascade = CascadeType.ALL, orphanRemoval = true)
   private MetadataEntity metadata;
 
-  public JourneyEntity()
-  {
-  }
-
   public JourneyEntity(String name, ResultEntity result, MetadataEntity metadata)
   {
     this.name = name;
@@ -38,48 +39,7 @@ public class JourneyEntity implements Serializable
   public JourneyEntity (JourneyDto journeyDto)
   {
     this (journeyDto.getName(), new ResultEntity(journeyDto.getResult()), new MetadataEntity(journeyDto.getMetadata()));
-    this.result.setJourney(this);
-    this.metadata.setJourney(this);
-  }
-
-  public Long getId()
-  {
-    return id;
-  }
-
-  public void setId(Long id)
-  {
-    this.id = id;
-  }
-
-  public ResultEntity getResult()
-  {
-    return result;
-  }
-
-  public void setResult(ResultEntity result)
-  {
-    this.result = result;
-  }
-
-  public MetadataEntity getMetadata()
-  {
-    return metadata;
-  }
-
-  public void setMetadata(MetadataEntity metadata)
-  {
-    this.metadata = metadata;
-  }
-
-  public String getName()
-  {
-    return name;
-  }
-
-  public void setName(String name)
-  {
-    this.name = name;
+    this.result.getJourney().setResult(this.getResult());
   }
 
   public JourneyEntity fromDto (JourneyDto journeyDto)

@@ -27,6 +27,10 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>fr.simplex-software.tfp</groupId>
+      <artifactId>plan-journey-jaxb</artifactId>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>

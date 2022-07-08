@@ -1,6 +1,7 @@
 package fr.simplex_software.tfp.plan_journey.model.entities;
 
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -11,6 +12,10 @@ import java.io.*;
 @Table(name = "DESTINATIONS")
 @XmlRootElement(name="destination")
 @XmlAccessorType(XmlAccessType.FIELD)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class DestinationEntity implements Serializable
 {
   @Id
@@ -27,10 +32,6 @@ public class DestinationEntity implements Serializable
   @Column(name = "PLATFORM_ID", nullable = false, length = 40)
   private String platformId;
 
-  public DestinationEntity()
-  {
-  }
-
   public DestinationEntity (String stationName, String platformId)
   {
     this.platformId = platformId;
@@ -42,46 +43,5 @@ public class DestinationEntity implements Serializable
   {
     this.stationName = destinationDto.getStationName();
     this.platformId = destinationDto.getPlatformId();
-  }
-
-  public Long getId()
-  {
-    return id;
-  }
-
-
-  public void setId(Long id)
-  {
-    this.id = id;
-  }
-
-  public ResultEntity getResult()
-  {
-    return result;
-  }
-
-  public void setResult(ResultEntity result)
-  {
-    this.result = result;
-  }
-
-  public String getStationName()
-  {
-    return stationName;
-  }
-
-  public void setStationName(String stationName)
-  {
-    this.stationName = stationName;
-  }
-
-  public String getPlatformId()
-  {
-    return platformId;
-  }
-
-  public void setPlatformId(String platformId)
-  {
-    this.platformId = platformId;
   }
 }

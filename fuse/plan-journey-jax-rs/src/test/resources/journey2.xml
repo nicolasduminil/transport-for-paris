@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<journey id="10">
+  <name>MyJourney</name>
+  <result id="10">
+    <destinations>
+      <destination id="10">
+        <result refId="10"/>
+        <stationName>stationName1</stationName>
+        <platformId>platformId1</platformId>
+      </destination>
+      <destination id="20">
+        <result refId="10"/>
+        <stationName>stationName2</stationName>
+        <platformId>platformId2</platformId>
+      </destination>
+    </destinations>
+    <journey refId="10"/>
+  </result>
+  <metadata id="10">
+    <journey refId="10"/>
+    <metadataCall>metadataCall</metadataCall>
+    <metadataWhen>2021-03-12T16:12:55+01:00</metadataWhen>
+    <metadataVersion>metadataVersion</metadataVersion>
+  </metadata>
+</journey>
+
+

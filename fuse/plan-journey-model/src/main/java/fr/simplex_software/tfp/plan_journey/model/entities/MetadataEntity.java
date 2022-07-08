@@ -2,6 +2,7 @@ package fr.simplex_software.tfp.plan_journey.model.entities;
 
 import fr.simplex_software.tfp.plan_journey.model.converters.*;
 import fr.simplex_software.tfp.plan_journey.model.dtos.*;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -14,6 +15,10 @@ import java.time.*;
 @Table(name = "METADATA")
 @XmlRootElement(name = "metadata")
 @XmlAccessorType(XmlAccessType.FIELD)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class MetadataEntity implements Serializable
 {
   @Id
@@ -35,10 +40,6 @@ public class MetadataEntity implements Serializable
   @Column(name = "METADATA_VERSION", nullable = false, length = 40)
   private String metadataVersion;
 
-  public MetadataEntity()
-  {
-  }
-
   public MetadataEntity (String metadataCall, ZonedDateTime metadataWhen, String metadataVersion)
   {
     this.metadataCall = metadataCall;
@@ -51,55 +52,5 @@ public class MetadataEntity implements Serializable
     this.setMetadataVersion(metadataDto.getMetadataVersion());
     this.setMetadataWhen(metadataDto.getMetadataWhen());
     this.setMetadataCall(metadataDto.getMetadataCall());
-  }
-
-  public Long getId()
-  {
-    return id;
-  }
-
-  public void setId(Long id)
-  {
-    this.id = id;
-  }
-
-  public JourneyEntity getJourney()
-  {
-    return journey;
-  }
-
-  public void setJourney(JourneyEntity journey)
-  {
-    this.journey = journey;
-  }
-
-  public String getMetadataCall()
-  {
-    return metadataCall;
-  }
-
-  public void setMetadataCall(String metadataCall)
-  {
-    this.metadataCall = metadataCall;
-  }
-
-  public ZonedDateTime getMetadataWhen()
-  {
-    return metadataWhen;
-  }
-
-  public void setMetadataWhen(ZonedDateTime metadataWhen)
-  {
-    this.metadataWhen = metadataWhen;
-  }
-
-  public String getMetadataVersion()
-  {
-    return metadataVersion;
-  }
-
-  public void setMetadataVersion(String metadataVersion)
-  {
-    this.metadataVersion = metadataVersion;
   }
 }
